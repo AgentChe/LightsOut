@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Network
 
 class LeagueVC: LODataLoadingVC {
+    
+    let monitor = NWPathMonitor()
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -34,6 +37,9 @@ class LeagueVC: LODataLoadingVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let queue = DispatchQueue.global(qos: .background)
+        monitor.start(queue: queue)
+        
         print("DEBUG: LEagueVC viewdidlload")
         navigationItem.title = "League"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -46,8 +52,15 @@ class LeagueVC: LODataLoadingVC {
         collectionView.register(UINib(nibName: "LOSquareCell", bundle: nil), forCellWithReuseIdentifier: LOSquareCell.reuseID)
         
         collectionView.register(UINib(nibName: "LOLeaguesHeaderView", bundle: nil), forSupplementaryViewOfKind: LOLeaguesHeaderView.categoryHeaderId, withReuseIdentifier: LOLeaguesHeaderView.reuseId)
+        checkConnectionAndShowAlert(withMessage: .unableToGetAllRecords)
         authIfUserNotLogin()
         createObservers()
+    }
+    
+    func checkConnectionAndShowAlert(withMessage message: LOError) {
+        if monitor.currentPath.status == .unsatisfied {
+            print("DEBUG: Internet yok error")
+        }
     }
     
     func createObservers() {
@@ -109,7 +122,7 @@ extension LeagueVC: UICollectionViewDataSource {
         } else if section == 1 {
             return 1
         } else {
-            if friendsLeague.isEmpty { return 0 }
+            if friendsLeague.isEmpty { return 1 }
             else {
                 return friendsLeague.count
             }

@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseCore
+import StoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        
+    
+//        defaults.set(true, forKey: Keys.adsFree)
         FirebaseApp.configure()
         
         let isItOpenBefore = defaults.bool(forKey: "isItFirstOpen")
@@ -24,6 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("DEBUG: IT IS FIRST")
             defaults.set(5, forKey: "lifeCount")
             defaults.set(true, forKey: "isItFirstOpen")
+            //UserDefaults.standard.set(true, forKey: Keys.adsFree)
+            let adsFreeStatus = defaults.bool(forKey: Keys.adsFree)
+            print("DEBUG: ads free have bought before: \(adsFreeStatus)")
+            if adsFreeStatus {
+                defaults.set(true, forKey: Keys.getPro)
+            }
         } else {
             print("DEBUG: IT was opened before")
         }
@@ -47,6 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             
         }
+        
+        SKPaymentQueue.default().add(IAPManager.shared)
+        IAPManager.shared.fetchProduct()
         
         return true
     }

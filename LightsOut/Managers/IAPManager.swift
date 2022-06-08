@@ -27,7 +27,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     var product: SKProduct?
     //Fetch Product From Apple
     public func fetchProduct() {
-        let request = SKProductsRequest(productIdentifiers: ["com.foytingo.removeAds"])
+        let request = SKProductsRequest(productIdentifiers: ["com.foytingo.getPro"])
         request.delegate = self
         request.start()
     }
@@ -108,7 +108,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             return
         }
         if transaction.payment.productIdentifier == productBeingPurchasedID {
-            UserDefaults.standard.set(true, forKey: Keys.adsFree)
+            UserDefaults.standard.set(true, forKey: Keys.getPro)
             
             DispatchQueue.main.async {
                 self.delegate?.purchaseDidSucceed()
@@ -123,7 +123,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     }
     
     private func handleRestore(_ transaction: SKPaymentTransaction) {
-        UserDefaults.standard.set(true, forKey: Keys.adsFree)
+        UserDefaults.standard.set(true, forKey: Keys.getPro)
         SKPaymentQueue.default().finishTransaction(transaction)
         DispatchQueue.main.async {
             self.delegate?.restoreDidSucceed()

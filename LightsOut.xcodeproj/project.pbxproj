@@ -77,6 +77,7 @@
 		B6BDFB252850855900F805A5 /* LOEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB242850855900F805A5 /* LOEmptyStateView.swift */; };
 		B6BDFB272850875E00F805A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */; };
 		B6BDFB2928508D8400F805A5 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB2828508D8300F805A5 /* IAPManager.swift */; };
+		B6BDFB2B28508F1E00F805A5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB2A28508F1E00F805A5 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,8 @@
 		B6BDFB242850855900F805A5 /* LOEmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOEmptyStateView.swift; sourceTree = "<group>"; };
 		B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6BDFB2828508D8300F805A5 /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		B6BDFB2A28508F1E00F805A5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		B6BDFB2C2850924C00F805A5 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,7 @@
 				B6BDFA7D285079A500F805A5 /* LaunchScreen.storyboard */,
 				B6BDFA80285079A500F805A5 /* Info.plist */,
 				B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */,
+				B6BDFB2C2850924C00F805A5 /* Configuration.storekit */,
 			);
 			path = LightsOut;
 			sourceTree = "<group>";
@@ -218,6 +222,7 @@
 				B6BDFB2828508D8300F805A5 /* IAPManager.swift */,
 				B6BDFA9C28507C0800F805A5 /* DatabaseManager.swift */,
 				B6BDFA9E28507C1500F805A5 /* FirebaseManager.swift */,
+				B6BDFB2A28508F1E00F805A5 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6BDFAE1285080A500F805A5 /* YourLeagueVC.swift in Sources */,
+				B6BDFB2B28508F1E00F805A5 /* PersistenceManager.swift in Sources */,
 				B6BDFB252850855900F805A5 /* LOEmptyStateView.swift in Sources */,
 				B6BDFAE2285080A500F805A5 /* LeagueVC.swift in Sources */,
 				B6BDFB23285083F100F805A5 /* Double+Ext.swift in Sources */,

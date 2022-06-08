@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class LightsOutVC: UIViewController {
     
@@ -17,6 +18,7 @@ class LightsOutVC: UIViewController {
     
     var lights: [LOSingleLightView]!
     
+    @IBOutlet var getProButton: UIButton!
     @IBOutlet weak var lifeView: LOLifeView!
     @IBOutlet weak var touchArea: LOTouchAreaView!
     @IBOutlet weak var instructionView: LOInstructionView!
@@ -77,6 +79,22 @@ class LightsOutVC: UIViewController {
         }
     }
     
+    
+    var removedAdsButtonTapped = false
+    var isPro: Bool? {
+        didSet {
+            if isPro == false && oldValue == nil {
+                print("DEBUG: Pro Olunmadi")
+//                requestIDFA()
+            } else if isPro == true {
+                getProButton.isHidden = true
+                getProButton.isEnabled = false
+                lifeView.isHidden = true
+            }
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,6 +106,17 @@ class LightsOutVC: UIViewController {
         
         lifeCount = defaults.integer(forKey: "lifeCount")
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        removedAdsButtonTapped = false
+        isPro = isPurchased()
+    }
+    
+    func isPurchased() -> Bool {
+        let purchaseStatus = UserDefaults.standard.bool(forKey: Keys.getPro)
+        return purchaseStatus ? true : false
     }
     
     func addOneToLifeCount() {
@@ -139,7 +168,8 @@ class LightsOutVC: UIViewController {
     }
     
     func lightsOut() {
-        let randomTime = Double.random(in: 1...6)
+        let randomTime = Double.random(in: 1...3)
+        print("DEBUG: \(randomTime)")
         randomLightsOutTimer = Timer.scheduledTimer(withTimeInterval: randomTime, repeats: false, block: { [self] _ in
             for light in self.lights {
                 light.turnDefault()
@@ -153,11 +183,31 @@ class LightsOutVC: UIViewController {
         reactionTimeCounter += 0.001
     }
     
+    func rateRequest() {
+        let count = UserDefaults.standard.integer(forKey: Keys.playCountKey)
+        print("DEBUG: \(count)")
+        switch count {
+        case 14:
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
+        case _ where count%100 == 0 :
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
+//        case _ where count % 4 == 0:
+//            showInterstitialAd()
+        default:
+            break;
+        }
+    }
+    
     
 }
 
 extension LightsOutVC: LOTouchAreaDelegate {
     func startGame() {
+        PersistenceManager.shared.playCount()
         instructionView.isHidden = false
         instructionView.changeLabel(with: "Wait until all lights ON!")
         lightsUpInOrder()
@@ -168,10 +218,12 @@ extension LightsOutVC: LOTouchAreaDelegate {
         
         if reactionTimeCounter <= 0 {
             // If user release BEFORE all lights out
-            lifeCount -= 1
-            lifeView.lifeUpOrDownAnimation(lifeCase: .down)
-            defaults.set(lifeCount, forKey: "lifeCount")
-            print("DEBUG: Lifecount down \(lifeCount)")
+            if !isPro! {
+                lifeCount -= 1
+                lifeView.lifeUpOrDownAnimation(lifeCase: .down)
+                defaults.set(lifeCount, forKey: "lifeCount")
+                print("DEBUG: Lifecount down \(lifeCount)")
+            }
             
             instructionView.changeLabel(with: "Fail try again!")
             generator.notificationOccurred(.error)
@@ -203,14 +255,19 @@ extension LightsOutVC: LOTouchAreaDelegate {
         reactionTimeCounter = 0.0
         lightsCountForStartSequence = 0
         
+        
+        rateRequest()
     }
 }
 
 extension LightsOutVC: LOLifeViewDelegate {
     func didTapAddLifeButton() {
         print("DEBUG: Add life Button Tapped")
-        lifeCount += 1
-        lifeView.lifeUpOrDownAnimation(lifeCase: .up)
+        if !isPro! {
+            lifeCount += 1
+            lifeView.lifeUpOrDownAnimation(lifeCase: .up)
+        }
+
     }
     
     

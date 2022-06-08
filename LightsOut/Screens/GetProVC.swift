@@ -18,6 +18,7 @@ class GetProVC: UIViewController {
     @IBOutlet var restoreButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        IAPManager.shared.delegate = self
         logoImageView.layer.cornerRadius = 10
         descriptionLabel.text = "Add-free experience\nUnlimited life\nAccess Friend Leagues"
     }
@@ -26,14 +27,35 @@ class GetProVC: UIViewController {
         self.dismiss(animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func buyButton(_ sender: UIButton) {
+        IAPManager.shared.buyAdsFree()
     }
-    */
+    
+    @IBAction func restoreButton(_ sender: UIButton) {
+        IAPManager.shared.restore()
+    }
+}
 
+extension GetProVC: IAPManagerDelegate {
+    func restoreDidSucceed() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func purchaseDidSucceed() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func didReceiveError(_ errorType: PaymentErrors) {
+        switch errorType {
+        case .cantMakePayment:
+            print("DEBUG: cantmakepayment")
+        case .loadError:
+         print("DEBUG: Cant load product")
+        case .paymentError:
+            print("DEBUG: payment error")
+        case .restoreError:
+          print("DEBUG: restore error")
+        }
+    
+    }
 }
