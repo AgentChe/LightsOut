@@ -1,8 +1,8 @@
 //
 //  LOLeaguesHeaderView.swift
-//  LightsOut_V2
+//  LightsOut
 //
-//  Created by Murat Baykor on 1.06.2022.
+//  Created by Murat Baykor on 8.06.2022.
 //
 
 import UIKit

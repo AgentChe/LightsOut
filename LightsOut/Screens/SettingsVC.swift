@@ -1,17 +1,19 @@
 //
 //  SettingsVC.swift
-//  LightsOut_V2
+//  LightsOut
 //
-//  Created by Murat Baykor on 27.05.2022.
+//  Created by Murat Baykor on 8.06.2022.
 //
 
 import UIKit
-
+import StoreKit
 
 
 class SettingsVC: UITableViewController {
     
-
+    var isPro = UserDefaults.standard.bool(forKey: Keys.getPro)
+    var isSoundEffect = UserDefaults.standard.bool(forKey: Keys.soundSettings)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Settings"
@@ -19,6 +21,10 @@ class SettingsVC: UITableViewController {
         self.tableView.backgroundColor = UIColor.systemBackground
         tableView.isScrollEnabled = false
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -45,6 +51,7 @@ class SettingsVC: UITableViewController {
         if segue.identifier == "goToStatistics"{
               let secondView = segue.destination as! StatisticsVC
             secondView.title = "Statistics"
+            
         }
     }
     
@@ -53,11 +60,21 @@ class SettingsVC: UITableViewController {
         if indexPath == [0,1] {
             performSegue(withIdentifier: "goToStatistics", sender: self)
         } else if indexPath == [0,0] {
-            performSegue(withIdentifier: "goToGetPro", sender: self)
+            if !UserDefaults.standard.bool(forKey: Keys.getPro) {
+                performSegue(withIdentifier: "goToGetPro", sender: self)
+            }
         } else if indexPath == [1,0] {
-            print("DEBUG: Sound effects on/off")
-        } else if indexPath == [1,1] {
-            print("DEBUG: Tutorial on/off")
+            isSoundEffect.toggle()
+            print("DEBUG: sound effect status: \(isSoundEffect)")
+            UserDefaults.standard.set(isSoundEffect, forKey: Keys.soundSettings)
+            tableView.reloadRows(at: [indexPath], with: .none)
+            
+        } else if indexPath == [2,1] {
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
+        } else if indexPath == [2,2] {
+            performSegue(withIdentifier: "goToContact", sender: self)
         }
     }
     

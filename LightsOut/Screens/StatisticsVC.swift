@@ -1,23 +1,28 @@
 //
 //  StatisticsVC.swift
-//  LightsOut_V2
+//  LightsOut
 //
-//  Created by Murat Baykor on 27.05.2022.
+//  Created by Murat Baykor on 8.06.2022.
 //
 
 import UIKit
 import Charts
 
 class StatisticsVC: LODataLoadingVC {
-    
+
     @IBOutlet var containerViewForChart: UIView!
     @IBOutlet var chartView: LineChartView!
     
+    @IBOutlet var boxViewForLabel: UIView!
+    @IBOutlet var avarageLabel: UILabel!
     var chartEntrites: [ChartDataEntry]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Statistics"
+        boxViewForLabel.layer.cornerRadius = 10
+        
+        avarageLabel.text = "You avarage reaction time: \(UserDefaults.standard.double(forKey: Keys.avarageReactionTime).convertThreePointString()) s"
         containerViewForChart.backgroundColor = .secondarySystemBackground
         containerViewForChart.layer.cornerRadius = 10
         chartView.backgroundColor = .clear

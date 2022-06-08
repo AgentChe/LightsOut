@@ -1,8 +1,8 @@
 //
 //  LOLifeView.swift
-//  LightsOut_V2
+//  LightsOut
 //
-//  Created by Murat Baykor on 17.05.2022.
+//  Created by Murat Baykor on 8.06.2022.
 //
 
 import UIKit

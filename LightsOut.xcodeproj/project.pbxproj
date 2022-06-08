@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6B702FB2850CD07003D5AD3 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B702FA2850CD07003D5AD3 /* FeedbackVC.swift */; };
 		B6BDFA73285079A300F805A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA72285079A300F805A5 /* AppDelegate.swift */; };
 		B6BDFA75285079A300F805A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA74285079A300F805A5 /* SceneDelegate.swift */; };
 		B6BDFA7C285079A500F805A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFA7B285079A500F805A5 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6B702FA2850CD07003D5AD3 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		B6BDFA6F285079A300F805A5 /* LightsOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightsOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BDFA72285079A300F805A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6BDFA74285079A300F805A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				B6BDFAD3285080A500F805A5 /* SettingsVC.swift */,
 				B6BDFAD7285080A500F805A5 /* StatisticsVC.swift */,
 				B6BDFAD8285080A500F805A5 /* YourLeagueVC.swift */,
+				B6B702FA2850CD07003D5AD3 /* FeedbackVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				B6BDFAE3285080A500F805A5 /* GetProVC.swift in Sources */,
 				B6BDFAA928507CC000F805A5 /* OnlineRecordModel.swift in Sources */,
 				B6BDFAF32850817700F805A5 /* LOAlertVC.swift in Sources */,
+				B6B702FB2850CD07003D5AD3 /* FeedbackVC.swift in Sources */,
 				B6BDFAAF28507D5A00F805A5 /* UITextField+Ext.swift in Sources */,
 				B6BDFB2928508D8400F805A5 /* IAPManager.swift in Sources */,
 				B6BDFB0A285081E400F805A5 /* LODataLoadingVC.swift in Sources */,

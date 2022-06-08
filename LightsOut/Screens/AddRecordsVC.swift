@@ -1,8 +1,8 @@
 //
 //  AddRecordsVC.swift
-//  LightsOut_V2
+//  LightsOut
 //
-//  Created by Murat Baykor on 6.06.2022.
+//  Created by Murat Baykor on 8.06.2022.
 //
 
 import UIKit
@@ -80,7 +80,7 @@ class AddRecordsVC: LODataLoadingVC {
                 if let error = error {
                     print("DEBUG: \(error)")
                 } else {
-                    self.dismiss(animated: true)
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
         }
@@ -184,7 +184,7 @@ extension AddRecordsVC: LOAddNameForLeagueVCDelegate {
             if let error = error {
                 print("DEBUG: \(error)")
             } else {
-                self.dismiss(animated: true)
+                self.navigationController?.popViewController(animated: true)
             }
         }
         

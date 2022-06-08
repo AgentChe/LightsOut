@@ -37,10 +37,6 @@ struct FirebaseManager {
         }
     }
     
-    
-    
-    
-    
     func getAllRecordsFromFirestore(completion: @escaping([RecordModel], Error?) -> Void) {
         var records = [RecordModel]()
         db.collection("records").order(by: "recordTime").getDocuments { snapshot, error in
@@ -119,22 +115,13 @@ struct FirebaseManager {
                         completion(.wrongLeaguePassword)
                     }
                 }
-                
-                
-                
             case .failure(let error):
                 print("DEBUG: \(error)")
                 completion(.cantFoundLeague)
             }
         }
-        
-        
-        
-        
     }
-    
-
-    
+ 
     func getYourLeagues(userUid: String, completion: @escaping([LeagueModel],Error?) -> Void) {
         var yourLeagues = [LeagueModel]()
         
@@ -217,5 +204,41 @@ struct FirebaseManager {
         let docRef = db.collection("leagues").document("\(leagueNumber)")
         docRef.updateData(["recordsInLeagues": FieldValue.arrayUnion(recordDatas)], completion: completion)
     }
+    
+    
+    func deleteAllRecordsInFriendsLeague(leagueNumber: Int?, completion: @escaping(Error?) -> Void) {
+        guard let leagueNumber = leagueNumber else { return }
+        let docRef = db.collection("leagues").document("\(leagueNumber)")
+        docRef.updateData(["recordsInLeagues": FieldValue.delete()], completion: completion)
+    }
+    
+    func deleteOwnRecordInFriendsLeague(userUid: String, leagueNumber: Int, completion: @escaping(Error?) -> Void) {
+        var recordDatas = [[String:Any]]()
+        
+        let docRef = db.collection("leagues").document("\(leagueNumber)")
+        
+        docRef.getDocument(as: LeagueModel.self) { result in
+            switch result {
+            case .success(let league):
+                guard let onlineRecords = league.recordsInLeagues else { return }
+                for record in onlineRecords {
+                    let recordData = ["userUid": record.userUid,
+                                      "recordTime": record.recordTime,
+                                      "name": record.name ?? "",
+                                      "timeStamp": record.timeStamp,
+                                      "recordUid": record.recordUid] as [String : Any]
+                    recordDatas.append(recordData)
+                }
+                
+                let deletedRecords = recordDatas.filter {$0["userUid"] as! String == userUid}
+                
+                docRef.updateData(["recordsInLeagues": FieldValue.arrayRemove(deletedRecords)], completion: completion)
+            case .failure(let error):
+                completion(error)
+                
+            }
+        }
+    }
+    
 }
 

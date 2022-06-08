@@ -1,10 +1,9 @@
 //
 //  YourLeagueVC.swift
-//  LightsOut_V2
+//  LightsOut
 //
-//  Created by Murat Baykor on 6.06.2022.
+//  Created by Murat Baykor on 8.06.2022.
 //
-
 import UIKit
 
 class YourLeagueVC: LODataLoadingVC {
@@ -14,17 +13,31 @@ class YourLeagueVC: LODataLoadingVC {
     enum Section { case main }
     
     var league: LeagueModel?
+    var userUid: String?
+    
+    var leagueDeleteActionWorks = false {
+        didSet {
+            loadRecords()
+            leagueDeleteActionWorks = false
+            
+        }
+    }
     
     var records: [RecordModel] = [] {
         didSet {
             updateData(on: records)
             if records.isEmpty {
                 collectionView.backgroundView = LOEmptyStateView(message: "No Records?\n Add records with add button")
+                deleteRecords.isEnabled = false
+            } else {
+                collectionView.backgroundView = nil
+                deleteRecords.isEnabled = true
             }
         }
     }
     
     
+    @IBOutlet var deleteRecords: UIBarButtonItem!
     
     private lazy var dataSource = makeDataSource()
     
@@ -33,7 +46,6 @@ class YourLeagueVC: LODataLoadingVC {
         title = league?.leagueName
         collectionView.collectionViewLayout = UIHelper.createOnlineRecordVCLayout()
         collectionView.register(UINib(nibName: "LOOnlineRecordCell", bundle: nil), forCellWithReuseIdentifier: LOOnlineRecordCell.reuseID)
-        
         
     }
     
@@ -96,8 +108,65 @@ class YourLeagueVC: LODataLoadingVC {
         performSegue(withIdentifier: "goToAddRecordsToLeague", sender: self)
         
     }
-    @IBAction func leagueInfoButton(_ sender: UIBarButtonItem) {
+
+    
+    @IBAction func logOutButton(_ sender: UIBarButtonItem) {
+        if userUid == league?.creatorUid {
+            print("DEBUG: owener tapped quit alert")
+        } else {
+            print("DEBUG: It is not owner just quit alert")
+        }
     }
     
-    
+    @IBAction func deleteAction(_ sender: UIBarButtonItem) {
+        
+        if userUid == league?.creatorUid {
+            let ac = UIAlertController(title: "Delete Records", message: "You can delete all records in league or just your owns. ", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Delete All", style: .destructive, handler: { action in
+                guard let userUid = self.userUid else {
+                    return
+                }
+                guard let league = self.league else {
+                    return
+                }
+                FirebaseManager.shared.deleteOwnRecordInFriendsLeague(userUid: userUid, leagueNumber: league.leagueId) { error in
+                    self.leagueDeleteActionWorks = true
+                    if let error = error {
+                        print("DEBUG: \(error)")
+                    }
+                }
+            }))
+            ac.addAction(UIAlertAction(title: "Delete Owns", style: .destructive, handler: { action in
+                guard let league = self.league else {
+                    return
+                }
+                FirebaseManager.shared.deleteAllRecordsInFriendsLeague(leagueNumber: league.leagueId) { error in
+                    self.leagueDeleteActionWorks = true
+                    if let error = error {
+                        print("DEBUG: \(error)")
+                    }
+                }
+            }))
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Delete Records", message: "Your record will be deleted from league", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+                guard let userUid = self.userUid else {
+                    return
+                }
+                guard let league = self.league else {
+                    return
+                }
+                FirebaseManager.shared.deleteOwnRecordInFriendsLeague(userUid: userUid, leagueNumber: league.leagueId) { error in
+                    self.leagueDeleteActionWorks = true
+                    if let error = error {
+                        print("DEBUG: \(error)")
+                    }
+                }
+            }))
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            present(ac, animated: true)
+        }
+    }
 }

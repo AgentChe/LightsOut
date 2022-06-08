@@ -1,8 +1,8 @@
 //
 //  LeagueVC.swift
-//  LightsOut_V2
+//  LightsOut
 //
-//  Created by Murat Baykor on 19.05.2022.
+//  Created by Murat Baykor on 8.06.2022.
 //
 
 import UIKit
@@ -31,6 +31,12 @@ class LeagueVC: LODataLoadingVC {
         }
     }
     
+    var isPro: Bool? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -56,11 +62,21 @@ class LeagueVC: LODataLoadingVC {
         authIfUserNotLogin()
         createObservers()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        isPro = isPurchased()
+        
+    }
     
     func checkConnectionAndShowAlert(withMessage message: LOError) {
         if monitor.currentPath.status == .unsatisfied {
             print("DEBUG: Internet yok error")
         }
+    }
+    
+    func isPurchased() -> Bool {
+        let purchaseStatus = UserDefaults.standard.bool(forKey: Keys.getPro)
+        return purchaseStatus ? true : false
     }
     
     func createObservers() {
@@ -120,7 +136,11 @@ extension LeagueVC: UICollectionViewDataSource {
         if section == 0 {
             return 2
         } else if section == 1 {
-            return 1
+            if isPro == true {
+                return 0
+            } else {
+                return 1
+            }
         } else {
             if friendsLeague.isEmpty { return 1 }
             else {
@@ -185,9 +205,34 @@ extension LeagueVC: UICollectionViewDelegate {
             print("DEBUG: REKLAM")
         } else {
             if self.friendsLeague.isEmpty {
-                print("DEBUG: Show alert add or join")
+                if isPro == true {
+                    let ac = UIAlertController(title: "Add a league", message: "You can create a league or join a league", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "Create", style: .default, handler: { action in
+                        if self.userUid != "" {
+                            self.performSegue(withIdentifier: "goToCreateLeague", sender: self)
+                        }
+                    }))
+                    ac.addAction(UIAlertAction(title: "Join", style: .default,handler: { action in
+                        if self.userUid != "" {
+                            self.performSegue(withIdentifier: "goToJoinLeague", sender: self)
+                        }
+                    }))
+                    ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                    present(ac, animated: true)
+                } else {
+                    let ac = UIAlertController(title: "Get PRO", message: "You can access the friends league if you will be a PRO", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "Get PRO", style: .default, handler: { action in
+                        if self.userUid != "" {
+                            self.performSegue(withIdentifier: "goToGetPro", sender: self)
+                        }
+                    }))
+                    ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                    present(ac, animated: true)
+                }
+               
             } else {
                 let destVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YourLeagueVC") as! YourLeagueVC
+                destVC.userUid = userUid
                 destVC.league = friendsLeague[indexPath.row]
                 self.navigationController?.pushViewController(destVC, animated: true)
             }
@@ -202,8 +247,18 @@ extension LeagueVC: LOLeaguesHeaderViewDelegate {
         
     func didTapCreateButton() {
         
-        if userUid != "" {
+        if userUid != "" && isPro == true {
             performSegue(withIdentifier: "goToCreateLeague", sender: self)
+            
+        } else if isPro == false {
+            let ac = UIAlertController(title: "Get PRO", message: "You can access the friends league if you will be a PRO", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Get PRO", style: .default, handler: { action in
+                if self.userUid != "" {
+                    self.performSegue(withIdentifier: "goToGetPro", sender: self)
+                }
+            }))
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            present(ac, animated: true)
         }
         
         
@@ -222,8 +277,17 @@ extension LeagueVC: LOLeaguesHeaderViewDelegate {
     }
     
     func didTapJoinButton() {
-        if userUid != "" {
+        if userUid != "" && isPro == true  {
             performSegue(withIdentifier: "goToJoinLeague", sender: self)
+        } else if isPro == false {
+            let ac = UIAlertController(title: "Get PRO", message: "You can access the friends league if you will be a PRO", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Get PRO", style: .default, handler: { action in
+                if self.userUid != "" {
+                    self.performSegue(withIdentifier: "goToGetPro", sender: self)
+                }
+            }))
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            present(ac, animated: true)
         }
     }
     

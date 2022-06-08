@@ -1,8 +1,8 @@
 //
 //  UIHelper.swift
-//  LightsOut_V2
+//  LightsOut
 //
-//  Created by Murat Baykor on 19.05.2022.
+//  Created by Murat Baykor on 8.06.2022.
 //
 
 import UIKit
@@ -91,7 +91,7 @@ struct UIHelper {
         case 0:
             return 2
         case 1:
-            return 2
+            return 1
         case 2:
             return 3
         default:
@@ -115,25 +115,36 @@ struct UIHelper {
     
     static func configureCells(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.accessoryType = .disclosureIndicator
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath)
+        cell2.accessoryType = .disclosureIndicator
         
         var cellTitle = ""
         var cellSubtitle = ""
         
+        let isPro = UserDefaults.standard.bool(forKey: Keys.getPro)
         
         switch indexPath {
         case [0, 0]:
-            cellTitle = "Become a PRO!"
-            cellSubtitle = "Remove ads and access friends leagues"
+            if isPro {
+                cellTitle = "You are a PRO"
+                cellSubtitle = "You have unlimited life and access friend leagues."
+                cell.accessoryType = .none
+            } else {
+                cellTitle = "Become a PRO!"
+                cellSubtitle = "Remove ads and access friends leagues"
+            }
+
         case [0, 1]:
             cellTitle = "Statistics"
             cellSubtitle = "Your reaction time records and progression"
         case [1, 0]:
             cellTitle = "Sound Effect"
-            cellSubtitle = "On"
-        case [1, 1]:
-            cellTitle = "Enable Tutorial at next opening"
-            cellSubtitle = "Off"
+            if UserDefaults.standard.bool(forKey: Keys.soundSettings) {
+                cellSubtitle = "On"
+            } else {
+                cellSubtitle = "Off"
+            }
         case [2, 0]:
             cellTitle = "About Game"
         case [2, 1]:
@@ -150,7 +161,7 @@ struct UIHelper {
         content.secondaryText = cellSubtitle
         content.secondaryTextProperties.font = UIFont.systemFont(ofSize: 14, weight: .light)
         content.secondaryTextProperties.color = UIColor.systemGray
-        cell.accessoryType = .disclosureIndicator
+        
         cell.contentConfiguration = content
         
         var content2 = cell2.defaultContentConfiguration()
@@ -159,7 +170,7 @@ struct UIHelper {
         content2.secondaryTextProperties.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         content2.secondaryTextProperties.color = UIColor.systemGray
         cell2.contentConfiguration = content2
-        cell2.accessoryType = .disclosureIndicator
+        
         
         if indexPath == [1, 0] || indexPath == [1,1] || indexPath == [1,3] {
             return cell2

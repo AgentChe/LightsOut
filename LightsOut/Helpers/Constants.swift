@@ -1,8 +1,8 @@
 //
 //  Constants.swift
-//  LightsOut_V2
+//  LightsOut
 //
-//  Created by Murat Baykor on 27.05.2022.
+//  Created by Murat Baykor on 8.06.2022.
 //
 
 import UIKit
@@ -18,6 +18,7 @@ struct Constants {
     static let createLeagueNotificationKey = "com.foytingo.createLeagueNotificationKey"
     static let joinLeagueNotificationKey = "com.foytingo.joinLeagueNotificationKey"
     static let goLeagueNotificationKey = "com.foytingo.goLeagueNotificationKey"
+
 }
 
 enum Keys {
@@ -27,4 +28,6 @@ enum Keys {
     static let adsFree = "adsFree"
     static let getPro = "getPro"
     static let soundSettings = "soundSettings"
+    static let avarageReactionTime = "avarageReactionTime"
+    
 }
