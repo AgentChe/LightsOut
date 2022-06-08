@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AlertVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="Y6W-OH-hqX" customClass="LOAlertVC" customModule="LightsOut_V2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbz-eH-jtf">
+                                <rect key="frame" x="70" y="268" width="274" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You joined successfulyy in the league. Now you can add your records to the league." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gth-ol-FiU">
+                                        <rect key="frame" x="10" y="50.5" width="254" height="57.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bt-1e-RdE">
+                                        <rect key="frame" x="50" y="181" width="174" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="OK"/>
+                                        <connections>
+                                            <action selector="actionButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2ah-qJ-zPS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QK-Gu-sv2">
+                                        <rect key="frame" x="0.0" y="10" width="274" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="5Bt-1e-RdE" firstAttribute="leading" secondItem="nbz-eH-jtf" secondAttribute="leading" constant="50" id="4da-On-UKO"/>
+                                    <constraint firstItem="gth-ol-FiU" firstAttribute="top" secondItem="1QK-Gu-sv2" secondAttribute="bottom" constant="20" id="CqP-Lw-4kr"/>
+                                    <constraint firstItem="1QK-Gu-sv2" firstAttribute="leading" secondItem="nbz-eH-jtf" secondAttribute="leading" id="GiG-80-45U"/>
+                                    <constraint firstItem="gth-ol-FiU" firstAttribute="leading" secondItem="nbz-eH-jtf" secondAttribute="leading" constant="10" id="Lz5-fA-C67"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Bt-1e-RdE" secondAttribute="bottom" constant="18" id="Nm2-wu-8f5"/>
+                                    <constraint firstItem="1QK-Gu-sv2" firstAttribute="top" secondItem="nbz-eH-jtf" secondAttribute="top" constant="10" id="Org-js-2hb"/>
+                                    <constraint firstAttribute="height" constant="230" id="XUU-w3-hzW"/>
+                                    <constraint firstAttribute="trailing" secondItem="gth-ol-FiU" secondAttribute="trailing" constant="10" id="Yix-Qs-Jdn"/>
+                                    <constraint firstAttribute="trailing" secondItem="1QK-Gu-sv2" secondAttribute="trailing" id="fa3-ub-Y9o"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Bt-1e-RdE" secondAttribute="trailing" constant="50" id="kfi-sb-MUr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nbz-eH-jtf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="Mak-hT-3mr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nbz-eH-jtf" secondAttribute="trailing" constant="70" id="Rqq-dN-R4v"/>
+                            <constraint firstItem="nbz-eH-jtf" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" constant="-70" id="ehS-RZ-yqg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="5Bt-1e-RdE" id="pPH-wf-lbh"/>
+                        <outlet property="boxView" destination="nbz-eH-jtf" id="YPP-yb-EQS"/>
+                        <outlet property="messageLabel" destination="gth-ol-FiU" id="0xz-U7-Qbe"/>
+                        <outlet property="titleLabel" destination="1QK-Gu-sv2" id="GEK-Iv-c8m"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="70.982142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Name For LeagueVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController restorationIdentifier="LOAddNameForLeagueStoryboard" storyboardIdentifier="LOAddNameForLeagueStoryboard" id="Y6W-OH-hqX" customClass="LOAddNameForLeagueVC" customModule="LightsOut_V2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXI-aQ-DaD">
+                                <rect key="frame" x="70" y="263" width="274" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSs-VS-y8p">
+                                        <rect key="frame" x="0.0" y="10" width="274" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can save your record to the friend league." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDq-zH-zZF">
+                                        <rect key="frame" x="10" y="50.5" width="254" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Max 12 Character" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="va6-hP-vh9">
+                                        <rect key="frame" x="10" y="109" width="254" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BKI-Fa-KeN">
+                                        <rect key="frame" x="10" y="170" width="254" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW2-g7-8JT">
+                                                <rect key="frame" x="0.0" y="0.0" width="117" height="50"/>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nt2-Xx-bYC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiN-BH-Wqy">
+                                                <rect key="frame" x="137" y="0.0" width="117" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                <connections>
+                                                    <action selector="saveButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rTw-va-T3B"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SwB-1p-xYf"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cSs-VS-y8p" secondAttribute="trailing" id="3Yn-Dh-JlE"/>
+                                    <constraint firstItem="cSs-VS-y8p" firstAttribute="leading" secondItem="EXI-aQ-DaD" secondAttribute="leading" id="AfY-rq-zn3"/>
+                                    <constraint firstAttribute="trailing" secondItem="va6-hP-vh9" secondAttribute="trailing" constant="10" id="DJu-HY-nQr"/>
+                                    <constraint firstItem="va6-hP-vh9" firstAttribute="top" secondItem="cDq-zH-zZF" secondAttribute="bottom" constant="20" id="EBF-cQ-Niz"/>
+                                    <constraint firstAttribute="height" constant="230" id="OOB-0d-yls"/>
+                                    <constraint firstAttribute="bottom" secondItem="BKI-Fa-KeN" secondAttribute="bottom" constant="10" id="Qlh-QS-wsE"/>
+                                    <constraint firstItem="va6-hP-vh9" firstAttribute="leading" secondItem="EXI-aQ-DaD" secondAttribute="leading" constant="10" id="Rwc-VY-zEp"/>
+                                    <constraint firstItem="BKI-Fa-KeN" firstAttribute="leading" secondItem="EXI-aQ-DaD" secondAttribute="leading" constant="10" id="SSJ-Xr-ILD"/>
+                                    <constraint firstAttribute="trailing" secondItem="BKI-Fa-KeN" secondAttribute="trailing" constant="10" id="ZeM-Vd-QjB"/>
+                                    <constraint firstItem="cDq-zH-zZF" firstAttribute="leading" secondItem="EXI-aQ-DaD" secondAttribute="leading" constant="10" id="dth-8q-B0q"/>
+                                    <constraint firstItem="cDq-zH-zZF" firstAttribute="top" secondItem="cSs-VS-y8p" secondAttribute="bottom" constant="20" id="iPG-v1-Ckl"/>
+                                    <constraint firstItem="cSs-VS-y8p" firstAttribute="top" secondItem="EXI-aQ-DaD" secondAttribute="top" constant="10" id="l7E-Tf-16m"/>
+                                    <constraint firstAttribute="trailing" secondItem="cDq-zH-zZF" secondAttribute="trailing" constant="10" id="uKo-Si-MLU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EXI-aQ-DaD" secondAttribute="trailing" constant="70" id="B90-4E-D3B"/>
+                            <constraint firstItem="EXI-aQ-DaD" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-70" id="lAs-od-75p"/>
+                            <constraint firstItem="EXI-aQ-DaD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="zBa-iC-ME6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boxView" destination="EXI-aQ-DaD" id="4La-ZO-ZVA"/>
+                        <outlet property="nameTextField" destination="va6-hP-vh9" id="5gN-Wu-5Qx"/>
+                        <outlet property="saveButton" destination="hiN-BH-Wqy" id="NZA-m4-IwP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="74"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

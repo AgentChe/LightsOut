@@ -9,21 +9,143 @@
 /* Begin PBXBuildFile section */
 		B6BDFA73285079A300F805A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA72285079A300F805A5 /* AppDelegate.swift */; };
 		B6BDFA75285079A300F805A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA74285079A300F805A5 /* SceneDelegate.swift */; };
-		B6BDFA77285079A300F805A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA76285079A300F805A5 /* ViewController.swift */; };
-		B6BDFA7A285079A300F805A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFA78285079A300F805A5 /* Main.storyboard */; };
 		B6BDFA7C285079A500F805A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFA7B285079A500F805A5 /* Assets.xcassets */; };
 		B6BDFA7F285079A500F805A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFA7D285079A500F805A5 /* LaunchScreen.storyboard */; };
+		B6BDFA8F28507B1E00F805A5 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA8E28507B1E00F805A5 /* SQLite */; };
+		B6BDFA9228507B3500F805A5 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9128507B3500F805A5 /* Charts */; };
+		B6BDFA9528507BEB00F805A5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9428507BEB00F805A5 /* FirebaseAnalytics */; };
+		B6BDFA9728507BEB00F805A5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9628507BEB00F805A5 /* FirebaseAuth */; };
+		B6BDFA9928507BEB00F805A5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9828507BEB00F805A5 /* FirebaseFirestore */; };
+		B6BDFA9B28507BEB00F805A5 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9A28507BEB00F805A5 /* FirebaseFirestoreSwift */; };
+		B6BDFA9D28507C0800F805A5 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA9C28507C0800F805A5 /* DatabaseManager.swift */; };
+		B6BDFA9F28507C1500F805A5 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA9E28507C1500F805A5 /* FirebaseManager.swift */; };
+		B6BDFAA128507C4600F805A5 /* LOError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAA028507C4600F805A5 /* LOError.swift */; };
+		B6BDFAA328507C7500F805A5 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAA228507C7500F805A5 /* RecordModel.swift */; };
+		B6BDFAA728507CAB00F805A5 /* LeagueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAA628507CAB00F805A5 /* LeagueModel.swift */; };
+		B6BDFAA928507CC000F805A5 /* OnlineRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAA828507CC000F805A5 /* OnlineRecordModel.swift */; };
+		B6BDFAAB28507D2600F805A5 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAAA28507D2600F805A5 /* Date+Ext.swift */; };
+		B6BDFAAD28507D3E00F805A5 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAAC28507D3E00F805A5 /* UIView+Ext.swift */; };
+		B6BDFAAF28507D5A00F805A5 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAAE28507D5A00F805A5 /* UITextField+Ext.swift */; };
+		B6BDFAB228507DCC00F805A5 /* LOTouchAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAB128507DCC00F805A5 /* LOTouchAreaView.swift */; };
+		B6BDFAB428507DF200F805A5 /* LOTouchAreaLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAB328507DF200F805A5 /* LOTouchAreaLabel.swift */; };
+		B6BDFAB728507E2200F805A5 /* LOInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAB628507E2200F805A5 /* LOInstructionView.swift */; };
+		B6BDFAB928507E3F00F805A5 /* LOInstructionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAB828507E3F00F805A5 /* LOInstructionLabel.swift */; };
+		B6BDFABE28507EED00F805A5 /* LOLocalRecordsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFABC28507EED00F805A5 /* LOLocalRecordsHeaderView.swift */; };
+		B6BDFAC728507FA400F805A5 /* LOLocalRecordsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAC628507FA400F805A5 /* LOLocalRecordsHeaderView.xib */; };
+		B6BDFAC92850801600F805A5 /* LOCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAC82850801600F805A5 /* LOCollectionHeaderView.swift */; };
+		B6BDFACC2850803500F805A5 /* LOLeaguesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFACA2850803500F805A5 /* LOLeaguesHeaderView.swift */; };
+		B6BDFACD2850803500F805A5 /* LOLeaguesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFACB2850803500F805A5 /* LOLeaguesHeaderView.xib */; };
+		B6BDFACF2850803E00F805A5 /* LOLifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFACE2850803E00F805A5 /* LOLifeView.swift */; };
+		B6BDFAD12850804500F805A5 /* LOSingleLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD02850804500F805A5 /* LOSingleLightView.swift */; };
+		B6BDFADB285080A500F805A5 /* LocalRecordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD2285080A400F805A5 /* LocalRecordsVC.swift */; };
+		B6BDFADC285080A500F805A5 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD3285080A500F805A5 /* SettingsVC.swift */; };
+		B6BDFADD285080A500F805A5 /* OnlineRankingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD4285080A500F805A5 /* OnlineRankingsVC.swift */; };
+		B6BDFADE285080A500F805A5 /* AddRecordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD5285080A500F805A5 /* AddRecordsVC.swift */; };
+		B6BDFADF285080A500F805A5 /* LightsOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD6285080A500F805A5 /* LightsOutVC.swift */; };
+		B6BDFAE0285080A500F805A5 /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD7285080A500F805A5 /* StatisticsVC.swift */; };
+		B6BDFAE1285080A500F805A5 /* YourLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD8285080A500F805A5 /* YourLeagueVC.swift */; };
+		B6BDFAE2285080A500F805A5 /* LeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD9285080A500F805A5 /* LeagueVC.swift */; };
+		B6BDFAE3285080A500F805A5 /* GetProVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFADA285080A500F805A5 /* GetProVC.swift */; };
+		B6BDFAE5285080E500F805A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAE4285080E500F805A5 /* Main.storyboard */; };
+		B6BDFAE92850813A00F805A5 /* LOAddNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAE72850813900F805A5 /* LOAddNameVC.swift */; };
+		B6BDFAEA2850813A00F805A5 /* LOAddNameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAE82850813900F805A5 /* LOAddNameStoryboard.storyboard */; };
+		B6BDFAEE2850815400F805A5 /* LOAddNameForLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAEC2850815400F805A5 /* LOAddNameForLeagueVC.swift */; };
+		B6BDFAEF2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAED2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard */; };
+		B6BDFAF32850817700F805A5 /* LOAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAF12850817700F805A5 /* LOAlertVC.swift */; };
+		B6BDFAF42850817700F805A5 /* LOAlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAF22850817700F805A5 /* LOAlertStoryboard.storyboard */; };
+		B6BDFAF62850818200F805A5 /* LOChartAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAF52850818200F805A5 /* LOChartAxisValueFormatter.swift */; };
+		B6BDFAFC285081B700F805A5 /* LOCreateLagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAF8285081B600F805A5 /* LOCreateLagueStoryboard.storyboard */; };
+		B6BDFAFD285081B700F805A5 /* LOCreatLeagueLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAF9285081B600F805A5 /* LOCreatLeagueLoadingVC.swift */; };
+		B6BDFAFE285081B700F805A5 /* LOCreatLeagueConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAFA285081B600F805A5 /* LOCreatLeagueConfirmationVC.swift */; };
+		B6BDFAFF285081B700F805A5 /* LOCreateLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAFB285081B700F805A5 /* LOCreateLeagueVC.swift */; };
+		B6BDFB05285081CE00F805A5 /* LOJoinLeagueConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB01285081CE00F805A5 /* LOJoinLeagueConfirmationVC.swift */; };
+		B6BDFB06285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFB02285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard */; };
+		B6BDFB07285081CE00F805A5 /* LOJoinLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB03285081CE00F805A5 /* LOJoinLeagueVC.swift */; };
+		B6BDFB08285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB04285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift */; };
+		B6BDFB0A285081E400F805A5 /* LODataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB09285081E400F805A5 /* LODataLoadingVC.swift */; };
+		B6BDFB0C2850821F00F805A5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB0B2850821F00F805A5 /* Constants.swift */; };
+		B6BDFB182850824900F805A5 /* LOFullSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB102850824900F805A5 /* LOFullSizeCell.swift */; };
+		B6BDFB192850824900F805A5 /* LOOnlineRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFB112850824900F805A5 /* LOOnlineRecordCell.xib */; };
+		B6BDFB1A2850824900F805A5 /* LOSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFB122850824900F805A5 /* LOSquareCell.xib */; };
+		B6BDFB1B2850824900F805A5 /* LOOnlineRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB132850824900F805A5 /* LOOnlineRecordCell.swift */; };
+		B6BDFB1C2850824900F805A5 /* LOLocalRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFB142850824900F805A5 /* LOLocalRecordCell.xib */; };
+		B6BDFB1D2850824900F805A5 /* LOFullSizeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFB152850824900F805A5 /* LOFullSizeCell.xib */; };
+		B6BDFB1E2850824900F805A5 /* LOLocalRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB162850824900F805A5 /* LOLocalRecordCell.swift */; };
+		B6BDFB1F2850824900F805A5 /* LOSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB172850824900F805A5 /* LOSquareCell.swift */; };
+		B6BDFB212850838900F805A5 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB202850838900F805A5 /* UIHelper.swift */; };
+		B6BDFB23285083F100F805A5 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB22285083F100F805A5 /* Double+Ext.swift */; };
+		B6BDFB252850855900F805A5 /* LOEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB242850855900F805A5 /* LOEmptyStateView.swift */; };
+		B6BDFB272850875E00F805A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */; };
+		B6BDFB2928508D8400F805A5 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB2828508D8300F805A5 /* IAPManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B6BDFA6F285079A300F805A5 /* LightsOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightsOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BDFA72285079A300F805A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6BDFA74285079A300F805A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B6BDFA76285079A300F805A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B6BDFA79285079A300F805A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6BDFA7B285079A500F805A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6BDFA7E285079A500F805A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6BDFA80285079A500F805A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6BDFA9C28507C0800F805A5 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		B6BDFA9E28507C1500F805A5 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		B6BDFAA028507C4600F805A5 /* LOError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOError.swift; sourceTree = "<group>"; };
+		B6BDFAA228507C7500F805A5 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		B6BDFAA628507CAB00F805A5 /* LeagueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueModel.swift; sourceTree = "<group>"; };
+		B6BDFAA828507CC000F805A5 /* OnlineRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRecordModel.swift; sourceTree = "<group>"; };
+		B6BDFAAA28507D2600F805A5 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		B6BDFAAC28507D3E00F805A5 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		B6BDFAAE28507D5A00F805A5 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		B6BDFAB128507DCC00F805A5 /* LOTouchAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTouchAreaView.swift; sourceTree = "<group>"; };
+		B6BDFAB328507DF200F805A5 /* LOTouchAreaLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTouchAreaLabel.swift; sourceTree = "<group>"; };
+		B6BDFAB628507E2200F805A5 /* LOInstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOInstructionView.swift; sourceTree = "<group>"; };
+		B6BDFAB828507E3F00F805A5 /* LOInstructionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOInstructionLabel.swift; sourceTree = "<group>"; };
+		B6BDFABC28507EED00F805A5 /* LOLocalRecordsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLocalRecordsHeaderView.swift; sourceTree = "<group>"; };
+		B6BDFAC628507FA400F805A5 /* LOLocalRecordsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOLocalRecordsHeaderView.xib; sourceTree = "<group>"; };
+		B6BDFAC82850801600F805A5 /* LOCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOCollectionHeaderView.swift; sourceTree = "<group>"; };
+		B6BDFACA2850803500F805A5 /* LOLeaguesHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOLeaguesHeaderView.swift; sourceTree = "<group>"; };
+		B6BDFACB2850803500F805A5 /* LOLeaguesHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOLeaguesHeaderView.xib; sourceTree = "<group>"; };
+		B6BDFACE2850803E00F805A5 /* LOLifeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOLifeView.swift; sourceTree = "<group>"; };
+		B6BDFAD02850804500F805A5 /* LOSingleLightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOSingleLightView.swift; sourceTree = "<group>"; };
+		B6BDFAD2285080A400F805A5 /* LocalRecordsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalRecordsVC.swift; sourceTree = "<group>"; };
+		B6BDFAD3285080A500F805A5 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		B6BDFAD4285080A500F805A5 /* OnlineRankingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineRankingsVC.swift; sourceTree = "<group>"; };
+		B6BDFAD5285080A500F805A5 /* AddRecordsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecordsVC.swift; sourceTree = "<group>"; };
+		B6BDFAD6285080A500F805A5 /* LightsOutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsOutVC.swift; sourceTree = "<group>"; };
+		B6BDFAD7285080A500F805A5 /* StatisticsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
+		B6BDFAD8285080A500F805A5 /* YourLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourLeagueVC.swift; sourceTree = "<group>"; };
+		B6BDFAD9285080A500F805A5 /* LeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeagueVC.swift; sourceTree = "<group>"; };
+		B6BDFADA285080A500F805A5 /* GetProVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProVC.swift; sourceTree = "<group>"; };
+		B6BDFAE4285080E500F805A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B6BDFAE72850813900F805A5 /* LOAddNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOAddNameVC.swift; sourceTree = "<group>"; };
+		B6BDFAE82850813900F805A5 /* LOAddNameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOAddNameStoryboard.storyboard; sourceTree = "<group>"; };
+		B6BDFAEC2850815400F805A5 /* LOAddNameForLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOAddNameForLeagueVC.swift; sourceTree = "<group>"; };
+		B6BDFAED2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOAddNameForLeagueStoryboard.storyboard; sourceTree = "<group>"; };
+		B6BDFAF12850817700F805A5 /* LOAlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOAlertVC.swift; sourceTree = "<group>"; };
+		B6BDFAF22850817700F805A5 /* LOAlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOAlertStoryboard.storyboard; sourceTree = "<group>"; };
+		B6BDFAF52850818200F805A5 /* LOChartAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOChartAxisValueFormatter.swift; sourceTree = "<group>"; };
+		B6BDFAF8285081B600F805A5 /* LOCreateLagueStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOCreateLagueStoryboard.storyboard; sourceTree = "<group>"; };
+		B6BDFAF9285081B600F805A5 /* LOCreatLeagueLoadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOCreatLeagueLoadingVC.swift; sourceTree = "<group>"; };
+		B6BDFAFA285081B600F805A5 /* LOCreatLeagueConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOCreatLeagueConfirmationVC.swift; sourceTree = "<group>"; };
+		B6BDFAFB285081B700F805A5 /* LOCreateLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOCreateLeagueVC.swift; sourceTree = "<group>"; };
+		B6BDFB01285081CE00F805A5 /* LOJoinLeagueConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOJoinLeagueConfirmationVC.swift; sourceTree = "<group>"; };
+		B6BDFB02285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOJoinLeagueStoryboard.storyboard; sourceTree = "<group>"; };
+		B6BDFB03285081CE00F805A5 /* LOJoinLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOJoinLeagueVC.swift; sourceTree = "<group>"; };
+		B6BDFB04285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOJoinLeagueLoadingVC.swift; sourceTree = "<group>"; };
+		B6BDFB09285081E400F805A5 /* LODataLoadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LODataLoadingVC.swift; sourceTree = "<group>"; };
+		B6BDFB0B2850821F00F805A5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B6BDFB102850824900F805A5 /* LOFullSizeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOFullSizeCell.swift; sourceTree = "<group>"; };
+		B6BDFB112850824900F805A5 /* LOOnlineRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOOnlineRecordCell.xib; sourceTree = "<group>"; };
+		B6BDFB122850824900F805A5 /* LOSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOSquareCell.xib; sourceTree = "<group>"; };
+		B6BDFB132850824900F805A5 /* LOOnlineRecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOOnlineRecordCell.swift; sourceTree = "<group>"; };
+		B6BDFB142850824900F805A5 /* LOLocalRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOLocalRecordCell.xib; sourceTree = "<group>"; };
+		B6BDFB152850824900F805A5 /* LOFullSizeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOFullSizeCell.xib; sourceTree = "<group>"; };
+		B6BDFB162850824900F805A5 /* LOLocalRecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOLocalRecordCell.swift; sourceTree = "<group>"; };
+		B6BDFB172850824900F805A5 /* LOSquareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOSquareCell.swift; sourceTree = "<group>"; };
+		B6BDFB202850838900F805A5 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		B6BDFB22285083F100F805A5 /* Double+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
+		B6BDFB242850855900F805A5 /* LOEmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOEmptyStateView.swift; sourceTree = "<group>"; };
+		B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B6BDFB2828508D8300F805A5 /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +153,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BDFA8F28507B1E00F805A5 /* SQLite in Frameworks */,
+				B6BDFA9228507B3500F805A5 /* Charts in Frameworks */,
+				B6BDFA9528507BEB00F805A5 /* FirebaseAnalytics in Frameworks */,
+				B6BDFA9928507BEB00F805A5 /* FirebaseFirestore in Frameworks */,
+				B6BDFA9728507BEB00F805A5 /* FirebaseAuth in Frameworks */,
+				B6BDFA9B28507BEB00F805A5 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,11 +193,11 @@
 				B6BDFA86285079E100F805A5 /* Models */,
 				B6BDFA72285079A300F805A5 /* AppDelegate.swift */,
 				B6BDFA74285079A300F805A5 /* SceneDelegate.swift */,
-				B6BDFA76285079A300F805A5 /* ViewController.swift */,
-				B6BDFA78285079A300F805A5 /* Main.storyboard */,
+				B6BDFAE4285080E500F805A5 /* Main.storyboard */,
 				B6BDFA7B285079A500F805A5 /* Assets.xcassets */,
 				B6BDFA7D285079A500F805A5 /* LaunchScreen.storyboard */,
 				B6BDFA80285079A500F805A5 /* Info.plist */,
+				B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */,
 			);
 			path = LightsOut;
 			sourceTree = "<group>";
@@ -77,6 +205,9 @@
 		B6BDFA86285079E100F805A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B6BDFAA228507C7500F805A5 /* RecordModel.swift */,
+				B6BDFAA628507CAB00F805A5 /* LeagueModel.swift */,
+				B6BDFAA828507CC000F805A5 /* OnlineRecordModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -84,6 +215,9 @@
 		B6BDFA87285079E800F805A5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				B6BDFB2828508D8300F805A5 /* IAPManager.swift */,
+				B6BDFA9C28507C0800F805A5 /* DatabaseManager.swift */,
+				B6BDFA9E28507C1500F805A5 /* FirebaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -91,6 +225,15 @@
 		B6BDFA88285079ED00F805A5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B6BDFAD5285080A500F805A5 /* AddRecordsVC.swift */,
+				B6BDFADA285080A500F805A5 /* GetProVC.swift */,
+				B6BDFAD9285080A500F805A5 /* LeagueVC.swift */,
+				B6BDFAD6285080A500F805A5 /* LightsOutVC.swift */,
+				B6BDFAD2285080A400F805A5 /* LocalRecordsVC.swift */,
+				B6BDFAD4285080A500F805A5 /* OnlineRankingsVC.swift */,
+				B6BDFAD3285080A500F805A5 /* SettingsVC.swift */,
+				B6BDFAD7285080A500F805A5 /* StatisticsVC.swift */,
+				B6BDFAD8285080A500F805A5 /* YourLeagueVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -98,6 +241,11 @@
 		B6BDFA89285079F300F805A5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				B6BDFB00285081C000F805A5 /* JoinLeague */,
+				B6BDFAF7285081A300F805A5 /* CreateLeague */,
+				B6BDFAF02850816900F805A5 /* CustomAlert */,
+				B6BDFAEB2850814000F805A5 /* AddNameToFriendsLeague */,
+				B6BDFAE62850810900F805A5 /* AddNameToOnlineRecords */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -105,6 +253,10 @@
 		B6BDFA8A285079FD00F805A5 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				B6BDFAAA28507D2600F805A5 /* Date+Ext.swift */,
+				B6BDFAAC28507D3E00F805A5 /* UIView+Ext.swift */,
+				B6BDFAAE28507D5A00F805A5 /* UITextField+Ext.swift */,
+				B6BDFB22285083F100F805A5 /* Double+Ext.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -112,6 +264,11 @@
 		B6BDFA8B28507A0500F805A5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B6BDFAA028507C4600F805A5 /* LOError.swift */,
+				B6BDFAF52850818200F805A5 /* LOChartAxisValueFormatter.swift */,
+				B6BDFB09285081E400F805A5 /* LODataLoadingVC.swift */,
+				B6BDFB0B2850821F00F805A5 /* Constants.swift */,
+				B6BDFB202850838900F805A5 /* UIHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -119,8 +276,109 @@
 		B6BDFA8C28507A5500F805A5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B6BDFB242850855900F805A5 /* LOEmptyStateView.swift */,
+				B6BDFB0F2850823B00F805A5 /* Cells */,
+				B6BDFACE2850803E00F805A5 /* LOLifeView.swift */,
+				B6BDFAD02850804500F805A5 /* LOSingleLightView.swift */,
+				B6BDFABB28507EB100F805A5 /* HeaderViews */,
+				B6BDFAB528507E0700F805A5 /* InstructionArea */,
+				B6BDFAB028507DA900F805A5 /* TouchArea */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B6BDFAB028507DA900F805A5 /* TouchArea */ = {
+			isa = PBXGroup;
+			children = (
+				B6BDFAB128507DCC00F805A5 /* LOTouchAreaView.swift */,
+				B6BDFAB328507DF200F805A5 /* LOTouchAreaLabel.swift */,
+			);
+			path = TouchArea;
+			sourceTree = "<group>";
+		};
+		B6BDFAB528507E0700F805A5 /* InstructionArea */ = {
+			isa = PBXGroup;
+			children = (
+				B6BDFAB628507E2200F805A5 /* LOInstructionView.swift */,
+				B6BDFAB828507E3F00F805A5 /* LOInstructionLabel.swift */,
+			);
+			path = InstructionArea;
+			sourceTree = "<group>";
+		};
+		B6BDFABB28507EB100F805A5 /* HeaderViews */ = {
+			isa = PBXGroup;
+			children = (
+				B6BDFABC28507EED00F805A5 /* LOLocalRecordsHeaderView.swift */,
+				B6BDFAC628507FA400F805A5 /* LOLocalRecordsHeaderView.xib */,
+				B6BDFAC82850801600F805A5 /* LOCollectionHeaderView.swift */,
+				B6BDFACA2850803500F805A5 /* LOLeaguesHeaderView.swift */,
+				B6BDFACB2850803500F805A5 /* LOLeaguesHeaderView.xib */,
+			);
+			path = HeaderViews;
+			sourceTree = "<group>";
+		};
+		B6BDFAE62850810900F805A5 /* AddNameToOnlineRecords */ = {
+			isa = PBXGroup;
+			children = (
+				B6BDFAE82850813900F805A5 /* LOAddNameStoryboard.storyboard */,
+				B6BDFAE72850813900F805A5 /* LOAddNameVC.swift */,
+			);
+			path = AddNameToOnlineRecords;
+			sourceTree = "<group>";
+		};
+		B6BDFAEB2850814000F805A5 /* AddNameToFriendsLeague */ = {
+			isa = PBXGroup;
+			children = (
+				B6BDFAED2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard */,
+				B6BDFAEC2850815400F805A5 /* LOAddNameForLeagueVC.swift */,
+			);
+			path = AddNameToFriendsLeague;
+			sourceTree = "<group>";
+		};
+		B6BDFAF02850816900F805A5 /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				B6BDFAF22850817700F805A5 /* LOAlertStoryboard.storyboard */,
+				B6BDFAF12850817700F805A5 /* LOAlertVC.swift */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
+		B6BDFAF7285081A300F805A5 /* CreateLeague */ = {
+			isa = PBXGroup;
+			children = (
+				B6BDFAF8285081B600F805A5 /* LOCreateLagueStoryboard.storyboard */,
+				B6BDFAFB285081B700F805A5 /* LOCreateLeagueVC.swift */,
+				B6BDFAFA285081B600F805A5 /* LOCreatLeagueConfirmationVC.swift */,
+				B6BDFAF9285081B600F805A5 /* LOCreatLeagueLoadingVC.swift */,
+			);
+			path = CreateLeague;
+			sourceTree = "<group>";
+		};
+		B6BDFB00285081C000F805A5 /* JoinLeague */ = {
+			isa = PBXGroup;
+			children = (
+				B6BDFB01285081CE00F805A5 /* LOJoinLeagueConfirmationVC.swift */,
+				B6BDFB04285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift */,
+				B6BDFB02285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard */,
+				B6BDFB03285081CE00F805A5 /* LOJoinLeagueVC.swift */,
+			);
+			path = JoinLeague;
+			sourceTree = "<group>";
+		};
+		B6BDFB0F2850823B00F805A5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B6BDFB102850824900F805A5 /* LOFullSizeCell.swift */,
+				B6BDFB152850824900F805A5 /* LOFullSizeCell.xib */,
+				B6BDFB162850824900F805A5 /* LOLocalRecordCell.swift */,
+				B6BDFB142850824900F805A5 /* LOLocalRecordCell.xib */,
+				B6BDFB132850824900F805A5 /* LOOnlineRecordCell.swift */,
+				B6BDFB112850824900F805A5 /* LOOnlineRecordCell.xib */,
+				B6BDFB172850824900F805A5 /* LOSquareCell.swift */,
+				B6BDFB122850824900F805A5 /* LOSquareCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +397,14 @@
 			dependencies = (
 			);
 			name = LightsOut;
+			packageProductDependencies = (
+				B6BDFA8E28507B1E00F805A5 /* SQLite */,
+				B6BDFA9128507B3500F805A5 /* Charts */,
+				B6BDFA9428507BEB00F805A5 /* FirebaseAnalytics */,
+				B6BDFA9628507BEB00F805A5 /* FirebaseAuth */,
+				B6BDFA9828507BEB00F805A5 /* FirebaseFirestore */,
+				B6BDFA9A28507BEB00F805A5 /* FirebaseFirestoreSwift */,
+			);
 			productName = LightsOut;
 			productReference = B6BDFA6F285079A300F805A5 /* LightsOut.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +433,11 @@
 				Base,
 			);
 			mainGroup = B6BDFA66285079A300F805A5;
+			packageReferences = (
+				B6BDFA8D28507B1E00F805A5 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				B6BDFA9028507B3500F805A5 /* XCRemoteSwiftPackageReference "Charts" */,
+				B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B6BDFA70285079A300F805A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,9 +452,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BDFB192850824900F805A5 /* LOOnlineRecordCell.xib in Resources */,
+				B6BDFB1A2850824900F805A5 /* LOSquareCell.xib in Resources */,
+				B6BDFB272850875E00F805A5 /* GoogleService-Info.plist in Resources */,
 				B6BDFA7F285079A500F805A5 /* LaunchScreen.storyboard in Resources */,
+				B6BDFB06285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard in Resources */,
+				B6BDFAE5285080E500F805A5 /* Main.storyboard in Resources */,
+				B6BDFACD2850803500F805A5 /* LOLeaguesHeaderView.xib in Resources */,
+				B6BDFAC728507FA400F805A5 /* LOLocalRecordsHeaderView.xib in Resources */,
+				B6BDFB1C2850824900F805A5 /* LOLocalRecordCell.xib in Resources */,
+				B6BDFAFC285081B700F805A5 /* LOCreateLagueStoryboard.storyboard in Resources */,
 				B6BDFA7C285079A500F805A5 /* Assets.xcassets in Resources */,
-				B6BDFA7A285079A300F805A5 /* Main.storyboard in Resources */,
+				B6BDFAEF2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard in Resources */,
+				B6BDFAEA2850813A00F805A5 /* LOAddNameStoryboard.storyboard in Resources */,
+				B6BDFB1D2850824900F805A5 /* LOFullSizeCell.xib in Resources */,
+				B6BDFAF42850817700F805A5 /* LOAlertStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,23 +477,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6BDFA77285079A300F805A5 /* ViewController.swift in Sources */,
+				B6BDFAE1285080A500F805A5 /* YourLeagueVC.swift in Sources */,
+				B6BDFB252850855900F805A5 /* LOEmptyStateView.swift in Sources */,
+				B6BDFAE2285080A500F805A5 /* LeagueVC.swift in Sources */,
+				B6BDFB23285083F100F805A5 /* Double+Ext.swift in Sources */,
+				B6BDFAC92850801600F805A5 /* LOCollectionHeaderView.swift in Sources */,
+				B6BDFAB928507E3F00F805A5 /* LOInstructionLabel.swift in Sources */,
+				B6BDFACC2850803500F805A5 /* LOLeaguesHeaderView.swift in Sources */,
+				B6BDFADB285080A500F805A5 /* LocalRecordsVC.swift in Sources */,
+				B6BDFADD285080A500F805A5 /* OnlineRankingsVC.swift in Sources */,
+				B6BDFB1F2850824900F805A5 /* LOSquareCell.swift in Sources */,
+				B6BDFAFD285081B700F805A5 /* LOCreatLeagueLoadingVC.swift in Sources */,
+				B6BDFAA728507CAB00F805A5 /* LeagueModel.swift in Sources */,
+				B6BDFABE28507EED00F805A5 /* LOLocalRecordsHeaderView.swift in Sources */,
+				B6BDFACF2850803E00F805A5 /* LOLifeView.swift in Sources */,
+				B6BDFB0C2850821F00F805A5 /* Constants.swift in Sources */,
+				B6BDFAAD28507D3E00F805A5 /* UIView+Ext.swift in Sources */,
+				B6BDFB05285081CE00F805A5 /* LOJoinLeagueConfirmationVC.swift in Sources */,
+				B6BDFAB728507E2200F805A5 /* LOInstructionView.swift in Sources */,
+				B6BDFAB428507DF200F805A5 /* LOTouchAreaLabel.swift in Sources */,
+				B6BDFB1E2850824900F805A5 /* LOLocalRecordCell.swift in Sources */,
+				B6BDFAEE2850815400F805A5 /* LOAddNameForLeagueVC.swift in Sources */,
+				B6BDFA9D28507C0800F805A5 /* DatabaseManager.swift in Sources */,
+				B6BDFB212850838900F805A5 /* UIHelper.swift in Sources */,
+				B6BDFAE92850813A00F805A5 /* LOAddNameVC.swift in Sources */,
+				B6BDFB08285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift in Sources */,
+				B6BDFAF62850818200F805A5 /* LOChartAxisValueFormatter.swift in Sources */,
+				B6BDFB1B2850824900F805A5 /* LOOnlineRecordCell.swift in Sources */,
+				B6BDFA9F28507C1500F805A5 /* FirebaseManager.swift in Sources */,
+				B6BDFAE0285080A500F805A5 /* StatisticsVC.swift in Sources */,
+				B6BDFADE285080A500F805A5 /* AddRecordsVC.swift in Sources */,
 				B6BDFA73285079A300F805A5 /* AppDelegate.swift in Sources */,
+				B6BDFAE3285080A500F805A5 /* GetProVC.swift in Sources */,
+				B6BDFAA928507CC000F805A5 /* OnlineRecordModel.swift in Sources */,
+				B6BDFAF32850817700F805A5 /* LOAlertVC.swift in Sources */,
+				B6BDFAAF28507D5A00F805A5 /* UITextField+Ext.swift in Sources */,
+				B6BDFB2928508D8400F805A5 /* IAPManager.swift in Sources */,
+				B6BDFB0A285081E400F805A5 /* LODataLoadingVC.swift in Sources */,
+				B6BDFB182850824900F805A5 /* LOFullSizeCell.swift in Sources */,
+				B6BDFAA328507C7500F805A5 /* RecordModel.swift in Sources */,
+				B6BDFAFF285081B700F805A5 /* LOCreateLeagueVC.swift in Sources */,
 				B6BDFA75285079A300F805A5 /* SceneDelegate.swift in Sources */,
+				B6BDFAA128507C4600F805A5 /* LOError.swift in Sources */,
+				B6BDFAD12850804500F805A5 /* LOSingleLightView.swift in Sources */,
+				B6BDFB07285081CE00F805A5 /* LOJoinLeagueVC.swift in Sources */,
+				B6BDFADC285080A500F805A5 /* SettingsVC.swift in Sources */,
+				B6BDFAB228507DCC00F805A5 /* LOTouchAreaView.swift in Sources */,
+				B6BDFAFE285081B700F805A5 /* LOCreatLeagueConfirmationVC.swift in Sources */,
+				B6BDFADF285080A500F805A5 /* LightsOutVC.swift in Sources */,
+				B6BDFAAB28507D2600F805A5 /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B6BDFA78285079A300F805A5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6BDFA79285079A300F805A5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B6BDFA7D285079A500F805A5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -352,7 +673,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,7 +703,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,6 +739,66 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B6BDFA8D28507B1E00F805A5 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+		B6BDFA9028507B3500F805A5 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B6BDFA8E28507B1E00F805A5 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6BDFA8D28507B1E00F805A5 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+		B6BDFA9128507B3500F805A5 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6BDFA9028507B3500F805A5 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		B6BDFA9428507BEB00F805A5 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B6BDFA9628507BEB00F805A5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B6BDFA9828507BEB00F805A5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		B6BDFA9A28507BEB00F805A5 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B6BDFA67285079A300F805A5 /* Project object */;
 }

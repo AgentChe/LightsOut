@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add NameVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="LOAddNameVC" customModule="LightsOut_V2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksh-1P-wrs">
+                                <rect key="frame" x="70" y="263" width="274" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ia-uh-6sM">
+                                        <rect key="frame" x="0.0" y="10" width="274" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can save your record to the online rankings." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhz-Y5-nWV">
+                                        <rect key="frame" x="10" y="50.5" width="254" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Max 12 Character" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ymu-wt-g9c">
+                                        <rect key="frame" x="20" y="109" width="234" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WTq-Zj-w8s">
+                                        <rect key="frame" x="10" y="170" width="254" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sit-gm-yFf">
+                                                <rect key="frame" x="0.0" y="0.0" width="117" height="50"/>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="k6h-Ci-d9t"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGn-0V-RSO">
+                                                <rect key="frame" x="137" y="0.0" width="117" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                <connections>
+                                                    <action selector="saveButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HoS-qr-7PW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6uT-qK-zOE"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ymu-wt-g9c" secondAttribute="trailing" constant="20" id="6c7-DN-t9V"/>
+                                    <constraint firstItem="1Ia-uh-6sM" firstAttribute="top" secondItem="Ksh-1P-wrs" secondAttribute="top" constant="10" id="EMI-33-k4e"/>
+                                    <constraint firstAttribute="trailing" secondItem="WTq-Zj-w8s" secondAttribute="trailing" constant="10" id="Lx2-Wj-Ltp"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Ia-uh-6sM" secondAttribute="trailing" id="X8v-nl-XEG"/>
+                                    <constraint firstAttribute="height" constant="230" id="XZz-bO-Xeb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dhz-Y5-nWV" secondAttribute="trailing" constant="10" id="YLC-9a-DMS"/>
+                                    <constraint firstItem="Dhz-Y5-nWV" firstAttribute="top" secondItem="1Ia-uh-6sM" secondAttribute="bottom" constant="20" id="cfC-X2-mgy"/>
+                                    <constraint firstItem="1Ia-uh-6sM" firstAttribute="leading" secondItem="Ksh-1P-wrs" secondAttribute="leading" id="eQJ-TA-Y3f"/>
+                                    <constraint firstAttribute="bottom" secondItem="WTq-Zj-w8s" secondAttribute="bottom" constant="10" id="gCM-F7-mnf"/>
+                                    <constraint firstItem="Dhz-Y5-nWV" firstAttribute="leading" secondItem="Ksh-1P-wrs" secondAttribute="leading" constant="10" id="mTp-j3-7r0"/>
+                                    <constraint firstItem="ymu-wt-g9c" firstAttribute="leading" secondItem="Ksh-1P-wrs" secondAttribute="leading" constant="20" id="p9Z-WB-MfY"/>
+                                    <constraint firstItem="ymu-wt-g9c" firstAttribute="top" secondItem="Dhz-Y5-nWV" secondAttribute="bottom" constant="20" id="tOq-AH-ZIs"/>
+                                    <constraint firstItem="WTq-Zj-w8s" firstAttribute="leading" secondItem="Ksh-1P-wrs" secondAttribute="leading" constant="10" id="y1f-Om-IZp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ksh-1P-wrs" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-70" id="Fzo-sB-utw"/>
+                            <constraint firstItem="Ksh-1P-wrs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="eMv-1q-3Ug"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ksh-1P-wrs" secondAttribute="trailing" constant="70" id="oBg-Pf-VXQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boxView" destination="Ksh-1P-wrs" id="Dtb-cp-FDx"/>
+                        <outlet property="cancelButton" destination="Sit-gm-yFf" id="dUu-NM-81E"/>
+                        <outlet property="nameTextField" destination="ymu-wt-g9c" id="Ofq-uY-qTN"/>
+                        <outlet property="saveButton" destination="TGn-0V-RSO" id="JeV-E2-ECH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="70.982142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

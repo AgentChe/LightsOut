@@ -6,14 +6,48 @@
 //
 
 import UIKit
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
+        FirebaseApp.configure()
+        
+        let isItOpenBefore = defaults.bool(forKey: "isItFirstOpen")
+        
+        if !isItOpenBefore {
+            print("DEBUG: IT IS FIRST")
+            defaults.set(5, forKey: "lifeCount")
+            defaults.set(true, forKey: "isItFirstOpen")
+        } else {
+            print("DEBUG: IT was opened before")
+        }
+        
+        
+        DatabaseManager.shared.connectDatabase { error in
+            
+            if let error = error {
+                //Show error alert with database connection
+                print("DEBUG: error from database connection \(error.localizedDescription)")
+            } else {
+                //Create table if is not
+                print("connection basarilir")
+                DatabaseManager.shared.createTableIfWasNotCreated { error in
+                    guard let error = error else { return }
+                    //Show error alert with table creation
+                    print("DEBUG: error from database creation \(error.localizedDescription)")
+                }
+            }
+        
+            
+            
+        }
+        
         return true
     }
 
