@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6A7EA6028520FEE003F7852 /* YourLeagueHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7EA5E28520FEE003F7852 /* YourLeagueHeaderView.swift */; };
+		B6A7EA6128520FEE003F7852 /* YourLeagueHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A7EA5F28520FEE003F7852 /* YourLeagueHeaderView.xib */; };
 		B6B702FB2850CD07003D5AD3 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B702FA2850CD07003D5AD3 /* FeedbackVC.swift */; };
 		B6BDFA73285079A300F805A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA72285079A300F805A5 /* AppDelegate.swift */; };
 		B6BDFA75285079A300F805A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA74285079A300F805A5 /* SceneDelegate.swift */; };
@@ -82,6 +84,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6A7EA5E28520FEE003F7852 /* YourLeagueHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourLeagueHeaderView.swift; sourceTree = "<group>"; };
+		B6A7EA5F28520FEE003F7852 /* YourLeagueHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourLeagueHeaderView.xib; sourceTree = "<group>"; };
 		B6B702FA2850CD07003D5AD3 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		B6BDFA6F285079A300F805A5 /* LightsOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightsOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BDFA72285079A300F805A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 				B6BDFAC82850801600F805A5 /* LOCollectionHeaderView.swift */,
 				B6BDFACA2850803500F805A5 /* LOLeaguesHeaderView.swift */,
 				B6BDFACB2850803500F805A5 /* LOLeaguesHeaderView.xib */,
+				B6A7EA5E28520FEE003F7852 /* YourLeagueHeaderView.swift */,
+				B6A7EA5F28520FEE003F7852 /* YourLeagueHeaderView.xib */,
 			);
 			path = HeaderViews;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				B6BDFAEA2850813A00F805A5 /* LOAddNameStoryboard.storyboard in Resources */,
 				B6BDFB1D2850824900F805A5 /* LOFullSizeCell.xib in Resources */,
 				B6BDFAF42850817700F805A5 /* LOAlertStoryboard.storyboard in Resources */,
+				B6A7EA6128520FEE003F7852 /* YourLeagueHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +515,7 @@
 				B6BDFB1E2850824900F805A5 /* LOLocalRecordCell.swift in Sources */,
 				B6BDFAEE2850815400F805A5 /* LOAddNameForLeagueVC.swift in Sources */,
 				B6BDFA9D28507C0800F805A5 /* DatabaseManager.swift in Sources */,
+				B6A7EA6028520FEE003F7852 /* YourLeagueHeaderView.swift in Sources */,
 				B6BDFB212850838900F805A5 /* UIHelper.swift in Sources */,
 				B6BDFAE92850813A00F805A5 /* LOAddNameVC.swift in Sources */,
 				B6BDFB08285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift in Sources */,

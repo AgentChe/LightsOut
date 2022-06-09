@@ -11,7 +11,7 @@
         <!--Create LeagueVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController restorationIdentifier="LOCreateLeagueVC" storyboardIdentifier="LOCreateLeagueVC" id="Y6W-OH-hqX" customClass="LOCreateLeagueVC" customModule="LightsOut_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LOCreateLeagueVC" storyboardIdentifier="LOCreateLeagueVC" id="Y6W-OH-hqX" customClass="LOCreateLeagueVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,7 @@
         <!--Creat League ConfirmationVC-->
         <scene sceneID="BUy-eJ-JFd">
             <objects>
-                <viewController restorationIdentifier="LOCreatLeagueConfirmation" storyboardIdentifier="LOCreatLeagueConfirmation" id="ub7-Zb-TfV" customClass="LOCreatLeagueConfirmationVC" customModule="LightsOut_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LOCreatLeagueConfirmation" storyboardIdentifier="LOCreatLeagueConfirmation" id="ub7-Zb-TfV" customClass="LOCreatLeagueConfirmationVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wIj-Mz-ymt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,7 +223,7 @@
         <!--Creat League LoadingVC-->
         <scene sceneID="Kgm-de-gLg">
             <objects>
-                <viewController restorationIdentifier="LOCreatLeagueLoading" storyboardIdentifier="LOCreatLeagueLoading" id="JkF-Vu-F5M" customClass="LOCreatLeagueLoadingVC" customModule="LightsOut_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LOCreatLeagueLoading" storyboardIdentifier="LOCreatLeagueLoading" id="JkF-Vu-F5M" customClass="LOCreatLeagueLoadingVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qmg-aD-HJw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

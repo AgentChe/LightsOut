@@ -18,6 +18,7 @@ struct Constants {
     static let createLeagueNotificationKey = "com.foytingo.createLeagueNotificationKey"
     static let joinLeagueNotificationKey = "com.foytingo.joinLeagueNotificationKey"
     static let goLeagueNotificationKey = "com.foytingo.goLeagueNotificationKey"
+    static let leagueWasDeletedNotificationKey = "com.foytingo.leagueWasDeletedNotificationKey"
 
 }
 

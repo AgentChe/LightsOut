@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qu-ey-y1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="810"/>
+            <point key="canvasLocation" x="1790" y="834"/>
         </scene>
         <!--Online RankingsVC-->
         <scene sceneID="YFS-1G-XtL">
@@ -252,14 +252,20 @@
                             <constraint firstItem="vbf-KW-8Kn" firstAttribute="trailing" secondItem="Cxz-Fa-0aP" secondAttribute="trailing" id="rnX-CW-l7H"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="49u-V2-6cm"/>
+                    <navigationItem key="navigationItem" id="49u-V2-6cm">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="thv-BE-reK">
+                            <connections>
+                                <action selector="infoButtonAction:" destination="9IX-lv-vOp" id="i63-q3-2pB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Cxz-Fa-0aP" id="NKS-90-eOz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKH-eO-Uuk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2665" y="69"/>
+            <point key="canvasLocation" x="4073" y="100"/>
         </scene>
         <!--Local RecordsVC-->
         <scene sceneID="nqk-nY-Dcj">
@@ -299,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLj-jJ-UAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3708" y="69"/>
+            <point key="canvasLocation" x="2577" y="69"/>
         </scene>
         <!--LOAddNameStoryboard-->
         <scene sceneID="Hda-ht-R7P">
@@ -307,7 +313,7 @@
                 <viewControllerPlaceholder storyboardName="LOAddNameStoryboard" id="Nou-KJ-CgC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owy-fk-yvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4740" y="69"/>
+            <point key="canvasLocation" x="3350" y="69"/>
         </scene>
         <!--Settings-->
         <scene sceneID="pEi-1P-mTc">
@@ -391,11 +397,12 @@
                         <segue destination="Zp9-jy-4ig" kind="show" identifier="goToStatistics" id="4Sw-pg-8Vt"/>
                         <segue destination="Ezw-3O-4kB" kind="presentation" identifier="goToGetPro" modalPresentationStyle="fullScreen" id="3RS-CI-zpt"/>
                         <segue destination="4Tq-d9-ZQP" kind="show" identifier="goToContact" id="fAw-t4-7YE"/>
+                        <segue destination="eyy-zs-zXQ" kind="show" identifier="goToAboutGame" id="c3U-0H-g8x"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1m7-FN-Y3r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="1585"/>
+            <point key="canvasLocation" x="1791" y="1585"/>
         </scene>
         <!--FeedbackVC-->
         <scene sceneID="88a-IM-MEs">
@@ -466,7 +473,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fB-Uu-GBR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728.8000000000002" y="1986.9458128078818"/>
+            <point key="canvasLocation" x="1167" y="2483"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gKP-ph-Bm3">
+            <objects>
+                <viewController id="eyy-zs-zXQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1D2-oU-j2S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024" translatesAutoresizingMaskIntoConstraints="NO" id="nj4-76-iqD">
+                                <rect key="frame" x="123.66666666666669" y="138" width="128" height="128"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="0be-ej-TfF"/>
+                                    <constraint firstAttribute="width" constant="128" id="boi-sx-Vpe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LightsOut: Reflex Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erG-jW-CbI">
+                                <rect key="frame" x="20" y="316" width="335" height="31.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v2.0.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjf-a8-HdC">
+                                <rect key="frame" x="10" y="367.33333333333331" width="355" height="21.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQC-IC-z1q">
+                                <rect key="frame" x="10" y="409" width="355" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="oSu-RA-DB5"/>
+                                </constraints>
+                                <string key="text">You need to tap and hold on the gray area where is on the LightsOut screen to start. Five red lights start turning red in order. When all lights turn red, they will be off after a random time (between 1-5 seconds). You need to relase your finger as quickly as possible. You can see your reaction time your screen. You can discover in the app what can you do with your reaction time.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s3P-SK-KfC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nj4-76-iqD" firstAttribute="top" secondItem="s3P-SK-KfC" secondAttribute="top" constant="50" id="6gH-T4-DuY"/>
+                            <constraint firstItem="vjf-a8-HdC" firstAttribute="leading" secondItem="s3P-SK-KfC" secondAttribute="leading" constant="10" id="7bD-dZ-yNM"/>
+                            <constraint firstItem="nj4-76-iqD" firstAttribute="centerX" secondItem="1D2-oU-j2S" secondAttribute="centerX" id="WM4-Ro-raz"/>
+                            <constraint firstItem="erG-jW-CbI" firstAttribute="top" secondItem="nj4-76-iqD" secondAttribute="bottom" constant="50" id="YZJ-Ne-BW9"/>
+                            <constraint firstItem="vjf-a8-HdC" firstAttribute="top" secondItem="erG-jW-CbI" secondAttribute="bottom" constant="20" id="atG-lA-9Mm"/>
+                            <constraint firstItem="s3P-SK-KfC" firstAttribute="trailing" secondItem="vjf-a8-HdC" secondAttribute="trailing" constant="10" id="dmK-Kv-qld"/>
+                            <constraint firstItem="wQC-IC-z1q" firstAttribute="top" secondItem="vjf-a8-HdC" secondAttribute="bottom" constant="20" id="jE0-9q-uaN"/>
+                            <constraint firstItem="wQC-IC-z1q" firstAttribute="leading" secondItem="s3P-SK-KfC" secondAttribute="leading" constant="10" id="jzA-zh-6ky"/>
+                            <constraint firstItem="s3P-SK-KfC" firstAttribute="trailing" secondItem="erG-jW-CbI" secondAttribute="trailing" constant="20" id="tGZ-Tb-hGa"/>
+                            <constraint firstItem="erG-jW-CbI" firstAttribute="leading" secondItem="s3P-SK-KfC" secondAttribute="leading" constant="20" id="wgg-1D-uuG"/>
+                            <constraint firstAttribute="trailing" secondItem="wQC-IC-z1q" secondAttribute="trailing" constant="10" id="zpT-dY-pSz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bta-gV-QeY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcM-84-3Yi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="2483"/>
         </scene>
         <!--StatisticsVC-->
         <scene sceneID="QUH-Pg-mb8">
@@ -542,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRH-5F-UIj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3708" y="1585"/>
+            <point key="canvasLocation" x="2577" y="2483"/>
         </scene>
         <!--LOCreateLagueStoryboard-->
         <scene sceneID="oVb-sI-c5v">
@@ -552,7 +620,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgM-kK-3MQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518" y="1071"/>
+            <point key="canvasLocation" x="3022" y="1179"/>
         </scene>
         <!--LOJoinLeagueStoryboard-->
         <scene sceneID="bff-8y-qPa">
@@ -562,7 +630,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WeW-ht-1jK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2576" y="1008"/>
+            <point key="canvasLocation" x="2642" y="1179"/>
         </scene>
         <!--Your LeagueVC-->
         <scene sceneID="oZs-XC-jSN">
@@ -620,7 +688,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoM-Os-CLw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3257" y="810"/>
+            <point key="canvasLocation" x="4074" y="810"/>
         </scene>
         <!--Your Local Records-->
         <scene sceneID="YRu-CA-gAR">
@@ -678,7 +746,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zB-b0-A6Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4718" y="780"/>
+            <point key="canvasLocation" x="5090" y="810"/>
         </scene>
         <!--Get ProVC-->
         <scene sceneID="TI3-Cj-flQ">
@@ -796,17 +864,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztO-FI-Gkx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1754" y="69"/>
+            <point key="canvasLocation" x="3572" y="1606"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3RS-CI-zpt"/>
-        <segue reference="4Sw-pg-8Vt"/>
+        <segue reference="ulV-3l-81C"/>
+        <segue reference="MAo-7B-Q2o"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024" width="341.33334350585938" height="341.33334350585938"/>
         <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="light.min" catalog="system" width="128" height="75"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>

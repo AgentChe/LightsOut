@@ -239,6 +239,22 @@ struct FirebaseManager {
             }
         }
     }
+
+    func exitLeague(userUid: String, leagueNumber: Int, owner: Bool, completion: @escaping(Error?) -> Void) {
+        let docRef = db.collection("leagues").document("\(leagueNumber)")
+        docRef.updateData(["participantsUids": FieldValue.arrayRemove([userUid])]) { error in
+            if let error = error {
+                completion(error)
+            } else {
+                if owner {
+                    docRef.delete(completion: completion)
+                } else {
+                    deleteOwnRecordInFriendsLeague(userUid: userUid, leagueNumber: leagueNumber, completion: completion)
+                }
+                
+            }
+        }
+    }
     
 }
 

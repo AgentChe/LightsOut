@@ -13,7 +13,7 @@ struct UIHelper {
         case userSettings, gameSettings, aboutGame
     }
     
-    static func createOnlineRecordVCLayout() -> UICollectionViewCompositionalLayout {
+    static func createOnlineRecordVCLayout(isHeaderOn: Bool = false) -> UICollectionViewCompositionalLayout {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
         
         
@@ -25,6 +25,10 @@ struct UIHelper {
         section.contentInsets.leading = Constants.globalPadding
         section.contentInsets.trailing = Constants.globalPadding
 
+        if isHeaderOn {
+            section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)]
+        }
+        
         return UICollectionViewCompositionalLayout(section: section)
     }
     
@@ -128,7 +132,7 @@ struct UIHelper {
         case [0, 0]:
             if isPro {
                 cellTitle = "You are a PRO"
-                cellSubtitle = "You have unlimited life and access friend leagues."
+                cellSubtitle = "You have unlimited life and access friend leagues. No ads."
                 cell.accessoryType = .none
             } else {
                 cellTitle = "Become a PRO!"

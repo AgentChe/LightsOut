@@ -17,6 +17,7 @@ class LeagueVC: LODataLoadingVC {
     let getCreatedLeagueInfo = Notification.Name(rawValue: Constants.createLeagueNotificationKey)
     let getJoinedLeagueInfo = Notification.Name(rawValue: Constants.joinLeagueNotificationKey)
     let goLeagueInfo = Notification.Name(rawValue: Constants.goLeagueNotificationKey)
+    let goDeletedInfo = Notification.Name(rawValue: Constants.leagueWasDeletedNotificationKey)
     let cellId = "cellId"
     
     var friendsLeague: [LeagueModel] = [] {
@@ -84,6 +85,7 @@ class LeagueVC: LODataLoadingVC {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateLeagueSection), name: getJoinedLeagueInfo , object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLeagueSection), name: goDeletedInfo , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(goLeague), name: goLeagueInfo, object: nil)
     }
     

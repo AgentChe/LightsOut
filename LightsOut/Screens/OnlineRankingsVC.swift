@@ -31,6 +31,11 @@ class OnlineRankingsVC: LODataLoadingVC {
         loadRecords()
     }
     
+    @IBAction func infoButtonAction(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    
     func loadRecords() {
         print("DEBUG: Online load records work")
         self.showLoadingView()

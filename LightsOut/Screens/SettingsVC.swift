@@ -75,6 +75,8 @@ class SettingsVC: UITableViewController {
             }
         } else if indexPath == [2,2] {
             performSegue(withIdentifier: "goToContact", sender: self)
+        } else if indexPath == [2,0] {
+            performSegue(withIdentifier: "goToAboutGame", sender: self)
         }
     }
     
