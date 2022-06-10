@@ -39,10 +39,7 @@ class LocalRecordsVC: LODataLoadingVC {
     private lazy var dataSource = makeDataSource()
     
     override func viewDidLoad() {
-    
-        
         super.viewDidLoad()
-        navigationItem.title = "Local Records"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
         collectionView.collectionViewLayout = UIHelper.createLocalRecordVCLayout()

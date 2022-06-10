@@ -223,7 +223,7 @@
             </objects>
             <point key="canvasLocation" x="1790" y="834"/>
         </scene>
-        <!--Online RankingsVC-->
+        <!--Online Rankings-->
         <scene sceneID="YFS-1G-XtL">
             <objects>
                 <viewController restorationIdentifier="OnlineRankingsVC" storyboardIdentifier="OnlineRankingsVC" id="9IX-lv-vOp" customClass="OnlineRankingsVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
@@ -252,7 +252,7 @@
                             <constraint firstItem="vbf-KW-8Kn" firstAttribute="trailing" secondItem="Cxz-Fa-0aP" secondAttribute="trailing" id="rnX-CW-l7H"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="49u-V2-6cm">
+                    <navigationItem key="navigationItem" title="Online Rankings" id="49u-V2-6cm">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="thv-BE-reK">
                             <connections>
                                 <action selector="infoButtonAction:" destination="9IX-lv-vOp" id="i63-q3-2pB"/>
@@ -267,7 +267,7 @@
             </objects>
             <point key="canvasLocation" x="4073" y="100"/>
         </scene>
-        <!--Local RecordsVC-->
+        <!--Local Records-->
         <scene sceneID="nqk-nY-Dcj">
             <objects>
                 <viewController restorationIdentifier="LocalRecordsVC" storyboardIdentifier="LocalRecordsVC" id="7iD-QZ-9yC" customClass="LocalRecordsVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
@@ -296,7 +296,7 @@
                             <constraint firstItem="N3i-px-UUT" firstAttribute="trailing" secondItem="cuc-T0-Tf2" secondAttribute="trailing" id="uAz-7B-69v"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VzK-ul-zc6"/>
+                    <navigationItem key="navigationItem" title="Local Records" id="VzK-ul-zc6"/>
                     <connections>
                         <outlet property="collectionView" destination="cuc-T0-Tf2" id="ptP-By-BRH"/>
                         <segue destination="Zp9-jy-4ig" kind="show" identifier="goToStatisticsFromLocalRecords" id="MAo-7B-Q2o"/>

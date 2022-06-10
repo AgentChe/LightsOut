@@ -22,7 +22,6 @@ class OnlineRankingsVC: LODataLoadingVC {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Online Rankings"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
         collectionView.collectionViewLayout = UIHelper.createOnlineRecordVCLayout()

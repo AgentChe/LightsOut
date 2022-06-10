@@ -39,6 +39,20 @@ enum LocalizedAlertboxStrings {
     static let saveToOnline = NSLocalizedString("Save to Online Rankings", comment: "")
     static let getPro = NSLocalizedString("Get PRO", comment: "")
     static let getProDesc = NSLocalizedString("You can access the friends league if you will be a PRO", comment: "")
+    static let contact = NSLocalizedString("Contact / Feedback", comment: "")
+    static let contactSuccess = NSLocalizedString("Your message was succesfully sent.", comment: "")
+    static let contactError = NSLocalizedString("Your message could not be sent.", comment: "")
+    static let emailError = NSLocalizedString("You can not send an email. Check your settings.", comment: "")
+    static let quitLeague = NSLocalizedString("Quit League", comment: "")
+    static let quitAndDeleteDesc = NSLocalizedString("You are owner of this league. If you quit, league will deleate. Are you sure?", comment: "")
+    static let quitAndDelete = NSLocalizedString("Delete and quit", comment: "")
+    static let justQuitDesc = NSLocalizedString("If you quit league, your records will deleted from league. Are you sure?", comment: "")
+    static let quit = NSLocalizedString("Quit", comment: "")
+    static let deleteRecords = NSLocalizedString("Delete Records", comment: "")
+    static let deleteRecordsDescForOwner = NSLocalizedString("You can delete all records in league or just your owns. ", comment: "")
+    static let deleteAll = NSLocalizedString("Delete All", comment: "")
+    static let deleteOwns = NSLocalizedString("Delete Owns", comment: "")
+    static let deleteRecordsDesc = NSLocalizedString("Your record will be deleted from league", comment: "")
 }
 
 enum LocalizedStrings {
@@ -70,6 +84,7 @@ enum LocalizedStrings {
     static let aboutGameCell = NSLocalizedString("About Game", comment: "")
     static let rateCell = NSLocalizedString("Rate on the App Store", comment: "")
     static let contactCell = NSLocalizedString("Contact / Feedback", comment: "")
-    
-    
+    static let chartDesc = NSLocalizedString("Your progression by last week (seconds)", comment: "")
+    static let emailPlaceholder = NSLocalizedString("Enter your feedback here...", comment: "")
+    static let emptyStateInLeague = NSLocalizedString("No Records?\n Add records with add button", comment: "")
 }

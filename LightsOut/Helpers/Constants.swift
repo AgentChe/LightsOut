@@ -33,6 +33,7 @@ struct Constants {
     enum NotificationKeys {
         static let updateLeagueInfo = "com.foytingo.updateLeagueInfo"
         static let goLeagueNotificationKey = "com.foytingo.goLeagueNotificationKey"
+        static let deleteActionInfo = "com.foytingo.deleteActionInfo"
     }
     
     enum Screens {

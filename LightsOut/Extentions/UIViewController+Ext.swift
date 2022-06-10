@@ -58,4 +58,96 @@ extension UIViewController {
         present(ac, animated: true)
     }
     
+    
+    func presentQuitAndDeleteAlert(userUid: String, leagueNumber: Int) {
+        let ac = UIAlertController(title: LocalizedAlertboxStrings.quitLeague, message: LocalizedAlertboxStrings.quitAndDeleteDesc , preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.quitAndDelete , style: .destructive, handler: { action in
+            FirebaseManager.shared.exitLeague(userUid: userUid, leagueNumber: leagueNumber, owner: true) { error in
+                guard let error = error else {
+                    let leagueWasDeleted = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
+                    NotificationCenter.default.post(name: leagueWasDeleted, object: nil)
+                    self.navigationController?.popViewController(animated: true)
+                    return
+                }
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
+
+            }
+        }))
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.cancel, style: .cancel))
+        present(ac, animated: true)
+    }
+
+    func presentQuitAlert(userUid: String, leagueNumber: Int) {
+        let ac = UIAlertController(title: LocalizedAlertboxStrings.quitLeague, message: LocalizedAlertboxStrings.justQuitDesc, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.quit, style: .destructive, handler: { action in
+            FirebaseManager.shared.exitLeague(userUid: userUid, leagueNumber: leagueNumber, owner: false) { error in
+                guard let error = error else {
+                    let leagueWasDeleted = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
+                    NotificationCenter.default.post(name: leagueWasDeleted, object: nil)
+                    self.navigationController?.popViewController(animated: true)
+                    return
+                }
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
+
+            }
+        }))
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.cancel, style: .cancel))
+        present(ac, animated: true)
+    }
+
+    func presentDeleteRecordsForOwner(userUid: String?, league: LeagueModel?) {
+        let ac = UIAlertController(title: LocalizedAlertboxStrings.deleteRecords, message: LocalizedAlertboxStrings.deleteRecordsDescForOwner, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.deleteAll, style: .destructive, handler: { action in
+            guard let userUid = userUid else {
+                return
+            }
+            guard let league = league else {
+                return
+            }
+            FirebaseManager.shared.deleteOwnRecordInFriendsLeague(userUid: userUid, leagueNumber: league.leagueId) { error in
+                let leagueWasDeleted = Notification.Name(rawValue: Constants.NotificationKeys.deleteActionInfo)
+                NotificationCenter.default.post(name: leagueWasDeleted, object: nil)
+                if let error = error {
+                    self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
+                }
+            }
+        }))
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.deleteOwns, style: .destructive, handler: { action in
+            guard let league = league else {
+                return
+            }
+            FirebaseManager.shared.deleteAllRecordsInFriendsLeague(leagueNumber: league.leagueId) { error in
+                let leagueWasDeleted = Notification.Name(rawValue: Constants.NotificationKeys.deleteActionInfo)
+                NotificationCenter.default.post(name: leagueWasDeleted, object: nil)
+                if let error = error {
+                    self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
+                }
+            }
+        }))
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.cancel, style: .cancel))
+        present(ac, animated: true)
+    }
+    
+    func presentDeleteRecordsForMember(userUid: String?, league: LeagueModel?) {
+        let ac = UIAlertController(title: LocalizedAlertboxStrings.deleteRecords, message: LocalizedAlertboxStrings.deleteRecordsDesc, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.delete, style: .destructive, handler: { action in
+            guard let userUid = userUid else {
+                return
+            }
+            guard let league = league else {
+                return
+            }
+            FirebaseManager.shared.deleteOwnRecordInFriendsLeague(userUid: userUid, leagueNumber: league.leagueId) { error in
+                let leagueWasDeleted = Notification.Name(rawValue: Constants.NotificationKeys.deleteActionInfo)
+                NotificationCenter.default.post(name: leagueWasDeleted, object: nil)
+                if let error = error {
+                    self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
+                }
+            }
+        }))
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.cancel, style: .cancel))
+        present(ac, animated: true)
+    }
 }
+
+

@@ -19,10 +19,8 @@ class StatisticsVC: LODataLoadingVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Statistics"
         boxViewForLabel.layer.cornerRadius = 10
-        
-        avarageLabel.text = "You avarage reaction time: \(UserDefaults.standard.double(forKey: Constants.Keys.avarageReactionTime).convertThreePointString()) s"
+        avarageLabel.text = "\(LocalizedStrings.avarageReaction) \(UserDefaults.standard.double(forKey: Constants.Keys.avarageReactionTime).convertThreePointString()) s"
         containerViewForChart.backgroundColor = .secondarySystemBackground
         containerViewForChart.layer.cornerRadius = 10
         chartView.backgroundColor = .clear
@@ -57,7 +55,7 @@ class StatisticsVC: LODataLoadingVC {
                                            ChartDataEntry(x: 6, y: avarages[6].isNaN ? 0.0 : avarages[6])]
 
                 print(avarages)
-                let set1 = LineChartDataSet(entries: chartValuesForDates, label: "Your progression by last week (seconds)")
+                let set1 = LineChartDataSet(entries: chartValuesForDates, label: LocalizedStrings.chartDesc)
                 set1.setColor(.systemRed)
                 set1.drawCircleHoleEnabled = false
                 set1.circleRadius = 2.5
@@ -67,7 +65,7 @@ class StatisticsVC: LODataLoadingVC {
                 let data = LineChartData(dataSet: set1)
                 self.chartView.data = data
             case .failure(let error):
-                print("DEBUG: error \(error)")
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             }
         }
         
