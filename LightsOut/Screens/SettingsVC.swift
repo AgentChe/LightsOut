@@ -36,7 +36,7 @@ class SettingsVC: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return Constants.sectionCount
+        return Constants.SectionCounts.settingsVC
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

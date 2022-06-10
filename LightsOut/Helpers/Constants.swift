@@ -12,7 +12,22 @@ enum PaymentErrors {
 }
 
 struct Constants {
-    static let sectionCount = 3
+    enum SectionCounts {
+        static let leagueVC = 3
+        static let settingsVC = 3
+    }
+    
+    enum ItemCounts {
+        static let leagueVCSection0 = 2
+        static let leagueVCSection1 = UserDefaults.standard.bool(forKey: Constants.Keys.getPro) ? 0 : 1
+        
+    }
+    
+    enum screenNames {
+        
+    }
+    
+    //static let sectionCount = 3
     static let globalPadding: CGFloat = 20
     
     static let createLeagueNotificationKey = "com.foytingo.createLeagueNotificationKey"
@@ -21,7 +36,7 @@ struct Constants {
     static let leagueWasDeletedNotificationKey = "com.foytingo.leagueWasDeletedNotificationKey"
     
     enum CellReuseID {
-        static let fullSizeCell = "LOLongSizeCell"
+        static let fullSizeCell = "LOFullSizeCell"
         static let squareCell = "LOSquareCell"
         static let localRecordCell = "LOLocalRecordCell"
         static let onlineRecordCell = "LOOnlineRecordCell"

@@ -32,12 +32,20 @@ enum LocalizedAlertboxStrings {
     static let next = NSLocalizedString("Next", comment: "")
     static let delete = NSLocalizedString("Delete", comment: "")
     static let error = NSLocalizedString("Error", comment: "")
+    static let create = NSLocalizedString("Create", comment: "")
+    static let join = NSLocalizedString("Join", comment: "")
     static let ok = NSLocalizedString("OK", comment: "")
     static let chooseAction = NSLocalizedString("Choose Action", comment: "")
     static let saveToOnline = NSLocalizedString("Save to Online Rankings", comment: "")
+    static let getPro = NSLocalizedString("Get PRO", comment: "")
+    static let getProDesc = NSLocalizedString("You can access the friends league if you will be a PRO", comment: "")
 }
 
 enum LocalizedStrings {
+    static let yourRecords = NSLocalizedString("Your Records", comment: "")
+    static let onlineRankings = NSLocalizedString("Online Rankings", comment: "")
+    static let addLeague = NSLocalizedString("Add a league", comment: "")
+    static let addLeagueDesc = NSLocalizedString("You can create a league or join a league", comment: "")
     static let seconds = NSLocalizedString("seconds", comment: "")
     static let avarageReaction = NSLocalizedString("You avarage reaction time:", comment: "")
     static let tapAndHold = NSLocalizedString("Tap and hold to start!", comment: "")

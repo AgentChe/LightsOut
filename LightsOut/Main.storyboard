@@ -179,10 +179,10 @@
             </objects>
             <point key="canvasLocation" x="946" y="810"/>
         </scene>
-        <!--LeagueVC-->
+        <!--League-->
         <scene sceneID="e44-aH-T6l">
             <objects>
-                <viewController restorationIdentifier="LeagueVC" storyboardIdentifier="LeagueVC" id="UK2-RI-SmR" customClass="LeagueVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LeagueVC" storyboardIdentifier="LeagueVC" title="League" id="UK2-RI-SmR" customClass="LeagueVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZPM-tp-Zie">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,7 +208,7 @@
                             <constraint firstItem="3zb-U3-Y2r" firstAttribute="trailing" secondItem="5SG-3X-JCF" secondAttribute="trailing" id="ouc-L0-rVR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6Uf-Gk-hkv"/>
+                    <navigationItem key="navigationItem" title="League" id="6Uf-Gk-hkv"/>
                     <connections>
                         <outlet property="collectionView" destination="5SG-3X-JCF" id="e1X-bn-DJw"/>
                         <segue destination="7iD-QZ-9yC" kind="show" identifier="toLocalLeague" id="kSC-G3-0yp"/>
@@ -868,8 +868,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ulV-3l-81C"/>
-        <segue reference="MAo-7B-Q2o"/>
+        <segue reference="3RS-CI-zpt"/>
+        <segue reference="4Sw-pg-8Vt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024" width="341.33334350585938" height="341.33334350585938"/>
