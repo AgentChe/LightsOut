@@ -11,11 +11,10 @@ class LeagueVC: LODataLoadingVC {
     
     
     @IBOutlet var collectionView: UICollectionView!
+
+    let goLeagueInfo = Notification.Name(rawValue: Constants.NotificationKeys.goLeagueNotificationKey)
+    let updateLeagueInfo = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
     
-    let getCreatedLeagueInfo = Notification.Name(rawValue: Constants.createLeagueNotificationKey)
-    let getJoinedLeagueInfo = Notification.Name(rawValue: Constants.joinLeagueNotificationKey)
-    let goLeagueInfo = Notification.Name(rawValue: Constants.goLeagueNotificationKey)
-    let goDeletedInfo = Notification.Name(rawValue: Constants.leagueWasDeletedNotificationKey)
     let cellId = "cellId"
     
     var friendsLeague: [LeagueModel] = [] {
@@ -42,9 +41,6 @@ class LeagueVC: LODataLoadingVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        print("DEBUG: LEagueVC viewdidlload")
         navigationController?.navigationBar.prefersLargeTitles = true
         collectionView.collectionViewLayout = UIHelper.createLeagueVCLayout()
         collectionView.dataSource = self
@@ -72,11 +68,7 @@ class LeagueVC: LODataLoadingVC {
     }
     
     func createObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateLeagueSection), name: getCreatedLeagueInfo, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateLeagueSection), name: getJoinedLeagueInfo , object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(updateLeagueSection), name: goDeletedInfo , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLeagueSection), name: updateLeagueInfo, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(goLeague), name: goLeagueInfo, object: nil)
     }
     
@@ -85,11 +77,8 @@ class LeagueVC: LODataLoadingVC {
     }
     
     @objc func goLeague() {
-        let destVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "YourLeagueVC")
-        self.navigationController?.pushViewController(destVC, animated: true)
+        goTo(with: Constants.Screens.yourLeagueVC)
     }
-    
-    
     
     func loadFirendsLeaguesFromFirebase() {
         showLoadingView()
@@ -103,10 +92,8 @@ class LeagueVC: LODataLoadingVC {
         }
     }
     
-    
     func authIfUserNotLogin() {
         if let currentUserUid = FirebaseManager.shared.getCurrentUser() {
-            print("current user uid: \(currentUserUid)")
             userUid = currentUserUid
         } else {
             FirebaseManager.shared.authAnonymous { currentUserUid, error in
@@ -117,6 +104,22 @@ class LeagueVC: LODataLoadingVC {
                 self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             }
             
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Segues.goToCreateLeague{
+            let secondView = segue.destination as! LOCreateLeagueVC
+            secondView.userUid = userUid
+            secondView.randomLeaagueID = Int.random(in: 10000...99999)
+        } else if segue.identifier == Constants.Segues.goToJoinLeague {
+            let secondView = segue.destination as! LOJoinLeagueVC
+            secondView.userUid = userUid
+        } else if segue.identifier == Constants.Segues.goToYourLeague {
+            guard let selectedIndexPath = sender as? NSIndexPath else { return }
+            let secondView = segue.destination as! YourLeagueVC
+            secondView.userUid = userUid
+            secondView.league = friendsLeague[selectedIndexPath.row]
         }
     }
     
@@ -163,27 +166,25 @@ extension LeagueVC: UICollectionViewDataSource {
         header.delegate = self
         return header
     }
-    
-    
 }
 
 extension LeagueVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            indexPath.row == 0 ? goTo(with: "LocalRecordsVC") : goTo(with: "OnlineRankingsVC")
+            indexPath.row == 0 ? goTo(with: Constants.Screens.localRecordsVC) : goTo(with: Constants.Screens.onlineRecordsVC)
         } else if indexPath.section == 1 {
             print("DEBUG: REKLAM")
         } else {
             if self.friendsLeague.isEmpty {
                 checkUserProStatusAndPresentAlert(status: isPro, userUid: userUid)
+            } else {
+                performSegue(withIdentifier: Constants.Segues.goToYourLeague, sender: indexPath)
             }
         }
     }
 }
 
-
 extension LeagueVC: LOLeaguesHeaderViewDelegate {
-    
     func didTapCreateButton() {
         if userUid != "" && isPro == true {
             performSegue(withIdentifier: Constants.Segues.goToCreateLeague, sender: self)
@@ -191,19 +192,7 @@ extension LeagueVC: LOLeaguesHeaderViewDelegate {
             presentGetProAlert(userUid: userUid)
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.Segues.goToCreateLeague{
-            let secondView = segue.destination as! LOCreateLeagueVC
-            secondView.userUid = userUid
-            secondView.randomLeaagueID = Int.random(in: 10000...99999)
-        } else if segue.identifier == Constants.Segues.goToJoinLeague {
-            let secondView = segue.destination as! LOJoinLeagueVC
-            secondView.userUid = userUid
-        }
-    }
-    
-    
+
     func didTapJoinButton() {
         if userUid != "" && isPro == true  {
             performSegue(withIdentifier: Constants.Segues.goToJoinLeague, sender: self)
@@ -211,6 +200,5 @@ extension LeagueVC: LOLeaguesHeaderViewDelegate {
             presentGetProAlert(userUid: userUid)
         }
     }
-    
-    
+  
 }

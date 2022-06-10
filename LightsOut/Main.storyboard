@@ -270,7 +270,7 @@
         <!--Local RecordsVC-->
         <scene sceneID="nqk-nY-Dcj">
             <objects>
-                <viewController restorationIdentifier="LocalRecordVC" storyboardIdentifier="LocalRecordVC" id="7iD-QZ-9yC" customClass="LocalRecordsVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LocalRecordsVC" storyboardIdentifier="LocalRecordsVC" id="7iD-QZ-9yC" customClass="LocalRecordsVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jCS-ws-JXH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -536,7 +536,7 @@
             </objects>
             <point key="canvasLocation" x="1860" y="2483"/>
         </scene>
-        <!--StatisticsVC-->
+        <!--Statistics-->
         <scene sceneID="QUH-Pg-mb8">
             <objects>
                 <viewController restorationIdentifier="StatisticsVC" storyboardIdentifier="StatisticsVC" id="Zp9-jy-4ig" customClass="StatisticsVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
@@ -600,7 +600,7 @@
                             <constraint firstItem="Kxb-9g-f2c" firstAttribute="leading" secondItem="B02-Yo-FKi" secondAttribute="leading" constant="20" id="wwY-od-nXN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vhV-l7-GH8"/>
+                    <navigationItem key="navigationItem" title="Statistics" id="vhV-l7-GH8"/>
                     <connections>
                         <outlet property="avarageLabel" destination="AVa-p1-zWz" id="tYK-WA-D2Q"/>
                         <outlet property="boxViewForLabel" destination="vYp-Ck-nGj" id="NhC-PK-RPm"/>
@@ -869,7 +869,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="3RS-CI-zpt"/>
-        <segue reference="4Sw-pg-8Vt"/>
+        <segue reference="MAo-7B-Q2o"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024" width="341.33334350585938" height="341.33334350585938"/>

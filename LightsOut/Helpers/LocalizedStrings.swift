@@ -56,4 +56,20 @@ enum LocalizedStrings {
     static let yourReactionTime = NSLocalizedString("Your reaction time:", comment: "")
     static let fail = NSLocalizedString("Fail try again!", comment: "")
     static let release = NSLocalizedString("Release", comment: "")
+    static let gameSettings = NSLocalizedString("Game Settings", comment: "")
+    static let aboutGame = NSLocalizedString("About", comment: "")
+    static let proCell = NSLocalizedString("You are a pro", comment: "")
+    static let proCellSub = NSLocalizedString("You have unlimited life and access friend leagues. No ads.", comment: "")
+    static let becomeProCell = NSLocalizedString("Become a PRO!", comment: "")
+    static let becomeProCellSub = NSLocalizedString("Remove ads and access friends leagues", comment: "")
+    static let statisticsCell = NSLocalizedString("Statistics", comment: "")
+    static let statisticsCellSub = NSLocalizedString("Your reaction time records and progression", comment: "")
+    static let soundEffectCell = NSLocalizedString("Sound Effect", comment: "")
+    static let soundEffectOn = NSLocalizedString("On", comment: "")
+    static let soundEffectOff = NSLocalizedString("Off", comment: "")
+    static let aboutGameCell = NSLocalizedString("About Game", comment: "")
+    static let rateCell = NSLocalizedString("Rate on the App Store", comment: "")
+    static let contactCell = NSLocalizedString("Contact / Feedback", comment: "")
+    
+    
 }

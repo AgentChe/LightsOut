@@ -21,19 +21,25 @@ struct Constants {
         static let leagueVCSection0 = 2
         static let leagueVCSection1 = UserDefaults.standard.bool(forKey: Constants.Keys.getPro) ? 0 : 1
         
+        static let settingsVCSection0 = 2
+        static let settingsVCSection1 = 1
+        static let settingsVCSection2 = 3
     }
     
-    enum screenNames {
-        
-    }
     
     //static let sectionCount = 3
     static let globalPadding: CGFloat = 20
     
-    static let createLeagueNotificationKey = "com.foytingo.createLeagueNotificationKey"
-    static let joinLeagueNotificationKey = "com.foytingo.joinLeagueNotificationKey"
-    static let goLeagueNotificationKey = "com.foytingo.goLeagueNotificationKey"
-    static let leagueWasDeletedNotificationKey = "com.foytingo.leagueWasDeletedNotificationKey"
+    enum NotificationKeys {
+        static let updateLeagueInfo = "com.foytingo.updateLeagueInfo"
+        static let goLeagueNotificationKey = "com.foytingo.goLeagueNotificationKey"
+    }
+    
+    enum Screens {
+        static let yourLeagueVC = "YourLeagueVC"
+        static let localRecordsVC = "LocalRecordsVC"
+        static let onlineRecordsVC = "OnlineRankingsVC"
+    }
     
     enum CellReuseID {
         static let fullSizeCell = "LOFullSizeCell"
@@ -78,6 +84,7 @@ struct Constants {
         static let goToContacts = "goToContact"
         static let goToAboutGame = "goToAboutGame"
         static let goToAddRecordsToLeague = "goToAddRecordsToLeague"
+        static let goToYourLeague = "goToYourLeague"
     }
     
 }

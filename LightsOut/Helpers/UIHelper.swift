@@ -19,7 +19,6 @@ struct UIHelper {
         
         let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)), subitems: [item])
         group.contentInsets.top = Constants.globalPadding / 2
-       // group.contentInsets.bottom = 5
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets.leading = Constants.globalPadding
@@ -79,7 +78,6 @@ struct UIHelper {
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPagingCentered
                 
-               // section.contentInsets.leading = Constants.globalPadding
                 section.contentInsets.trailing = Constants.globalPadding
                 section.contentInsets.top = Constants.globalPadding / 2
                 
@@ -93,11 +91,11 @@ struct UIHelper {
     static func configureNumberOfRowsInSection(_ sectionNumber: Int) -> Int {
         switch sectionNumber {
         case 0:
-            return 2
+            return Constants.ItemCounts.settingsVCSection0
         case 1:
-            return 1
+            return Constants.ItemCounts.settingsVCSection1
         case 2:
-            return 3
+            return Constants.ItemCounts.settingsVCSection2
         default:
             return 0
         }
@@ -108,9 +106,9 @@ struct UIHelper {
         case 0:
             return nil
         case 1:
-            return "Game Settings"
+            return LocalizedStrings.gameSettings
         case 2:
-            return "About"
+            return LocalizedStrings.aboutGame
         default:
             return ""
         }
@@ -129,36 +127,34 @@ struct UIHelper {
         let isPro = UserDefaults.standard.bool(forKey: Constants.Keys.getPro)
         
         switch indexPath {
-        case [0, 0]:
+        case [0, 0]: // Pro cell
             if isPro {
-                cellTitle = "You are a PRO"
-                cellSubtitle = "You have unlimited life and access friend leagues. No ads."
+                cellTitle = LocalizedStrings.proCell
+                cellSubtitle = LocalizedStrings.proCellSub
                 cell.accessoryType = .none
             } else {
-                cellTitle = "Become a PRO!"
-                cellSubtitle = "Remove ads and access friends leagues"
+                cellTitle = LocalizedStrings.becomeProCell
+                cellSubtitle = LocalizedStrings.becomeProCellSub
             }
-
         case [0, 1]:
-            cellTitle = "Statistics"
-            cellSubtitle = "Your reaction time records and progression"
+            cellTitle = LocalizedStrings.statisticsCell
+            cellSubtitle = LocalizedStrings.statisticsCellSub
         case [1, 0]:
-            cellTitle = "Sound Effect"
+            cellTitle = LocalizedStrings.soundEffectCell
             if UserDefaults.standard.bool(forKey: Constants.Keys.soundSettings) {
-                cellSubtitle = "On"
+                cellSubtitle = LocalizedStrings.soundEffectOn
             } else {
-                cellSubtitle = "Off"
+                cellSubtitle = LocalizedStrings.soundEffectOff
             }
         case [2, 0]:
-            cellTitle = "About Game"
+            cellTitle = LocalizedStrings.aboutGameCell
         case [2, 1]:
-            cellTitle = "Rate on the App Store"
+            cellTitle = LocalizedStrings.rateCell
         case [2,2]:
-            cellTitle = "Contact / Feedback"
+            cellTitle = LocalizedStrings.contactCell
         default:
-            cellTitle = "Hello "
+            cellTitle = "Hello"
         }
-    
     
         var content = cell.defaultContentConfiguration()
         content.text = cellTitle

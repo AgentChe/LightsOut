@@ -19,9 +19,9 @@ class LOJoinLeagueConfirmationVC: UIViewController {
     
     @IBAction func goLeagueButtonAction(_ sender: UIButton) {
         self.view.window?.rootViewController?.dismiss(animated: true, completion: {
-            let goLeagueName = Notification.Name(rawValue: Constants.goLeagueNotificationKey)
+            let goLeagueName = Notification.Name(rawValue: Constants.NotificationKeys.goLeagueNotificationKey)
             NotificationCenter.default.post(name: goLeagueName, object: nil)
-            let joinLeagueName = Notification.Name(rawValue: Constants.joinLeagueNotificationKey)
+            let joinLeagueName = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
             NotificationCenter.default.post(name: joinLeagueName, object: nil)
             
         })
@@ -29,7 +29,7 @@ class LOJoinLeagueConfirmationVC: UIViewController {
     
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
-        let name = Notification.Name(rawValue: Constants.joinLeagueNotificationKey)
+        let name = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
         NotificationCenter.default.post(name: name, object: nil)
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         

@@ -16,15 +16,9 @@ class SettingsVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.backgroundColor = UIColor.systemBackground
         tableView.isScrollEnabled = false
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -46,36 +40,33 @@ class SettingsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         UIHelper.configureCells(tableView: tableView, indexPath: indexPath)
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.Segues.goToStatistics{
-              let secondView = segue.destination as! StatisticsVC
-            secondView.title = "Statistics"
-            
-        }
-    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath == [0,1] {
+            //Statistics
             performSegue(withIdentifier: Constants.Segues.goToStatistics, sender: self)
         } else if indexPath == [0,0] {
+            //Get pro
             if !UserDefaults.standard.bool(forKey: Constants.Keys.getPro) {
                 performSegue(withIdentifier: Constants.Segues.goToGetPro, sender: self)
             }
         } else if indexPath == [1,0] {
+            //Sound Settings
             isSoundEffect.toggle()
-            print("DEBUG: sound effect status: \(isSoundEffect)")
             UserDefaults.standard.set(isSoundEffect, forKey: Constants.Keys.soundSettings)
             tableView.reloadRows(at: [indexPath], with: .none)
             
         } else if indexPath == [2,1] {
+            //Rate App
             if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
             }
-        } else if indexPath == [2,2] {
+        } else if indexPath == [2,2]{
+            // Contact/Feedback
             performSegue(withIdentifier: Constants.Segues.goToContacts, sender: self)
-        } else if indexPath == [2,0] {
+        } else if indexPath == [2,0]  {
+            // About Game
             performSegue(withIdentifier: Constants.Segues.goToAboutGame, sender: self)
         }
     }

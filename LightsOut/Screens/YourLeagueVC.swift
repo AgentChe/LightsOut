@@ -136,7 +136,7 @@ class YourLeagueVC: LODataLoadingVC {
             ac.addAction(UIAlertAction(title: "Delete and quit", style: .destructive, handler: { action in
                 FirebaseManager.shared.exitLeague(userUid: userUid, leagueNumber: league.leagueId, owner: true) { error in
                     guard let error = error else {
-                        let leagueWasDeleted = Notification.Name(rawValue: Constants.leagueWasDeletedNotificationKey)
+                        let leagueWasDeleted = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
                         NotificationCenter.default.post(name: leagueWasDeleted, object: nil)
                         self.navigationController?.popViewController(animated: true)
                         return
@@ -152,7 +152,7 @@ class YourLeagueVC: LODataLoadingVC {
             ac.addAction(UIAlertAction(title: "Quit", style: .destructive, handler: { action in
                 FirebaseManager.shared.exitLeague(userUid: userUid, leagueNumber: league.leagueId, owner: false) { error in
                     guard let error = error else {
-                        let leagueWasDeleted = Notification.Name(rawValue: Constants.leagueWasDeletedNotificationKey)
+                        let leagueWasDeleted = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
                         NotificationCenter.default.post(name: leagueWasDeleted, object: nil)
                         self.navigationController?.popViewController(animated: true)
                         return

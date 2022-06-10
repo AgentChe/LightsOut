@@ -29,7 +29,7 @@ class LOCreatLeagueConfirmationVC: UIViewController {
     }
     
     @IBAction func okButtonAction(_ sender: UIButton) {
-        let name = Notification.Name(rawValue: Constants.createLeagueNotificationKey)
+        let name = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
         NotificationCenter.default.post(name: name, object: nil)
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
