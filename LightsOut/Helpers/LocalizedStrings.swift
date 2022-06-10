@@ -25,3 +25,27 @@ enum LocalizedErrorMessages {
     static let alreadyInLeague = NSLocalizedString("You are already in this league.", comment: "")
     static let cantCreateLeague = NSLocalizedString("The league could not be created. Please try againg", comment: "")
 }
+
+enum LocalizedAlertboxStrings {
+    static let done = NSLocalizedString("Done", comment: "")
+    static let cancel = NSLocalizedString("Cancel", comment: "")
+    static let next = NSLocalizedString("Next", comment: "")
+    static let delete = NSLocalizedString("Delete", comment: "")
+    static let error = NSLocalizedString("Error", comment: "")
+    static let ok = NSLocalizedString("OK", comment: "")
+    static let chooseAction = NSLocalizedString("Choose Action", comment: "")
+    static let saveToOnline = NSLocalizedString("Save to Online Rankings", comment: "")
+}
+
+enum LocalizedStrings {
+    static let seconds = NSLocalizedString("seconds", comment: "")
+    static let avarageReaction = NSLocalizedString("You avarage reaction time:", comment: "")
+    static let tapAndHold = NSLocalizedString("Tap and hold to start!", comment: "")
+    static let tapAndHoldDescr = NSLocalizedString("When all lights off, release as quickly as you can.", comment: "")
+    static let noLife = NSLocalizedString("You have no life.", comment: "")
+    static let waitLightsOut = NSLocalizedString("Wait until all lights OUT!", comment: "")
+    static let waitLightsON = NSLocalizedString("Wait until all lights ON!", comment: "")
+    static let yourReactionTime = NSLocalizedString("Your reaction time:", comment: "")
+    static let fail = NSLocalizedString("Fail try again!", comment: "")
+    static let release = NSLocalizedString("Release", comment: "")
+}

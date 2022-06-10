@@ -46,7 +46,7 @@ class LOCreateLeagueVC: UIViewController {
         
         
         
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        let done: UIBarButtonItem = UIBarButtonItem(title: LocalizedAlertboxStrings.done, style: .done, target: self, action: #selector(self.doneButtonAction))
         passwordTextfiel.addDoneButton(button: done)
     }
     

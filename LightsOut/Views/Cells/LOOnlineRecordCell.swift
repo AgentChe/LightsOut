@@ -20,7 +20,7 @@ class LOOnlineRecordCell: UICollectionViewCell {
     
     func set(record: RecordModel, rankValue: Int) {
         numberImageView.image = UIImage(systemName: "\(rankValue).circle")
-        topLabel.text = "\(record.recordTime) " + "seconds" + " - \(record.name!)"
+        topLabel.text = "\(record.recordTime) " + LocalizedStrings.seconds + " - \(record.name!)"
         bottomLabel.text = Date(timeIntervalSince1970: record.timeStamp).convertToStringWithFormat()
     }
 

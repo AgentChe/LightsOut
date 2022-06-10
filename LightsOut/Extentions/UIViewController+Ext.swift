@@ -11,7 +11,8 @@ import UIKit
 extension UIViewController {
     func presentAlertWithOk(title: String, message: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Ok", style: .default))
+        ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.ok, style: .default))
         present(ac, animated: true)
     }
+    
 }

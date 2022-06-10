@@ -25,7 +25,7 @@ class LOLocalRecordsHeaderView: UICollectionReusableView {
     
     func setAvarageReactionTime(with avarageReactionTime: Double) {
         
-        textLabel.text = "You avarage reaction time: \(avarageReactionTime.convertThreePointString())"
+        textLabel.text =  "\(LocalizedStrings.avarageReaction) \(avarageReactionTime.convertThreePointString())"
     }
     
     private func configureTapGesture() {

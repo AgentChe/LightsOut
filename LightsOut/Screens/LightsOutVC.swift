@@ -51,7 +51,7 @@ class LightsOutVC: UIViewController {
             lifeFillDate = defaults.double(forKey: Constants.Keys.lifeFillDate)
             if lifeCount <= 0 {
                 DispatchQueue.main.async {
-                    self.instructionView.changeLabel(with: "You have no life.")
+                    self.instructionView.changeLabel(with: LocalizedStrings.noLife)
                     self.instructionView.isHidden = false
                 }
                 
@@ -147,7 +147,7 @@ class LightsOutVC: UIViewController {
                 self.userUid = uid
                 return
             }
-            print("DEBUG: \(error)")
+            self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
         }
     }
     
@@ -160,7 +160,7 @@ class LightsOutVC: UIViewController {
         lightsCountForStartSequence += 1
         
         if lightsCountForStartSequence == 5 {
-            instructionView.changeLabel(with: "Wait until all lights OUT!")
+            instructionView.changeLabel(with: LocalizedStrings.waitLightsOut)
             lightsCountForStartSequence = 0
             oneSecLightTimer?.invalidate()
             lightsOut()
@@ -175,7 +175,7 @@ class LightsOutVC: UIViewController {
                 light.turnDefault()
             }
             self.reactionCounterTimer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
-            instructionView.changeLabel(with: "Release!")
+            instructionView.changeLabel(with: LocalizedStrings.release)
         })
     }
     
@@ -209,7 +209,7 @@ extension LightsOutVC: LOTouchAreaDelegate {
     func startGame() {
         PersistenceManager.shared.playCount()
         instructionView.isHidden = false
-        instructionView.changeLabel(with: "Wait until all lights ON!")
+        instructionView.changeLabel(with: LocalizedStrings.waitLightsON)
         lightsUpInOrder()
     }
     
@@ -225,22 +225,18 @@ extension LightsOutVC: LOTouchAreaDelegate {
                 print("DEBUG: Lifecount down \(lifeCount)")
             }
             
-            instructionView.changeLabel(with: "Fail try again!")
+            instructionView.changeLabel(with: LocalizedStrings.fail)
             generator.notificationOccurred(.error)
             
         } else {
             // If user release AFTER all lights out
-            instructionView.changeLabel(with: "Your reaction time: \(reactionTimeCounter.convertThreePointString())")
+            instructionView.changeLabel(with: "\(LocalizedStrings.yourReactionTime) \(reactionTimeCounter.convertThreePointString())")
             let timeStamp = Double(Date().timeIntervalSince1970)
-            guard let userUid = userUid else {
-                print("DEBUG: USER UID IS NIL")
-                return
-            }
+            guard let userUid = userUid else { return }
             let newRecord = RecordModel(userUid: userUid, timeStamp: timeStamp, recordTime: reactionTimeCounter.convertThreePointString(), recordUid: UUID().uuidString)
-            //DatabaseManager.shared.saveNewRecord(with: newRecord)
             DatabaseManager.shared.addNewRecordToSqliteDb(record: newRecord) { error in
                 guard let error = error else { return }
-                print("DEBUG: Error to save \(error)")
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             }
             generator.notificationOccurred(.success)
         }

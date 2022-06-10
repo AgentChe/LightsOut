@@ -36,8 +36,8 @@ class LOTouchAreaView: UIView {
     }
     
     private func configureStackView() {
-        touchAreaTopLabel.text = "Tap and hold to start!"
-        touchAreaBottomLabel.text = "When all lights off, release as quickly as you can."
+        touchAreaTopLabel.text = LocalizedStrings.tapAndHold
+        touchAreaBottomLabel.text = LocalizedStrings.tapAndHoldDescr
         
         stackView.addArrangedSubview(touchAreaTopLabel)
         stackView.addArrangedSubview(touchAreaBottomLabel)

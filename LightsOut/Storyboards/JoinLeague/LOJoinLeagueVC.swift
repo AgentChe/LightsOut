@@ -27,10 +27,10 @@ class LOJoinLeagueVC: UIViewController {
         leagueNumberTextfield.delegate = self
         leaguePasswordTextfield.delegate = self
         
-        let next: UIBarButtonItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(self.nextButtonAction))
+        let next: UIBarButtonItem = UIBarButtonItem(title: LocalizedAlertboxStrings.next, style: .done, target: self, action: #selector(self.nextButtonAction))
         leagueNumberTextfield.addDoneButton(button: next)
         
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        let done: UIBarButtonItem = UIBarButtonItem(title: LocalizedAlertboxStrings.done, style: .done, target: self, action: #selector(self.doneButtonAction))
         leaguePasswordTextfield.addDoneButton(button: done)
         
     }

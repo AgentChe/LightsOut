@@ -45,15 +45,15 @@ class LOLocalRecordCell: UICollectionViewCell {
     
     
     func showActionSheetToEdit(vc: UIViewController, record: RecordModel) {
-        let actionMenu = UIAlertController(title: nil, message: "Choose Action", preferredStyle: .actionSheet)
+        let actionMenu = UIAlertController(title: nil, message: LocalizedAlertboxStrings.chooseAction, preferredStyle: .actionSheet)
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+        let deleteAction = UIAlertAction(title: LocalizedAlertboxStrings.delete, style: .destructive) { action in
             self.actionDelegate?.didTapDeleteAction(self)
         }
-        let saveAction = UIAlertAction(title: "Save to Online Rankings", style: .default) { action in
+        let saveAction = UIAlertAction(title: LocalizedAlertboxStrings.saveToOnline, style: .default) { action in
             self.actionDelegate?.didTapSaveAction(self)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: LocalizedAlertboxStrings.cancel, style: .cancel)
         
         
         if record.isSaved == false {
