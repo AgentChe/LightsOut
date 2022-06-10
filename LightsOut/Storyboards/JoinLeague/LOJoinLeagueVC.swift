@@ -9,7 +9,6 @@ import UIKit
 
 class LOJoinLeagueVC: UIViewController {
 
-    
     var userUid: String?
     var isLeagueNumberOk = false
     var isLeaguePasswordOk = false
@@ -49,7 +48,7 @@ class LOJoinLeagueVC: UIViewController {
     
     @IBAction func joinButtonAction(_ sender: UIButton) {
         self.view.endEditing(true)
-        self.performSegue(withIdentifier: "goToJoinLoading", sender: self)
+        self.performSegue(withIdentifier: Constants.Segues.goToJoinLoading, sender: self)
     }
     
     @IBAction func cancelButtonAction(_ sender: UIButton) {

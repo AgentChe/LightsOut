@@ -19,17 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        defaults.set(true, forKey: Keys.adsFree)
         FirebaseApp.configure()
         
-        let isItOpenBefore = defaults.bool(forKey: "isItFirstOpen")
+        let isItOpenBefore = defaults.bool(forKey: Constants.Keys.isItFirstOpen)
         
         if !isItOpenBefore {
             print("DEBUG: IT IS FIRST")
-            defaults.set(5, forKey: "lifeCount")
-            defaults.set(true, forKey: "isItFirstOpen")
+            defaults.set(5, forKey: Constants.Keys.lifeCount)
+            defaults.set(true, forKey: Constants.Keys.isItFirstOpen)
             //UserDefaults.standard.set(true, forKey: Keys.adsFree)
-            let adsFreeStatus = defaults.bool(forKey: Keys.adsFree)
+            let adsFreeStatus = defaults.bool(forKey: Constants.Keys.adsFree)
             print("DEBUG: ads free have bought before: \(adsFreeStatus)")
             if adsFreeStatus {
-                defaults.set(true, forKey: Keys.getPro)
+                defaults.set(true, forKey: Constants.Keys.getPro)
             }
         } else {
             print("DEBUG: IT was opened before")

@@ -18,30 +18,21 @@ class LOInstructionView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
-
     }
-    
     
     private func configure() {
         layer.cornerRadius = 20
-        
         addSubview(instructionLabel)
         NSLayoutConstraint.activate([
             instructionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             instructionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             instructionLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
-
-            
         ])
-        
     }
     
-
     func changeLabel(with text: String) {
         instructionLabel.text = text
     }
     
     
-    
-
 }

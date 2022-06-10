@@ -29,7 +29,7 @@ class LocalRecordsVC: LODataLoadingVC {
             } else {
                 collectionView.backgroundView = nil
                 collectionView.isScrollEnabled = true
-                UserDefaults.standard.set(avarageReactionTime, forKey: Keys.avarageReactionTime)
+                UserDefaults.standard.set(avarageReactionTime, forKey: Constants.Keys.avarageReactionTime)
             }
         }
     }
@@ -46,8 +46,8 @@ class LocalRecordsVC: LODataLoadingVC {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
         collectionView.collectionViewLayout = UIHelper.createLocalRecordVCLayout()
-        collectionView.register(UINib(nibName: "LOLocalRecordCell", bundle: nil), forCellWithReuseIdentifier: LOLocalRecordCell.reuseID)
-        collectionView.register(UINib(nibName: "LOLocalRecordsHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LOLocalRecordsHeaderView.reuseId)
+        collectionView.register(UINib(nibName: Constants.CellReuseID.localRecordCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.localRecordCell)
+        collectionView.register(UINib(nibName: Constants.HeaderReuseID.localRecordsHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Constants.HeaderReuseID.localRecordsHeader)
 
         //DatabaseManager.shared.addCustomRecord()
     }
@@ -86,7 +86,7 @@ class LocalRecordsVC: LODataLoadingVC {
     
     func makeDataSource() -> UICollectionViewDiffableDataSource<Section, RecordModel> {
         let dataSource = UICollectionViewDiffableDataSource<Section, RecordModel>(collectionView: collectionView) { collectionView, indexPath, record in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LOLocalRecordCell.reuseID, for: indexPath) as! LOLocalRecordCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.localRecordCell, for: indexPath) as! LOLocalRecordCell
             cell.set(record: record, rankValue: indexPath.item + 1)
             cell.actionDelegate = self
             return cell
@@ -98,7 +98,7 @@ class LocalRecordsVC: LODataLoadingVC {
                 return nil
             }
         
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LOLocalRecordsHeaderView.reuseId, for: indexPath) as? LOLocalRecordsHeaderView
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.HeaderReuseID.localRecordsHeader, for: indexPath) as? LOLocalRecordsHeaderView
         
             view?.setAvarageReactionTime(with: self.avarageReactionTime)
             view?.headerViewDelegate = self
@@ -149,55 +149,9 @@ extension LocalRecordsVC: LOLocalRecordCellActionDelegate {
 
     func didTapSaveAction(_ cell: LOLocalRecordCell) {
 
-        performSegue(withIdentifier: "goToAddName", sender: cell)
+        performSegue(withIdentifier: Constants.Segues.goToAddName, sender: cell)
         
-
-        
-        
-       //performSegue(withIdentifier: "goToAddName", sender: self)
-        
-//        let ac = UIAlertController(title: "Save Online" , message: "Save your" + "\(localRecords[indexPath.row].reactionTime)" + "\n Limit 12 characters bla bla bla", preferredStyle: .alert)
-//        ac.addTextField { (textfield) in
-//            textfield.placeholder = "Enter a name"
-//            textfield.delegate = self
-//        }
-//
-//
-//        let saveAction = UIAlertAction(title: "Save", style: .default) { action in
-//            guard let textField = ac.textFields?[0] else { return }
-//            guard let name = textField.text else { return }
-//
-//            if name.isEmpty {
-//                print("DEBUG: name empty")
-//                return
-//            } else if name.count > 12 {
-//                return
-//            } else {
-//                self.localRecords[indexPath.row].name = name
-//                self.localRecords[indexPath.row].isSaved = true
-//            }
-//
-//            self.showLoadingView()
-//            DatabaseManager.shared.updateRecord(record: self.localRecords[indexPath.row]) { error in
-//                if let error = error {
-//                    print("DEBUG: Error: \(error)")
-//                } else {
-//                    print("DEBUG: Successfully updated with no error")
-//                    FirebaseManager.shared.saveRecordToFirebase(record: self.localRecords[indexPath.row]) { error in
-//                        self.dismissLoadingView()
-//                        guard let error = error else { return }
-//                        print("DEBUG: Error with save to firebase - \(error)")
-//                    }
-//                }
-//            }
- //       }
-//
-//        ac.addAction(saveAction)
-//        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-//
-//        present(ac, animated: true)
     }
-    
     
     func didTapDeleteAction(_ cell: LOLocalRecordCell) {
         let indexPath = collectionView.indexPath(for: cell)!

@@ -8,8 +8,6 @@
 import UIKit
 
 class LOSquareCell: UICollectionViewCell {
-
-    static let reuseID = "LOSquareCell"
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var leagueIdLabel: UILabel!

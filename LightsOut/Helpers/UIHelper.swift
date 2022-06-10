@@ -83,7 +83,7 @@ struct UIHelper {
                 section.contentInsets.trailing = Constants.globalPadding
                 section.contentInsets.top = Constants.globalPadding / 2
                 
-                section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: LOLeaguesHeaderView.categoryHeaderId, alignment: .topLeading)
+                section.boundarySupplementaryItems = [.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: Constants.HeaderReuseID.leagueCategoryHeader, alignment: .topLeading)
                 ]
                 return section
             }
@@ -126,7 +126,7 @@ struct UIHelper {
         var cellTitle = ""
         var cellSubtitle = ""
         
-        let isPro = UserDefaults.standard.bool(forKey: Keys.getPro)
+        let isPro = UserDefaults.standard.bool(forKey: Constants.Keys.getPro)
         
         switch indexPath {
         case [0, 0]:
@@ -144,7 +144,7 @@ struct UIHelper {
             cellSubtitle = "Your reaction time records and progression"
         case [1, 0]:
             cellTitle = "Sound Effect"
-            if UserDefaults.standard.bool(forKey: Keys.soundSettings) {
+            if UserDefaults.standard.bool(forKey: Constants.Keys.soundSettings) {
                 cellSubtitle = "On"
             } else {
                 cellSubtitle = "Off"

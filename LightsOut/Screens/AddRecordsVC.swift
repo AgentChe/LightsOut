@@ -45,7 +45,7 @@ class AddRecordsVC: LODataLoadingVC {
         super.viewDidLoad()
         doneButton.isEnabled = false
         collectionView.collectionViewLayout = UIHelper.createLocalRecordVCLayout(isHeaderOn: false)
-        collectionView.register(UINib(nibName: "LOLocalRecordCell", bundle: nil), forCellWithReuseIdentifier: LOLocalRecordCell.reuseID)
+        collectionView.register(UINib(nibName: Constants.CellReuseID.localRecordCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.localRecordCell)
         collectionView.allowsMultipleSelection = true
         collectionView.delegate = self
     }
@@ -113,7 +113,7 @@ class AddRecordsVC: LODataLoadingVC {
     
     func makeDataSource() -> UICollectionViewDiffableDataSource<Section, RecordModel> {
         let dataSource = UICollectionViewDiffableDataSource<Section, RecordModel>(collectionView: collectionView) { collectionView, indexPath, record in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LOLocalRecordCell.reuseID, for: indexPath) as! LOLocalRecordCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.localRecordCell, for: indexPath) as! LOLocalRecordCell
             cell.set(record: record, rankValue: indexPath.item + 1)
             cell.editButton.isHidden = true
             cell.selectImageView.isHidden = false

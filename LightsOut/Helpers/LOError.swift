@@ -14,37 +14,37 @@ enum LOError: String, Error, Codable {
     var localizedDescription: String {
         switch self {
         case .unableToConnectDatabase:
-            return "Cant be connected to database."
+            return LocalizedErrorMessages.unableToConnectDatabase
         case .unableToCreateDatabase:
-            return "Cant create database."
+            return LocalizedErrorMessages.unableToCreateDatabase
         case .dbWasCreatedSuccessfully:
             return "Database was created successfuly"
         case .dbAlreadyCreated:
             return "Database was already created."
         case .unableToSaveNewRecord:
-            return "New record cant be saved"
+            return LocalizedErrorMessages.unableToSaveNewRecord
         case .unableToGetAllRecords:
-            return "Cant be get all records from database"
+            return LocalizedErrorMessages.unableToGetAllRecords
         case .unableToDelete:
-            return "Cant be deleated record from database"
+            return LocalizedErrorMessages.unableToDelete
         case .cantGetSingleUserFromDB:
-            return "Cant get single record from database"
+            return LocalizedErrorMessages.cantGetSingleRecordFromDB
         case .updateErrorInLocalDb:
-            return "Cant update record in local db"
+            return LocalizedErrorMessages.updateErrorInLocalDB
         case .cantCalculateAvarageForChart:
-            return "Cant calculate avarage for chart"
+            return LocalizedErrorMessages.cantCalculateAvarageForChart
         case .wrongLeaguePassword:
-            return "Wrong league password"
+            return LocalizedErrorMessages.wrongLeaguePassword
         case .cantFoundLeague:
-            return "Cant found league"
+            return LocalizedErrorMessages.cantFoundLeague
         case .cantJoinLeague:
-            return "Something went wrong Cant join league"
+            return LocalizedErrorMessages.cantJoinLeague
         case .checkYourPassword:
-            return "Check your password"
+            return LocalizedErrorMessages.checkYourPassword
         case .alreadyInLeague:
-            return "You have already in lig"
+            return LocalizedErrorMessages.alreadyInLeague
         case .createLeagueError:
-            return "Cant create league"
+            return LocalizedErrorMessages.cantCreateLeague
         }
     }
 }

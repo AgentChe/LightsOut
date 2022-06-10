@@ -16,8 +16,6 @@ class LOLocalRecordCell: UICollectionViewCell {
     
     var record: RecordModel?
     
-    static let reuseID = "LOLocalRecordCell"
-    
     @IBOutlet weak var numberImageView: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
@@ -30,7 +28,6 @@ class LOLocalRecordCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10
-        
     }
         
     func set(record: RecordModel, rankValue: Int) {
@@ -38,14 +35,12 @@ class LOLocalRecordCell: UICollectionViewCell {
         topLabel.text = "\(record.recordTime) " + "s" + " - \(record.name!)"
         bottomLabel.text = Date(timeIntervalSince1970: record.timeStamp).convertToStringWithFormat()
         self.record = record
-
     }
     
     @IBAction func editButtonAction(_ sender: UIButton) {
         if let parentViewController = self.parentViewController{
             showActionSheetToEdit(vc: parentViewController, record: record!)
         }
-        
     }
     
     

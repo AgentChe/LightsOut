@@ -14,9 +14,6 @@ protocol LOLeaguesHeaderViewDelegate: AnyObject {
 
 class LOLeaguesHeaderView: UICollectionReusableView {
 
-    static let reuseId = "leagueHeaderView"
-    static let categoryHeaderId = "categoryLeagueHeaderView"
-    
     weak var delegate: LOLeaguesHeaderViewDelegate?
     
     @IBOutlet var joinButton: UIButton!
@@ -25,7 +22,6 @@ class LOLeaguesHeaderView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     @IBAction func crateButtonAction(_ sender: UIButton) {

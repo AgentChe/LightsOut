@@ -11,12 +11,12 @@ import StoreKit
 
 class SettingsVC: UITableViewController {
     
-    var isPro = UserDefaults.standard.bool(forKey: Keys.getPro)
-    var isSoundEffect = UserDefaults.standard.bool(forKey: Keys.soundSettings)
+    var isPro = UserDefaults.standard.bool(forKey: Constants.Keys.getPro)
+    var isSoundEffect = UserDefaults.standard.bool(forKey: Constants.Keys.soundSettings)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Settings"
+//        navigationItem.title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.backgroundColor = UIColor.systemBackground
         tableView.isScrollEnabled = false
@@ -48,7 +48,7 @@ class SettingsVC: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToStatistics"{
+        if segue.identifier == Constants.Segues.goToStatistics{
               let secondView = segue.destination as! StatisticsVC
             secondView.title = "Statistics"
             
@@ -58,15 +58,15 @@ class SettingsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath == [0,1] {
-            performSegue(withIdentifier: "goToStatistics", sender: self)
+            performSegue(withIdentifier: Constants.Segues.goToStatistics, sender: self)
         } else if indexPath == [0,0] {
-            if !UserDefaults.standard.bool(forKey: Keys.getPro) {
-                performSegue(withIdentifier: "goToGetPro", sender: self)
+            if !UserDefaults.standard.bool(forKey: Constants.Keys.getPro) {
+                performSegue(withIdentifier: Constants.Segues.goToGetPro, sender: self)
             }
         } else if indexPath == [1,0] {
             isSoundEffect.toggle()
             print("DEBUG: sound effect status: \(isSoundEffect)")
-            UserDefaults.standard.set(isSoundEffect, forKey: Keys.soundSettings)
+            UserDefaults.standard.set(isSoundEffect, forKey: Constants.Keys.soundSettings)
             tableView.reloadRows(at: [indexPath], with: .none)
             
         } else if indexPath == [2,1] {
@@ -74,9 +74,9 @@ class SettingsVC: UITableViewController {
                 SKStoreReviewController.requestReview(in: scene)
             }
         } else if indexPath == [2,2] {
-            performSegue(withIdentifier: "goToContact", sender: self)
+            performSegue(withIdentifier: Constants.Segues.goToContacts, sender: self)
         } else if indexPath == [2,0] {
-            performSegue(withIdentifier: "goToAboutGame", sender: self)
+            performSegue(withIdentifier: Constants.Segues.goToAboutGame, sender: self)
         }
     }
     

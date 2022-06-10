@@ -26,15 +26,25 @@ class OnlineRankingsVC: LODataLoadingVC {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
         collectionView.collectionViewLayout = UIHelper.createOnlineRecordVCLayout()
-        collectionView.register(UINib(nibName: "LOOnlineRecordCell", bundle: nil), forCellWithReuseIdentifier: LOOnlineRecordCell.reuseID)
+        collectionView.register(UINib(nibName: Constants.CellReuseID.onlineRecordCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.onlineRecordCell)
         
         loadRecords()
     }
     
     @IBAction func infoButtonAction(_ sender: UIBarButtonItem) {
+        loadRankingRefreshMessage()
         
     }
     
+    func loadRankingRefreshMessage() {
+        FirebaseManager.shared.loadRankingRefreshMessage { (refreshMessage, error) in
+            guard let error = error else {
+                self.presentAlertWithOk(title: refreshMessage.title, message: refreshMessage.message)
+                return
+            }
+            self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
+        }
+    }
     
     func loadRecords() {
         print("DEBUG: Online load records work")
@@ -61,7 +71,7 @@ class OnlineRankingsVC: LODataLoadingVC {
     
     func makeDataSource() -> UICollectionViewDiffableDataSource<Section,RecordModel> {
         let dataSource = UICollectionViewDiffableDataSource<Section,RecordModel>(collectionView: collectionView) { collectionView, indexPath, record in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LOOnlineRecordCell.reuseID, for: indexPath) as! LOOnlineRecordCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.onlineRecordCell, for: indexPath) as! LOOnlineRecordCell
             cell.set(record: record, rankValue: indexPath.row + 1)
             return cell
         }

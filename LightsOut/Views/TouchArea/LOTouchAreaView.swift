@@ -24,24 +24,18 @@ class LOTouchAreaView: UIView {
         super.init(frame: frame)
     }
     
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
-
     }
-    
     
     private func configure() {
         layer.cornerRadius = 40
-        
         configureStackView()
         configureHandleGesture()
     }
     
-
     private func configureStackView() {
-        
         touchAreaTopLabel.text = "Tap and hold to start!"
         touchAreaBottomLabel.text = "When all lights off, release as quickly as you can."
         
@@ -57,10 +51,7 @@ class LOTouchAreaView: UIView {
         NSLayoutConstraint.activate([stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
                                      stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
                                      stackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10)])
-        
-
     }
-    
     
     private func configureHandleGesture() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
@@ -68,9 +59,8 @@ class LOTouchAreaView: UIView {
     }
     
     @objc func handleLongPress(sender: UILongPressGestureRecognizer){
-        let lifeCount = UserDefaults.standard.integer(forKey: "lifeCount")
+        let lifeCount = UserDefaults.standard.integer(forKey: Constants.Keys.lifeCount)
        
-        
         if sender.state == .began{
             if lifeCount <= 0 {
                 let generator = UINotificationFeedbackGenerator()

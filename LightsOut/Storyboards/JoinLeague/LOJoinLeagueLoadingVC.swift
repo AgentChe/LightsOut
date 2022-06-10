@@ -22,9 +22,7 @@ class LOJoinLeagueLoadingVC: UIViewController {
         super.viewDidLoad()
         joinLeague()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.55)
-        
     }
-    
     
     func joinLeague() {
         guard let leagueNumber = leagueNumber else {
@@ -38,21 +36,19 @@ class LOJoinLeagueLoadingVC: UIViewController {
         }
 
         FirebaseManager.shared.joinLeague(leagueNumber: leagueNumber, leaguePassword: leaguePassword, userUid: userUid) { error in
-            if let error = error {
-                print("DEBUG: \(error.localizedDescription)")
-                self.alertTitle = "Error"
-                self.alertMessage = error.localizedDescription
-                self.performSegue(withIdentifier: "goToAlert", sender: self)
+            if error != nil {
+                self.alertTitle = LocalizedErrorMessages.somethingWentWrong
+                self.alertMessage = LocalizedErrorMessages.cantJoinLeague
+                self.performSegue(withIdentifier: Constants.Segues.goToAlert, sender: self)
             } else {
-                print("DEBUG: Successfully joined")
-                self.performSegue(withIdentifier: "goToConfirmationJoin", sender: self)
+                self.performSegue(withIdentifier: Constants.Segues.goToConfirmation, sender: self)
             }
             
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToAlert"{
+        if segue.identifier == Constants.Segues.goToAlert{
               let secondView = segue.destination as! LOAlertVC
             secondView.alertTitle = alertTitle
             secondView.alertMessage = alertMessage

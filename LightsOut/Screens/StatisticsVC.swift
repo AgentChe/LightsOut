@@ -22,7 +22,7 @@ class StatisticsVC: LODataLoadingVC {
         title = "Statistics"
         boxViewForLabel.layer.cornerRadius = 10
         
-        avarageLabel.text = "You avarage reaction time: \(UserDefaults.standard.double(forKey: Keys.avarageReactionTime).convertThreePointString()) s"
+        avarageLabel.text = "You avarage reaction time: \(UserDefaults.standard.double(forKey: Constants.Keys.avarageReactionTime).convertThreePointString()) s"
         containerViewForChart.backgroundColor = .secondarySystemBackground
         containerViewForChart.layer.cornerRadius = 10
         chartView.backgroundColor = .clear

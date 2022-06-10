@@ -37,7 +37,7 @@ class LightsOutVC: UIViewController {
     var reactionCounterTimer: Timer?
     var isLifeTimeOn: Bool = false {
         didSet {
-            defaults.set(isLifeTimeOn, forKey: "isTimerOn")
+            defaults.set(isLifeTimeOn, forKey: Constants.Keys.isTimerOn)
         }
     }
     var reactionTimeCounter = 0.0
@@ -45,10 +45,10 @@ class LightsOutVC: UIViewController {
     var lifeCount: Int = 0 {
         didSet{
             print("DEBUG: Lifecount changed")
-            defaults.set(lifeCount, forKey: "lifeCount")
+            defaults.set(lifeCount, forKey: Constants.Keys.lifeCount)
             lifeView.updateLifeLabel(with: lifeCount)
-            isLifeTimeOn = defaults.bool(forKey: "isTimerOn")
-            lifeFillDate = defaults.double(forKey: "lifeFillDate")
+            isLifeTimeOn = defaults.bool(forKey: Constants.Keys.isTimerOn)
+            lifeFillDate = defaults.double(forKey: Constants.Keys.lifeFillDate)
             if lifeCount <= 0 {
                 DispatchQueue.main.async {
                     self.instructionView.changeLabel(with: "You have no life.")
@@ -62,7 +62,7 @@ class LightsOutVC: UIViewController {
                     isLifeTimeOn = true
                     lifeZeroDate = Date().timeIntervalSince1970
                     lifeFillDate = Date().timeIntervalSince1970 + 60
-                    defaults.set(lifeFillDate, forKey: "lifeFillDate")
+                    defaults.set(lifeFillDate, forKey: Constants.Keys.lifeFillDate)
                     lifeTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTestTimer), userInfo: nil, repeats: true)
                 } else {
                     print("Life timer Zaten acik")
@@ -104,7 +104,7 @@ class LightsOutVC: UIViewController {
         lifeView.lifeViewDelegate = self
         lights = [light0,light1,light2,light3,light4]
         
-        lifeCount = defaults.integer(forKey: "lifeCount")
+        lifeCount = defaults.integer(forKey: Constants.Keys.lifeCount)
         
     }
     
@@ -115,7 +115,7 @@ class LightsOutVC: UIViewController {
     }
     
     func isPurchased() -> Bool {
-        let purchaseStatus = UserDefaults.standard.bool(forKey: Keys.getPro)
+        let purchaseStatus = UserDefaults.standard.bool(forKey: Constants.Keys.getPro)
         return purchaseStatus ? true : false
     }
     
@@ -184,7 +184,7 @@ class LightsOutVC: UIViewController {
     }
     
     func rateRequest() {
-        let count = UserDefaults.standard.integer(forKey: Keys.playCountKey)
+        let count = UserDefaults.standard.integer(forKey: Constants.Keys.playCountKey)
         print("DEBUG: \(count)")
         switch count {
         case 14:
@@ -221,7 +221,7 @@ extension LightsOutVC: LOTouchAreaDelegate {
             if !isPro! {
                 lifeCount -= 1
                 lifeView.lifeUpOrDownAnimation(lifeCase: .down)
-                defaults.set(lifeCount, forKey: "lifeCount")
+                defaults.set(lifeCount, forKey: Constants.Keys.lifeCount)
                 print("DEBUG: Lifecount down \(lifeCount)")
             }
             

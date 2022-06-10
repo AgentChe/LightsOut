@@ -39,7 +39,7 @@ class DatabaseManager {
     
     func createTableIfWasNotCreated(completed: @escaping(LOError?) -> Void) {
 //        recordsTable = Table("records")
-        let isDbCreated = UserDefaults.standard.bool(forKey: "isDbCreated")
+        let isDbCreated = UserDefaults.standard.bool(forKey: Constants.Keys.isDbCreated)
         if !isDbCreated {
             print("DEBUG: Table was not created so create table function works")
             do {
@@ -54,7 +54,7 @@ class DatabaseManager {
                     t.column(isOnline)
                 }))
                 
-                UserDefaults.standard.set(true, forKey: "isDbCreated")
+                UserDefaults.standard.set(true, forKey: Constants.Keys.isDbCreated)
                 completed(nil)
             } catch {
                 completed(.unableToCreateDatabase)

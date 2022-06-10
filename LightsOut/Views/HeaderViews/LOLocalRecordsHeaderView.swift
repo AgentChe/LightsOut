@@ -15,7 +15,6 @@ class LOLocalRecordsHeaderView: UICollectionReusableView {
     
     weak var headerViewDelegate: LOLocalRecordsHeaderViewDelegate?
     
-    static let reuseId = "headerView"
     @IBOutlet var textLabel: UILabel!
 
     override func awakeFromNib() {

@@ -6,11 +6,9 @@
 //
 
 import UIKit
-import Network
 
 class LeagueVC: LODataLoadingVC {
     
-    let monitor = NWPathMonitor()
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -44,8 +42,7 @@ class LeagueVC: LODataLoadingVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let queue = DispatchQueue.global(qos: .background)
-        monitor.start(queue: queue)
+
         
         print("DEBUG: LEagueVC viewdidlload")
         navigationItem.title = "League"
@@ -55,11 +52,11 @@ class LeagueVC: LODataLoadingVC {
         collectionView.delegate = self
         collectionView.isScrollEnabled = false
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId) //This will be turned ad cell.
-        collectionView.register(UINib(nibName: "LOFullSizeCell", bundle: nil), forCellWithReuseIdentifier: LOFullSizeCell.reuseID)
-        collectionView.register(UINib(nibName: "LOSquareCell", bundle: nil), forCellWithReuseIdentifier: LOSquareCell.reuseID)
+        collectionView.register(UINib(nibName: Constants.CellReuseID.fullSizeCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.fullSizeCell)
+        collectionView.register(UINib(nibName: Constants.CellReuseID.squareCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.squareCell)
         
-        collectionView.register(UINib(nibName: "LOLeaguesHeaderView", bundle: nil), forSupplementaryViewOfKind: LOLeaguesHeaderView.categoryHeaderId, withReuseIdentifier: LOLeaguesHeaderView.reuseId)
-        checkConnectionAndShowAlert(withMessage: .unableToGetAllRecords)
+        collectionView.register(UINib(nibName: Constants.HeaderReuseID.leaguesHeader, bundle: nil), forSupplementaryViewOfKind: Constants.HeaderReuseID.leagueCategoryHeader, withReuseIdentifier: Constants.HeaderReuseID.leaguesHeader)
+        
         authIfUserNotLogin()
         createObservers()
     }
@@ -69,14 +66,9 @@ class LeagueVC: LODataLoadingVC {
         
     }
     
-    func checkConnectionAndShowAlert(withMessage message: LOError) {
-        if monitor.currentPath.status == .unsatisfied {
-            print("DEBUG: Internet yok error")
-        }
-    }
     
     func isPurchased() -> Bool {
-        let purchaseStatus = UserDefaults.standard.bool(forKey: Keys.getPro)
+        let purchaseStatus = UserDefaults.standard.bool(forKey: Constants.Keys.getPro)
         return purchaseStatus ? true : false
     }
     
@@ -153,7 +145,7 @@ extension LeagueVC: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LOFullSizeCell.reuseID, for: indexPath) as! LOFullSizeCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.fullSizeCell, for: indexPath) as! LOFullSizeCell
             if indexPath.row == 0 {
                 cell.setLabel(with: "Your Records")
             } else {
@@ -166,7 +158,7 @@ extension LeagueVC: UICollectionViewDataSource {
             cell.backgroundColor = .systemRed
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LOSquareCell.reuseID, for: indexPath) as! LOSquareCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.squareCell, for: indexPath) as! LOSquareCell
             if friendsLeague.isEmpty {
                 cell.set(with: "Add a league", leagueId: "")
             } else {
@@ -185,7 +177,7 @@ extension LeagueVC: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LOLeaguesHeaderView.reuseId, for: indexPath) as! LOLeaguesHeaderView
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.HeaderReuseID.leaguesHeader, for: indexPath) as! LOLeaguesHeaderView
         header.delegate = self
         return header
     }
@@ -211,12 +203,12 @@ extension LeagueVC: UICollectionViewDelegate {
                     let ac = UIAlertController(title: "Add a league", message: "You can create a league or join a league", preferredStyle: .alert)
                     ac.addAction(UIAlertAction(title: "Create", style: .default, handler: { action in
                         if self.userUid != "" {
-                            self.performSegue(withIdentifier: "goToCreateLeague", sender: self)
+                            self.performSegue(withIdentifier: Constants.Segues.goToCreateLeague, sender: self)
                         }
                     }))
                     ac.addAction(UIAlertAction(title: "Join", style: .default,handler: { action in
                         if self.userUid != "" {
-                            self.performSegue(withIdentifier: "goToJoinLeague", sender: self)
+                            self.performSegue(withIdentifier: Constants.Segues.goToJoinLeague, sender: self)
                         }
                     }))
                     ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -225,7 +217,7 @@ extension LeagueVC: UICollectionViewDelegate {
                     let ac = UIAlertController(title: "Get PRO", message: "You can access the friends league if you will be a PRO", preferredStyle: .alert)
                     ac.addAction(UIAlertAction(title: "Get PRO", style: .default, handler: { action in
                         if self.userUid != "" {
-                            self.performSegue(withIdentifier: "goToGetPro", sender: self)
+                            self.performSegue(withIdentifier: Constants.Segues.goToGetPro, sender: self)
                         }
                     }))
                     ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -250,13 +242,13 @@ extension LeagueVC: LOLeaguesHeaderViewDelegate {
     func didTapCreateButton() {
         
         if userUid != "" && isPro == true {
-            performSegue(withIdentifier: "goToCreateLeague", sender: self)
+            performSegue(withIdentifier: Constants.Segues.goToCreateLeague, sender: self)
             
         } else if isPro == false {
             let ac = UIAlertController(title: "Get PRO", message: "You can access the friends league if you will be a PRO", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Get PRO", style: .default, handler: { action in
                 if self.userUid != "" {
-                    self.performSegue(withIdentifier: "goToGetPro", sender: self)
+                    self.performSegue(withIdentifier: Constants.Segues.goToGetPro, sender: self)
                 }
             }))
             ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -268,24 +260,25 @@ extension LeagueVC: LOLeaguesHeaderViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToCreateLeague"{
+        if segue.identifier == Constants.Segues.goToCreateLeague{
             let secondView = segue.destination as! LOCreateLeagueVC
             secondView.userUid = userUid
             secondView.randomLeaagueID = Int.random(in: 10000...99999)
-        } else if segue.identifier == "goToJoinLeague" {
+        } else if segue.identifier == Constants.Segues.goToJoinLeague {
             let secondView = segue.destination as! LOJoinLeagueVC
             secondView.userUid = userUid
         }
     }
     
+    
     func didTapJoinButton() {
         if userUid != "" && isPro == true  {
-            performSegue(withIdentifier: "goToJoinLeague", sender: self)
+            performSegue(withIdentifier: Constants.Segues.goToJoinLeague, sender: self)
         } else if isPro == false {
             let ac = UIAlertController(title: "Get PRO", message: "You can access the friends league if you will be a PRO", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Get PRO", style: .default, handler: { action in
                 if self.userUid != "" {
-                    self.performSegue(withIdentifier: "goToGetPro", sender: self)
+                    self.performSegue(withIdentifier: Constants.Segues.goToGetPro, sender: self)
                 }
             }))
             ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))

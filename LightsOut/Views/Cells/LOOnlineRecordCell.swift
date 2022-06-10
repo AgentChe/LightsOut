@@ -8,8 +8,7 @@
 import UIKit
 
 class LOOnlineRecordCell: UICollectionViewCell {
-    static let reuseID = "LOOnlineRecordCell"
-    
+
     @IBOutlet var numberImageView: UIImageView!
     @IBOutlet var topLabel: UILabel!
     @IBOutlet var bottomLabel: UILabel!
@@ -19,7 +18,6 @@ class LOOnlineRecordCell: UICollectionViewCell {
         layer.cornerRadius = 10
     }
     
-    //.convertThreePointString()
     func set(record: RecordModel, rankValue: Int) {
         numberImageView.image = UIImage(systemName: "\(rankValue).circle")
         topLabel.text = "\(record.recordTime) " + "seconds" + " - \(record.name!)"

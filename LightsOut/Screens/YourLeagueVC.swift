@@ -45,8 +45,8 @@ class YourLeagueVC: LODataLoadingVC {
         super.viewDidLoad()
         title = league?.leagueName
         collectionView.collectionViewLayout = UIHelper.createOnlineRecordVCLayout(isHeaderOn: true)
-        collectionView.register(UINib(nibName: "LOOnlineRecordCell", bundle: nil), forCellWithReuseIdentifier: LOOnlineRecordCell.reuseID)
-        collectionView.register(UINib(nibName: "YourLeagueHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: YourLeagueHeaderView.reuseId)
+        collectionView.register(UINib(nibName: Constants.CellReuseID.onlineRecordCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.onlineRecordCell)
+        collectionView.register(UINib(nibName: Constants.HeaderReuseID.yourLeagueHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Constants.HeaderReuseID.yourLeagueHeader)
         
     }
     
@@ -91,7 +91,7 @@ class YourLeagueVC: LODataLoadingVC {
     
     func makeDataSource() -> UICollectionViewDiffableDataSource<Section,RecordModel> {
         let dataSource = UICollectionViewDiffableDataSource<Section,RecordModel>(collectionView: collectionView) { collectionView, indexPath, record in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LOOnlineRecordCell.reuseID, for: indexPath) as! LOOnlineRecordCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.onlineRecordCell, for: indexPath) as! LOOnlineRecordCell
             cell.set(record: record, rankValue: indexPath.row + 1)
             return cell
         }
@@ -101,7 +101,7 @@ class YourLeagueVC: LODataLoadingVC {
                 return nil
             }
         
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: YourLeagueHeaderView.reuseId, for: indexPath) as? YourLeagueHeaderView
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.HeaderReuseID.yourLeagueHeader, for: indexPath) as? YourLeagueHeaderView
             
             view?.headerViewDelegate = self
             return view
@@ -111,14 +111,14 @@ class YourLeagueVC: LODataLoadingVC {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToAddRecordsToLeague" {
+        if segue.identifier == Constants.Segues.goToAddRecordsToLeague {
             let secondView = segue.destination as! AddRecordsVC
             secondView.leagueNumber = league?.leagueId
         }
     }
     
     @IBAction func addRecordButton(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "goToAddRecordsToLeague", sender: self)
+        performSegue(withIdentifier: Constants.Segues.goToAddRecordsToLeague, sender: self)
         
     }
 

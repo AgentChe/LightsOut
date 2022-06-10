@@ -108,7 +108,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             return
         }
         if transaction.payment.productIdentifier == productBeingPurchasedID {
-            UserDefaults.standard.set(true, forKey: Keys.getPro)
+            UserDefaults.standard.set(true, forKey: Constants.Keys.getPro)
             
             DispatchQueue.main.async {
                 self.delegate?.purchaseDidSucceed()
@@ -123,7 +123,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     }
     
     private func handleRestore(_ transaction: SKPaymentTransaction) {
-        UserDefaults.standard.set(true, forKey: Keys.getPro)
+        UserDefaults.standard.set(true, forKey: Constants.Keys.getPro)
         SKPaymentQueue.default().finishTransaction(transaction)
         DispatchQueue.main.async {
             self.delegate?.restoreDidSucceed()

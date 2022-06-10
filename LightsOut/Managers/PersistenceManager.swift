@@ -13,8 +13,8 @@ struct PersistenceManager {
     
     
     func playCount() {
-        var count = UserDefaults.standard.integer(forKey: Keys.playCountKey )
+        var count = UserDefaults.standard.integer(forKey: Constants.Keys.playCountKey )
         count += 1
-        UserDefaults.standard.set(count, forKey: Keys.playCountKey)
+        UserDefaults.standard.set(count, forKey: Constants.Keys.playCountKey)
     }
 }

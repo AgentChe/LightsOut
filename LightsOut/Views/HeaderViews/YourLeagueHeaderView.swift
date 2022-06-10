@@ -14,8 +14,6 @@ class YourLeagueHeaderView: UICollectionReusableView {
 
     weak var headerViewDelegate: YourLeagueHeaderViewDelegate?
     
-    static let reuseId = "headerView"
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10

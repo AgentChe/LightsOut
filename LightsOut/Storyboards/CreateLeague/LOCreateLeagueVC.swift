@@ -152,7 +152,7 @@ class LOCreateLeagueVC: UIViewController {
         self.view.endEditing(true)
         if leagueIdIsOk {
             
-            self.performSegue(withIdentifier: "goToLoading", sender: self)
+            self.performSegue(withIdentifier: Constants.Segues.goToLoading, sender: self)
         }
         
         

@@ -11,9 +11,6 @@ class LOFullSizeCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
-    static let reuseID = "LOLongSizeCell"
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10
@@ -21,8 +18,5 @@ class LOFullSizeCell: UICollectionViewCell {
 
     func setLabel(with titleText: String) {
         titleLabel.text = titleText
-
     }
-    
-    
 }

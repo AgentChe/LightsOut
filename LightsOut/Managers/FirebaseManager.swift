@@ -256,5 +256,26 @@ struct FirebaseManager {
         }
     }
     
+    func loadRankingRefreshMessage(completion: @escaping(RefreshMessage, Error?) -> Void) {
+        
+        var refreshMessage = RefreshMessage(title: "Info", message: "Info message")
+        
+        let languageSettings = "TR"//LocalizedStrings.languageSettings
+        
+        db.collection("refreshMessage_\(languageSettings)").getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(refreshMessage,error)
+            } else {
+                for document in snapshot!.documents {
+                    let title = document.data()["title"] as! String
+                    let message = document.data()["message"] as! String
+                    
+                    refreshMessage = RefreshMessage(title: title, message: message)
+                }
+                completion(refreshMessage, error)
+            }
+        }
+    }
+    
 }
 
