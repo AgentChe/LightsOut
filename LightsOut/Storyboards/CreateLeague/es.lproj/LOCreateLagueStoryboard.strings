@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "League Name"; ObjectID = "2o8-UK-dAs"; */
+"2o8-UK-dAs.text" = "Nombre de la liga";
+
+/* Class = "UITextField"; placeholder = "Min: 4, Max: 20 characters"; ObjectID = "9fK-qI-jDq"; */
+"9fK-qI-jDq.placeholder" = "Mín.: 4, Máx.: 20 caracteres";
+
+/* Class = "UILabel"; text = "Create League"; ObjectID = "GwP-4v-WVY"; */
+"GwP-4v-WVY.text" = "Crear liga";
+
+/* Class = "UILabel"; text = "Create League"; ObjectID = "eRN-qN-ZfW"; */
+"eRN-qN-ZfW.text" = "Crear liga";
+
+/* Class = "UIButton"; configuration.title = "OK"; ObjectID = "ehS-mP-WiF"; */
+"ehS-mP-WiF.configuration.title" = "OK";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ehS-mP-WiF"; */
+"ehS-mP-WiF.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Your friends can join league with this number and password."; ObjectID = "hKu-xg-n4E"; */
+"hKu-xg-n4E.text" = "Tus amigos pueden unirse a la liga con este número y contraseña.";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "heh-jt-9q6"; */
+"heh-jt-9q6.text" = "Contraseña";
+
+/* Class = "UITextField"; placeholder = "Enter 4-digit number"; ObjectID = "hlG-u4-Wlc"; */
+"hlG-u4-Wlc.placeholder" = "Ingrese un número de 4 dígitos";
+
+/* Class = "UILabel"; text = "Password: 2343"; ObjectID = "opa-nZ-uYf"; */
+"opa-nZ-uYf.text" = "Contraseña: 2343";
+
+/* Class = "UIButton"; configuration.title = "Create"; ObjectID = "ovY-M8-UJ6"; */
+"ovY-M8-UJ6.configuration.title" = "Crear";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ovY-M8-UJ6"; */
+"ovY-M8-UJ6.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Cancel"; ObjectID = "qvt-x0-iCa"; */
+"qvt-x0-iCa.configuration.title" = "Cancelar";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "qvt-x0-iCa"; */
+"qvt-x0-iCa.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "00000"; ObjectID = "uaB-hd-Mgh"; */
+"uaB-hd-Mgh.text" = "00000";

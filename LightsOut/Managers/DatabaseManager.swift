@@ -29,7 +29,6 @@ class DatabaseManager {
     func connectDatabase(completion: @escaping(LOError?) -> Void) {
         do {
             db = try Connection("\(path)/records.sqlite3")
-            print(path)
             completion(nil)
         } catch {
             completion(.unableToConnectDatabase)
@@ -38,10 +37,8 @@ class DatabaseManager {
     
     
     func createTableIfWasNotCreated(completed: @escaping(LOError?) -> Void) {
-//        recordsTable = Table("records")
         let isDbCreated = UserDefaults.standard.bool(forKey: Constants.Keys.isDbCreated)
         if !isDbCreated {
-            print("DEBUG: Table was not created so create table function works")
             do {
                 try db.run(recordsTable.create(block: { t in
                     t.column(id, primaryKey: true)

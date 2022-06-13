@@ -1,0 +1,90 @@
+/*
+  Localizable.strings
+  LightsOut
+
+  Created by Murat Baykor on 13.06.2022.
+  
+*/
+
+"Something went wrong" = "Algo salió mal";
+"Unable to complete your request. Please try again." = "No se pudo completar su solicitud. Vuelva a intentarlo.";
+"The app could not connect to the database. Please reopen the app." =  "La aplicación no pudo conectarse a la base de datos. Vuelva a abrir la aplicación.";
+"The database could not be created. Please reopen the app." = "No se pudo crear la base de datos. Vuelva a abrir la aplicación.";
+"The new records could not be saved." =  "No se pudieron guardar los nuevos registros.";
+"All records could not be retrieved from the database. Please try again." = "No se pudieron recuperar todos los registros de la base de datos. Vuelva a intentarlo.";
+"The record could not be deleted from the database." = "No se pudo eliminar el registro de la base de datos.";
+"The record could not be retrieved from the database." = "No se pudo recuperar el registro de la base de datos.";
+"The record could not be updated in the database." = "No se pudo actualizar el registro en la base de datos.";
+"The average reaction time could not be calculated for the chart." = "No se pudo calcular el tiempo de reacción promedio para el gráfico.";
+"The password is wrong. Please check it and try again." = "La contraseña es incorrecta. Compruébela y vuelva a intentarlo.";
+"The league could not be found. Please check the league number and try again." = "No se pudo encontrar la liga. Verifique el número de la liga y vuelva a intentarlo.";
+"You could not join this league. Please try again." =  "No pudiste unirte a esta liga. Inténtalo de nuevo.";
+"Check your password." = "Revise su contraseña.";
+"You are already in this league." = "Ya estás en esta liga.";
+"The league could not be created. Please try again" = "No se pudo crear la liga. Inténtalo de nuevo";
+"Done" = "Terminado";
+"Cancel" = "Cancelar";
+"Next" = "Siguiente";
+"Delete" = "Eliminar";
+"Error" = "Error";
+"Create" = "Crear";
+"Join" = "Unirse";
+"OK" = "OK";
+"Choose Action" = "Elegir acción";
+"Save to Online Rankings" = "Guardar en clasificaciones en línea";
+"Get PRO" = "Obtener PRO";
+"If you become a PRO you can access the friends league" = "Si te haces PRO puedes acceder a la liga de amigos";
+"Contact / Feedback" = "Contacto / Comentarios";
+"Your message was successfully sent." = "Su mensaje fue enviado con éxito.";
+"Your message could not be sent." = "Su mensaje no pudo ser enviado.";
+"You can not send an email. Check your settings." = "No puede enviar un correo electrónico. Verifique su configuración.";
+"Quit League" = "Salir de la Liga";
+"You are the owner of this league. If you quit, the league will be deleted. Are you sure?" = "Eres el dueño de esta liga. Si sales, la liga será eliminada. ¿Estás seguro?";
+"Delete and quit" = "Delete and quit";
+"If you quit the league, your records will be deleted from the league. Are you sure?" = "Si abandonas la liga, tus registros se eliminarán de la liga. ¿Estás seguro?";
+"Quit" = "Salir";
+"Delete Records" = "Eliminar registros";
+"You can delete all records in the league or just your own." = "Puedes borrar todos los récords de la liga o solo el tuyo.";
+"Delete All" = "Borrar todo";
+"Delete Owns" = "Eliminar propiedad";
+"Your record will be deleted from the league" = "Tu récord será eliminado de la liga";
+"Your Records" = "Sus Registros";
+"Online Rankings" = "Clasificaciones en línea";
+"Add a league" = "Agregar una liga";
+"You can create a league or join a league" = "Puedes crear una liga o unirte a una liga";
+"seconds" = "segundos";
+"Your average reaction time:" = "Su tiempo medio de reacción:" ;
+"Tap and hold to start!" = "¡Toque y mantenga presionado para comenzar!";
+"When all lights are off, release as quickly as you can." = "Cuando todas las luces estén apagadas, suelta lo más rápido que puedas.";
+"You have no life." = "No tienes vida.";
+"Wait until all lights are OUT!" = "¡Espere hasta que todas las luces se APAGUEN!";
+"Wait until all lights are ON!" = "¡Espere hasta que todas las luces estén ENCENDIDAS!";
+"Your reaction time:" = "Tu tiempo de reacción:";
+"Fail! Try again!" = "¡Falla! ¡Inténtalo de nuevo!";
+"Release" = "Liberar";
+"Game Settings" = "Configuración del juego";
+"About" = "Acerca de";
+"You are a pro" = "Eres un profesional";
+"You have unlimited life and access to friend leagues. No ads." =  "Tienes vida ilimitada y acceso a ligas de amigos. Sin publicidad.";
+"Become a PRO!" = "¡Conviértete en PRO!";
+"Remove ads and access friends leagues" = "Eliminar anuncios y acceder a ligas de amigos";
+"Statistics" = "Estadísticas";
+"Your reaction time records and progression" = "Sus registros de tiempo de reacción y progresión";
+"Sound Effect" = "Efecto de sonido";
+"On" = "Encendido";
+"Off" = "Kapali";
+"About Game" = "Acerca del juego";
+"Rate on the App Store" = "Valorar en App Store";
+"Contact / Feedback" = "Contacto/Comentarios";
+"Your progression by last week (seconds)" = "Su progresión en la última semana (segundos)";
+"Enter your feedback here..." = "Ingrese sus comentarios aquí...";
+"No Records?\n Add records with the add button" = "¿Sin registros?\n Agregar registros con el botón Agregar";
+"No Records?\n Go to the Lights Out screen and test your reaction time." = "¿Sin registros?\n Vaya a la pantalla Lights Out y pruebe su tiempo de reacción.";
+"Your process is not completed. Please try again." = "Su proceso no se ha completado. Vuelva a intentarlo.";
+"You don't have permission to buy. Please check your settings." = "No tienes permiso para comprar. Por favor revisa tu configuración.";
+"Your restore process is not completed. Please try again." = "Su proceso de restauración no se ha completado. Vuelva a intentarlo.";
+"PRO option could not be purchasable. Please try again later." = "La opción PRO no se pudo comprar. Vuelva a intentarlo más tarde.";
+"Check your internet connection" = "Revise su conexión a Internet";
+
+
+

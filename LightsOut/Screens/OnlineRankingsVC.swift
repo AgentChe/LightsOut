@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class OnlineRankingsVC: LODataLoadingVC {
 
     @IBOutlet var collectionView: UICollectionView!

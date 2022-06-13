@@ -7,19 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4909185DCD44C67D06BF705A /* Pods_LightsOut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4A4C52EE7E4842B3FDD436 /* Pods_LightsOut.framework */; };
+		B62B039A2857155900C0D11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62B039C2857155900C0D11E /* Main.storyboard */; };
+		B62B03A5285716EF00C0D11E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B62B03A7285716EF00C0D11E /* Localizable.strings */; };
+		B66D291D2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D291F2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard */; };
+		B66D29262857560C002CAD00 /* LOCreateLagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D29282857560C002CAD00 /* LOCreateLagueStoryboard.storyboard */; };
+		B66D292D2857568E002CAD00 /* LOJoinLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D292F2857568E002CAD00 /* LOJoinLeagueStoryboard.storyboard */; };
+		B66D2934285756EB002CAD00 /* LOAddNameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D2936285756EB002CAD00 /* LOAddNameStoryboard.storyboard */; };
+		B66D293C28575BF8002CAD00 /* LOAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66D293B28575BF8002CAD00 /* LOAudioPlayer.swift */; };
+		B66D293E28575C1C002CAD00 /* beep2.wav in Resources */ = {isa = PBXBuildFile; fileRef = B66D293D28575C1C002CAD00 /* beep2.wav */; };
+		B66D294228575DF0002CAD00 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = B66D294128575DF0002CAD00 /* start.wav */; };
+		B66D294328575E3C002CAD00 /* LOLeaguesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66D294528575E3C002CAD00 /* LOLeaguesHeaderView.xib */; };
+		B66D294A28575EB7002CAD00 /* YourLeagueHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66D294C28575EB7002CAD00 /* YourLeagueHeaderView.xib */; };
 		B6A7EA6028520FEE003F7852 /* YourLeagueHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A7EA5E28520FEE003F7852 /* YourLeagueHeaderView.swift */; };
-		B6A7EA6128520FEE003F7852 /* YourLeagueHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A7EA5F28520FEE003F7852 /* YourLeagueHeaderView.xib */; };
 		B6B702FB2850CD07003D5AD3 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B702FA2850CD07003D5AD3 /* FeedbackVC.swift */; };
 		B6BDFA73285079A300F805A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA72285079A300F805A5 /* AppDelegate.swift */; };
 		B6BDFA75285079A300F805A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA74285079A300F805A5 /* SceneDelegate.swift */; };
 		B6BDFA7C285079A500F805A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFA7B285079A500F805A5 /* Assets.xcassets */; };
 		B6BDFA7F285079A500F805A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFA7D285079A500F805A5 /* LaunchScreen.storyboard */; };
-		B6BDFA8F28507B1E00F805A5 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA8E28507B1E00F805A5 /* SQLite */; };
-		B6BDFA9228507B3500F805A5 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9128507B3500F805A5 /* Charts */; };
-		B6BDFA9528507BEB00F805A5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9428507BEB00F805A5 /* FirebaseAnalytics */; };
-		B6BDFA9728507BEB00F805A5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9628507BEB00F805A5 /* FirebaseAuth */; };
-		B6BDFA9928507BEB00F805A5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9828507BEB00F805A5 /* FirebaseFirestore */; };
-		B6BDFA9B28507BEB00F805A5 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6BDFA9A28507BEB00F805A5 /* FirebaseFirestoreSwift */; };
 		B6BDFA9D28507C0800F805A5 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA9C28507C0800F805A5 /* DatabaseManager.swift */; };
 		B6BDFA9F28507C1500F805A5 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFA9E28507C1500F805A5 /* FirebaseManager.swift */; };
 		B6BDFAA128507C4600F805A5 /* LOError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAA028507C4600F805A5 /* LOError.swift */; };
@@ -36,7 +41,6 @@
 		B6BDFABE28507EED00F805A5 /* LOLocalRecordsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFABC28507EED00F805A5 /* LOLocalRecordsHeaderView.swift */; };
 		B6BDFAC728507FA400F805A5 /* LOLocalRecordsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAC628507FA400F805A5 /* LOLocalRecordsHeaderView.xib */; };
 		B6BDFACC2850803500F805A5 /* LOLeaguesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFACA2850803500F805A5 /* LOLeaguesHeaderView.swift */; };
-		B6BDFACD2850803500F805A5 /* LOLeaguesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFACB2850803500F805A5 /* LOLeaguesHeaderView.xib */; };
 		B6BDFACF2850803E00F805A5 /* LOLifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFACE2850803E00F805A5 /* LOLifeView.swift */; };
 		B6BDFAD12850804500F805A5 /* LOSingleLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD02850804500F805A5 /* LOSingleLightView.swift */; };
 		B6BDFADB285080A500F805A5 /* LocalRecordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD2285080A400F805A5 /* LocalRecordsVC.swift */; };
@@ -48,20 +52,15 @@
 		B6BDFAE1285080A500F805A5 /* YourLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD8285080A500F805A5 /* YourLeagueVC.swift */; };
 		B6BDFAE2285080A500F805A5 /* LeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAD9285080A500F805A5 /* LeagueVC.swift */; };
 		B6BDFAE3285080A500F805A5 /* GetProVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFADA285080A500F805A5 /* GetProVC.swift */; };
-		B6BDFAE5285080E500F805A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAE4285080E500F805A5 /* Main.storyboard */; };
 		B6BDFAE92850813A00F805A5 /* LOAddNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAE72850813900F805A5 /* LOAddNameVC.swift */; };
-		B6BDFAEA2850813A00F805A5 /* LOAddNameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAE82850813900F805A5 /* LOAddNameStoryboard.storyboard */; };
 		B6BDFAEE2850815400F805A5 /* LOAddNameForLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAEC2850815400F805A5 /* LOAddNameForLeagueVC.swift */; };
-		B6BDFAEF2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAED2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard */; };
 		B6BDFAF32850817700F805A5 /* LOAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAF12850817700F805A5 /* LOAlertVC.swift */; };
 		B6BDFAF42850817700F805A5 /* LOAlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAF22850817700F805A5 /* LOAlertStoryboard.storyboard */; };
 		B6BDFAF62850818200F805A5 /* LOChartAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAF52850818200F805A5 /* LOChartAxisValueFormatter.swift */; };
-		B6BDFAFC285081B700F805A5 /* LOCreateLagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFAF8285081B600F805A5 /* LOCreateLagueStoryboard.storyboard */; };
 		B6BDFAFD285081B700F805A5 /* LOCreatLeagueLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAF9285081B600F805A5 /* LOCreatLeagueLoadingVC.swift */; };
 		B6BDFAFE285081B700F805A5 /* LOCreatLeagueConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAFA285081B600F805A5 /* LOCreatLeagueConfirmationVC.swift */; };
 		B6BDFAFF285081B700F805A5 /* LOCreateLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFAFB285081B700F805A5 /* LOCreateLeagueVC.swift */; };
 		B6BDFB05285081CE00F805A5 /* LOJoinLeagueConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB01285081CE00F805A5 /* LOJoinLeagueConfirmationVC.swift */; };
-		B6BDFB06285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BDFB02285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard */; };
 		B6BDFB07285081CE00F805A5 /* LOJoinLeagueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB03285081CE00F805A5 /* LOJoinLeagueVC.swift */; };
 		B6BDFB08285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB04285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift */; };
 		B6BDFB0A285081E400F805A5 /* LODataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDFB09285081E400F805A5 /* LODataLoadingVC.swift */; };
@@ -86,8 +85,38 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A7A5F32A5E8F3A692C4FD5E /* Pods-LightsOut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightsOut.release.xcconfig"; path = "Target Support Files/Pods-LightsOut/Pods-LightsOut.release.xcconfig"; sourceTree = "<group>"; };
+		AA10CBC4C550529497968F61 /* Pods-LightsOut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightsOut.debug.xcconfig"; path = "Target Support Files/Pods-LightsOut/Pods-LightsOut.debug.xcconfig"; sourceTree = "<group>"; };
+		B62B03982857150200C0D11E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B62B03992857153700C0D11E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B62B039F2857156700C0D11E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B62B03A1285715E500C0D11E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		B62B03A2285715EC00C0D11E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		B62B03A6285716EF00C0D11E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B62B03A92857199C00C0D11E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B62B03AA285719B200C0D11E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B66D291E2857555B002CAD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LOAddNameForLeagueStoryboard.storyboard; sourceTree = "<group>"; };
+		B66D292328575567002CAD00 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LOAddNameForLeagueStoryboard.strings; sourceTree = "<group>"; };
+		B66D292528575596002CAD00 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LOAddNameForLeagueStoryboard.strings; sourceTree = "<group>"; };
+		B66D29272857560C002CAD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LOCreateLagueStoryboard.storyboard; sourceTree = "<group>"; };
+		B66D292A2857560F002CAD00 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LOCreateLagueStoryboard.strings; sourceTree = "<group>"; };
+		B66D292C2857563D002CAD00 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LOCreateLagueStoryboard.strings; sourceTree = "<group>"; };
+		B66D292E2857568E002CAD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LOJoinLeagueStoryboard.storyboard; sourceTree = "<group>"; };
+		B66D293128575690002CAD00 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LOJoinLeagueStoryboard.strings; sourceTree = "<group>"; };
+		B66D2933285756C0002CAD00 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LOJoinLeagueStoryboard.strings; sourceTree = "<group>"; };
+		B66D2935285756EB002CAD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LOAddNameStoryboard.storyboard; sourceTree = "<group>"; };
+		B66D2938285756F1002CAD00 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LOAddNameStoryboard.strings; sourceTree = "<group>"; };
+		B66D293A28575721002CAD00 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LOAddNameStoryboard.strings; sourceTree = "<group>"; };
+		B66D293B28575BF8002CAD00 /* LOAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOAudioPlayer.swift; sourceTree = "<group>"; };
+		B66D293D28575C1C002CAD00 /* beep2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep2.wav; sourceTree = "<group>"; };
+		B66D294128575DF0002CAD00 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
+		B66D294428575E3C002CAD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LOLeaguesHeaderView.xib; sourceTree = "<group>"; };
+		B66D294728575E41002CAD00 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LOLeaguesHeaderView.strings; sourceTree = "<group>"; };
+		B66D294928575E70002CAD00 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LOLeaguesHeaderView.strings; sourceTree = "<group>"; };
+		B66D294B28575EB7002CAD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/YourLeagueHeaderView.xib; sourceTree = "<group>"; };
+		B66D294E28575EBC002CAD00 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/YourLeagueHeaderView.strings; sourceTree = "<group>"; };
+		B66D295028575EC0002CAD00 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/YourLeagueHeaderView.strings; sourceTree = "<group>"; };
 		B6A7EA5E28520FEE003F7852 /* YourLeagueHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourLeagueHeaderView.swift; sourceTree = "<group>"; };
-		B6A7EA5F28520FEE003F7852 /* YourLeagueHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourLeagueHeaderView.xib; sourceTree = "<group>"; };
 		B6B702FA2850CD07003D5AD3 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		B6BDFA6F285079A300F805A5 /* LightsOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightsOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BDFA72285079A300F805A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +140,6 @@
 		B6BDFABC28507EED00F805A5 /* LOLocalRecordsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLocalRecordsHeaderView.swift; sourceTree = "<group>"; };
 		B6BDFAC628507FA400F805A5 /* LOLocalRecordsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOLocalRecordsHeaderView.xib; sourceTree = "<group>"; };
 		B6BDFACA2850803500F805A5 /* LOLeaguesHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOLeaguesHeaderView.swift; sourceTree = "<group>"; };
-		B6BDFACB2850803500F805A5 /* LOLeaguesHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LOLeaguesHeaderView.xib; sourceTree = "<group>"; };
 		B6BDFACE2850803E00F805A5 /* LOLifeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOLifeView.swift; sourceTree = "<group>"; };
 		B6BDFAD02850804500F805A5 /* LOSingleLightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOSingleLightView.swift; sourceTree = "<group>"; };
 		B6BDFAD2285080A400F805A5 /* LocalRecordsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalRecordsVC.swift; sourceTree = "<group>"; };
@@ -123,20 +151,15 @@
 		B6BDFAD8285080A500F805A5 /* YourLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourLeagueVC.swift; sourceTree = "<group>"; };
 		B6BDFAD9285080A500F805A5 /* LeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeagueVC.swift; sourceTree = "<group>"; };
 		B6BDFADA285080A500F805A5 /* GetProVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProVC.swift; sourceTree = "<group>"; };
-		B6BDFAE4285080E500F805A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B6BDFAE72850813900F805A5 /* LOAddNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOAddNameVC.swift; sourceTree = "<group>"; };
-		B6BDFAE82850813900F805A5 /* LOAddNameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOAddNameStoryboard.storyboard; sourceTree = "<group>"; };
 		B6BDFAEC2850815400F805A5 /* LOAddNameForLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOAddNameForLeagueVC.swift; sourceTree = "<group>"; };
-		B6BDFAED2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOAddNameForLeagueStoryboard.storyboard; sourceTree = "<group>"; };
 		B6BDFAF12850817700F805A5 /* LOAlertVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOAlertVC.swift; sourceTree = "<group>"; };
 		B6BDFAF22850817700F805A5 /* LOAlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOAlertStoryboard.storyboard; sourceTree = "<group>"; };
 		B6BDFAF52850818200F805A5 /* LOChartAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOChartAxisValueFormatter.swift; sourceTree = "<group>"; };
-		B6BDFAF8285081B600F805A5 /* LOCreateLagueStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOCreateLagueStoryboard.storyboard; sourceTree = "<group>"; };
 		B6BDFAF9285081B600F805A5 /* LOCreatLeagueLoadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOCreatLeagueLoadingVC.swift; sourceTree = "<group>"; };
 		B6BDFAFA285081B600F805A5 /* LOCreatLeagueConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOCreatLeagueConfirmationVC.swift; sourceTree = "<group>"; };
 		B6BDFAFB285081B700F805A5 /* LOCreateLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOCreateLeagueVC.swift; sourceTree = "<group>"; };
 		B6BDFB01285081CE00F805A5 /* LOJoinLeagueConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOJoinLeagueConfirmationVC.swift; sourceTree = "<group>"; };
-		B6BDFB02285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOJoinLeagueStoryboard.storyboard; sourceTree = "<group>"; };
 		B6BDFB03285081CE00F805A5 /* LOJoinLeagueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOJoinLeagueVC.swift; sourceTree = "<group>"; };
 		B6BDFB04285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOJoinLeagueLoadingVC.swift; sourceTree = "<group>"; };
 		B6BDFB09285081E400F805A5 /* LODataLoadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LODataLoadingVC.swift; sourceTree = "<group>"; };
@@ -159,6 +182,7 @@
 		B6DCD24828531C3E00725C1E /* RefreshMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshMessage.swift; sourceTree = "<group>"; };
 		B6DCD24A28531D1000725C1E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		B6DCD24C28531D5A00725C1E /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		DD4A4C52EE7E4842B3FDD436 /* Pods_LightsOut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightsOut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,23 +190,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6BDFA8F28507B1E00F805A5 /* SQLite in Frameworks */,
-				B6BDFA9228507B3500F805A5 /* Charts in Frameworks */,
-				B6BDFA9528507BEB00F805A5 /* FirebaseAnalytics in Frameworks */,
-				B6BDFA9928507BEB00F805A5 /* FirebaseFirestore in Frameworks */,
-				B6BDFA9728507BEB00F805A5 /* FirebaseAuth in Frameworks */,
-				B6BDFA9B28507BEB00F805A5 /* FirebaseFirestoreSwift in Frameworks */,
+				4909185DCD44C67D06BF705A /* Pods_LightsOut.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047B966F55A02030D4300D60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD4A4C52EE7E4842B3FDD436 /* Pods_LightsOut.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B0121449C00184C074F9A82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA10CBC4C550529497968F61 /* Pods-LightsOut.debug.xcconfig */,
+				6A7A5F32A5E8F3A692C4FD5E /* Pods-LightsOut.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B6BDFA66285079A300F805A5 = {
 			isa = PBXGroup;
 			children = (
 				B6BDFA71285079A300F805A5 /* LightsOut */,
 				B6BDFA70285079A300F805A5 /* Products */,
+				1B0121449C00184C074F9A82 /* Pods */,
+				047B966F55A02030D4300D60 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,12 +244,15 @@
 				B6BDFA86285079E100F805A5 /* Models */,
 				B6BDFA72285079A300F805A5 /* AppDelegate.swift */,
 				B6BDFA74285079A300F805A5 /* SceneDelegate.swift */,
-				B6BDFAE4285080E500F805A5 /* Main.storyboard */,
+				B62B039C2857155900C0D11E /* Main.storyboard */,
 				B6BDFA7B285079A500F805A5 /* Assets.xcassets */,
 				B6BDFA7D285079A500F805A5 /* LaunchScreen.storyboard */,
 				B6BDFA80285079A500F805A5 /* Info.plist */,
 				B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */,
 				B6BDFB2C2850924C00F805A5 /* Configuration.storekit */,
+				B62B03A7285716EF00C0D11E /* Localizable.strings */,
+				B66D293D28575C1C002CAD00 /* beep2.wav */,
+				B66D294128575DF0002CAD00 /* start.wav */,
 			);
 			path = LightsOut;
 			sourceTree = "<group>";
@@ -288,6 +329,7 @@
 				B6BDFB0B2850821F00F805A5 /* Constants.swift */,
 				B6BDFB202850838900F805A5 /* UIHelper.swift */,
 				B6DCD24C28531D5A00725C1E /* LocalizedStrings.swift */,
+				B66D293B28575BF8002CAD00 /* LOAudioPlayer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -330,9 +372,9 @@
 				B6BDFABC28507EED00F805A5 /* LOLocalRecordsHeaderView.swift */,
 				B6BDFAC628507FA400F805A5 /* LOLocalRecordsHeaderView.xib */,
 				B6BDFACA2850803500F805A5 /* LOLeaguesHeaderView.swift */,
-				B6BDFACB2850803500F805A5 /* LOLeaguesHeaderView.xib */,
+				B66D294528575E3C002CAD00 /* LOLeaguesHeaderView.xib */,
 				B6A7EA5E28520FEE003F7852 /* YourLeagueHeaderView.swift */,
-				B6A7EA5F28520FEE003F7852 /* YourLeagueHeaderView.xib */,
+				B66D294C28575EB7002CAD00 /* YourLeagueHeaderView.xib */,
 			);
 			path = HeaderViews;
 			sourceTree = "<group>";
@@ -340,7 +382,7 @@
 		B6BDFAE62850810900F805A5 /* AddNameToOnlineRecords */ = {
 			isa = PBXGroup;
 			children = (
-				B6BDFAE82850813900F805A5 /* LOAddNameStoryboard.storyboard */,
+				B66D2936285756EB002CAD00 /* LOAddNameStoryboard.storyboard */,
 				B6BDFAE72850813900F805A5 /* LOAddNameVC.swift */,
 			);
 			path = AddNameToOnlineRecords;
@@ -349,7 +391,7 @@
 		B6BDFAEB2850814000F805A5 /* AddNameToFriendsLeague */ = {
 			isa = PBXGroup;
 			children = (
-				B6BDFAED2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard */,
+				B66D291F2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard */,
 				B6BDFAEC2850815400F805A5 /* LOAddNameForLeagueVC.swift */,
 			);
 			path = AddNameToFriendsLeague;
@@ -367,7 +409,7 @@
 		B6BDFAF7285081A300F805A5 /* CreateLeague */ = {
 			isa = PBXGroup;
 			children = (
-				B6BDFAF8285081B600F805A5 /* LOCreateLagueStoryboard.storyboard */,
+				B66D29282857560C002CAD00 /* LOCreateLagueStoryboard.storyboard */,
 				B6BDFAFB285081B700F805A5 /* LOCreateLeagueVC.swift */,
 				B6BDFAFA285081B600F805A5 /* LOCreatLeagueConfirmationVC.swift */,
 				B6BDFAF9285081B600F805A5 /* LOCreatLeagueLoadingVC.swift */,
@@ -380,7 +422,7 @@
 			children = (
 				B6BDFB01285081CE00F805A5 /* LOJoinLeagueConfirmationVC.swift */,
 				B6BDFB04285081CE00F805A5 /* LOJoinLeagueLoadingVC.swift */,
-				B6BDFB02285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard */,
+				B66D292F2857568E002CAD00 /* LOJoinLeagueStoryboard.storyboard */,
 				B6BDFB03285081CE00F805A5 /* LOJoinLeagueVC.swift */,
 			);
 			path = JoinLeague;
@@ -408,9 +450,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6BDFA83285079A500F805A5 /* Build configuration list for PBXNativeTarget "LightsOut" */;
 			buildPhases = (
+				D852E2A9EE469D5C0049439C /* [CP] Check Pods Manifest.lock */,
 				B6BDFA6B285079A300F805A5 /* Sources */,
 				B6BDFA6C285079A300F805A5 /* Frameworks */,
 				B6BDFA6D285079A300F805A5 /* Resources */,
+				17C9EB854D8AC4550D282E0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,12 +462,6 @@
 			);
 			name = LightsOut;
 			packageProductDependencies = (
-				B6BDFA8E28507B1E00F805A5 /* SQLite */,
-				B6BDFA9128507B3500F805A5 /* Charts */,
-				B6BDFA9428507BEB00F805A5 /* FirebaseAnalytics */,
-				B6BDFA9628507BEB00F805A5 /* FirebaseAuth */,
-				B6BDFA9828507BEB00F805A5 /* FirebaseFirestore */,
-				B6BDFA9A28507BEB00F805A5 /* FirebaseFirestoreSwift */,
 			);
 			productName = LightsOut;
 			productReference = B6BDFA6F285079A300F805A5 /* LightsOut.app */;
@@ -451,12 +489,11 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
+				es,
 			);
 			mainGroup = B6BDFA66285079A300F805A5;
 			packageReferences = (
-				B6BDFA8D28507B1E00F805A5 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
-				B6BDFA9028507B3500F805A5 /* XCRemoteSwiftPackageReference "Charts" */,
-				B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B6BDFA70285079A300F805A5 /* Products */;
 			projectDirPath = "";
@@ -472,26 +509,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62B03A5285716EF00C0D11E /* Localizable.strings in Resources */,
 				B6BDFB192850824900F805A5 /* LOOnlineRecordCell.xib in Resources */,
 				B6BDFB1A2850824900F805A5 /* LOSquareCell.xib in Resources */,
 				B6BDFB272850875E00F805A5 /* GoogleService-Info.plist in Resources */,
 				B6BDFA7F285079A500F805A5 /* LaunchScreen.storyboard in Resources */,
-				B6BDFB06285081CE00F805A5 /* LOJoinLeagueStoryboard.storyboard in Resources */,
-				B6BDFAE5285080E500F805A5 /* Main.storyboard in Resources */,
-				B6BDFACD2850803500F805A5 /* LOLeaguesHeaderView.xib in Resources */,
+				B66D292D2857568E002CAD00 /* LOJoinLeagueStoryboard.storyboard in Resources */,
+				B66D294228575DF0002CAD00 /* start.wav in Resources */,
+				B62B039A2857155900C0D11E /* Main.storyboard in Resources */,
+				B66D294328575E3C002CAD00 /* LOLeaguesHeaderView.xib in Resources */,
 				B6BDFAC728507FA400F805A5 /* LOLocalRecordsHeaderView.xib in Resources */,
+				B66D293E28575C1C002CAD00 /* beep2.wav in Resources */,
 				B6BDFB1C2850824900F805A5 /* LOLocalRecordCell.xib in Resources */,
-				B6BDFAFC285081B700F805A5 /* LOCreateLagueStoryboard.storyboard in Resources */,
+				B66D29262857560C002CAD00 /* LOCreateLagueStoryboard.storyboard in Resources */,
 				B6BDFA7C285079A500F805A5 /* Assets.xcassets in Resources */,
-				B6BDFAEF2850815400F805A5 /* LOAddNameForLeagueStoryboard.storyboard in Resources */,
-				B6BDFAEA2850813A00F805A5 /* LOAddNameStoryboard.storyboard in Resources */,
+				B66D291D2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard in Resources */,
+				B66D2934285756EB002CAD00 /* LOAddNameStoryboard.storyboard in Resources */,
 				B6BDFB1D2850824900F805A5 /* LOFullSizeCell.xib in Resources */,
 				B6BDFAF42850817700F805A5 /* LOAlertStoryboard.storyboard in Resources */,
-				B6A7EA6128520FEE003F7852 /* YourLeagueHeaderView.xib in Resources */,
+				B66D294A28575EB7002CAD00 /* YourLeagueHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17C9EB854D8AC4550D282E0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightsOut/Pods-LightsOut-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightsOut/Pods-LightsOut-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LightsOut/Pods-LightsOut-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D852E2A9EE469D5C0049439C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LightsOut-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B6BDFA6B285079A300F805A5 /* Sources */ = {
@@ -511,6 +593,7 @@
 				B6BDFB1F2850824900F805A5 /* LOSquareCell.swift in Sources */,
 				B6BDFAFD285081B700F805A5 /* LOCreatLeagueLoadingVC.swift in Sources */,
 				B6BDFAA728507CAB00F805A5 /* LeagueModel.swift in Sources */,
+				B66D293C28575BF8002CAD00 /* LOAudioPlayer.swift in Sources */,
 				B6BDFABE28507EED00F805A5 /* LOLocalRecordsHeaderView.swift in Sources */,
 				B6BDFACF2850803E00F805A5 /* LOLifeView.swift in Sources */,
 				B6BDFB0C2850821F00F805A5 /* Constants.swift in Sources */,
@@ -558,10 +641,92 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B62B039C2857155900C0D11E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B62B039F2857156700C0D11E /* Base */,
+				B62B03A1285715E500C0D11E /* es */,
+				B62B03A2285715EC00C0D11E /* tr */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B62B03A7285716EF00C0D11E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B62B03A6285716EF00C0D11E /* es */,
+				B62B03A92857199C00C0D11E /* en */,
+				B62B03AA285719B200C0D11E /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B66D291F2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66D291E2857555B002CAD00 /* Base */,
+				B66D292328575567002CAD00 /* es */,
+				B66D292528575596002CAD00 /* tr */,
+			);
+			name = LOAddNameForLeagueStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		B66D29282857560C002CAD00 /* LOCreateLagueStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66D29272857560C002CAD00 /* Base */,
+				B66D292A2857560F002CAD00 /* es */,
+				B66D292C2857563D002CAD00 /* tr */,
+			);
+			name = LOCreateLagueStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		B66D292F2857568E002CAD00 /* LOJoinLeagueStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66D292E2857568E002CAD00 /* Base */,
+				B66D293128575690002CAD00 /* es */,
+				B66D2933285756C0002CAD00 /* tr */,
+			);
+			name = LOJoinLeagueStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		B66D2936285756EB002CAD00 /* LOAddNameStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66D2935285756EB002CAD00 /* Base */,
+				B66D2938285756F1002CAD00 /* es */,
+				B66D293A28575721002CAD00 /* tr */,
+			);
+			name = LOAddNameStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		B66D294528575E3C002CAD00 /* LOLeaguesHeaderView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66D294428575E3C002CAD00 /* Base */,
+				B66D294728575E41002CAD00 /* es */,
+				B66D294928575E70002CAD00 /* tr */,
+			);
+			name = LOLeaguesHeaderView.xib;
+			sourceTree = "<group>";
+		};
+		B66D294C28575EB7002CAD00 /* YourLeagueHeaderView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66D294B28575EB7002CAD00 /* Base */,
+				B66D294E28575EBC002CAD00 /* es */,
+				B66D295028575EC0002CAD00 /* tr */,
+			);
+			name = YourLeagueHeaderView.xib;
+			sourceTree = "<group>";
+		};
 		B6BDFA7D285079A500F805A5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B6BDFA7E285079A500F805A5 /* Base */,
+				B62B03982857150200C0D11E /* tr */,
+				B62B03992857153700C0D11E /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -573,6 +738,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -633,6 +799,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -685,6 +852,7 @@
 		};
 		B6BDFA84285079A500F805A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA10CBC4C550529497968F61 /* Pods-LightsOut.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -715,6 +883,7 @@
 		};
 		B6BDFA85285079A500F805A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A7A5F32A5E8F3A692C4FD5E /* Pods-LightsOut.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -765,66 +934,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B6BDFA8D28507B1E00F805A5 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.2;
-			};
-		};
-		B6BDFA9028507B3500F805A5 /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B6BDFA8E28507B1E00F805A5 /* SQLite */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B6BDFA8D28507B1E00F805A5 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
-			productName = SQLite;
-		};
-		B6BDFA9128507B3500F805A5 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B6BDFA9028507B3500F805A5 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
-		};
-		B6BDFA9428507BEB00F805A5 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		B6BDFA9628507BEB00F805A5 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		B6BDFA9828507BEB00F805A5 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		B6BDFA9A28507BEB00F805A5 /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B6BDFA9328507BEB00F805A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B6BDFA67285079A300F805A5 /* Project object */;
 }

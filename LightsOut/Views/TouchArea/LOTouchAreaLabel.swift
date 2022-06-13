@@ -28,6 +28,8 @@ class LOTouchAreaLabel: UILabel {
         translatesAutoresizingMaskIntoConstraints = false
         textAlignment = .center
         textColor = .placeholderText
+        adjustsFontSizeToFitWidth = true
+        minimumScaleFactor = 0.2
         
     }
 }

@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Save Record"; ObjectID = "1Ia-uh-6sM"; */
+"1Ia-uh-6sM.text" = "Zamanı Kaydet";
+
+/* Class = "UILabel"; text = "You can save your record to the online rankings."; ObjectID = "Dhz-Y5-nWV"; */
+"Dhz-Y5-nWV.text" = "Zaman kayıtınızı çevrimiçi sıralamalara kaydedebilirsiniz.";
+
+/* Class = "UIButton"; configuration.title = "Cancel"; ObjectID = "Sit-gm-yFf"; */
+"Sit-gm-yFf.configuration.title" = "İptal";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Sit-gm-yFf"; */
+"Sit-gm-yFf.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "TGn-0V-RSO"; */
+"TGn-0V-RSO.configuration.title" = "Kaydet";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TGn-0V-RSO"; */
+"TGn-0V-RSO.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Max 12 Character"; ObjectID = "ymu-wt-g9c"; */
+"ymu-wt-g9c.placeholder" = "En Fazla 12 Karakte";

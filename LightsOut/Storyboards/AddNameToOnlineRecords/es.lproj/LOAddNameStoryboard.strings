@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Save Record"; ObjectID = "1Ia-uh-6sM"; */
+"1Ia-uh-6sM.text" = "Guardar registro";
+
+/* Class = "UILabel"; text = "You can save your record to the online rankings."; ObjectID = "Dhz-Y5-nWV"; */
+"Dhz-Y5-nWV.text" = "Puede guardar su registro en las clasificaciones en línea.";
+
+/* Class = "UIButton"; configuration.title = "Cancel"; ObjectID = "Sit-gm-yFf"; */
+"Sit-gm-yFf.configuration.title" = "Cancelar";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Sit-gm-yFf"; */
+"Sit-gm-yFf.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "TGn-0V-RSO"; */
+"TGn-0V-RSO.configuration.title" = "Guardar";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TGn-0V-RSO"; */
+"TGn-0V-RSO.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Max 12 Character"; ObjectID = "ymu-wt-g9c"; */
+"ymu-wt-g9c.placeholder" = "Máx. 12 caracteres";

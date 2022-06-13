@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Friend Leagues"; ObjectID = "54P-oR-dIx"; */
+"54P-oR-dIx.text" = "Arkadaş Ligleri";
+
+/* Class = "UIButton"; configuration.title = "Create"; ObjectID = "6o1-MS-FeG"; */
+"6o1-MS-FeG.configuration.title" = "Oluştur";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6o1-MS-FeG"; */
+"6o1-MS-FeG.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "|"; ObjectID = "NBt-Sp-GTh"; */
+"NBt-Sp-GTh.text" = "|";
+
+/* Class = "UIButton"; configuration.title = "Join"; ObjectID = "kMh-d0-QTl"; */
+"kMh-d0-QTl.configuration.title" = "Katıl";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kMh-d0-QTl"; */
+"kMh-d0-QTl.normalTitle" = "Button";

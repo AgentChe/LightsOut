@@ -1,0 +1,96 @@
+
+/* Class = "UILabel"; text = "Unlimited Life"; ObjectID = "1hb-lL-4J8"; */
+"1hb-lL-4J8.text" = "Sınırsız Can";
+
+/* Class = "UINavigationItem"; title = "Online Rankings"; ObjectID = "49u-V2-6cm"; */
+"49u-V2-6cm.title" = "Çevrimiçi Sıralamalar";
+
+/* Class = "UINavigationItem"; title = "League"; ObjectID = "6Uf-Gk-hkv"; */
+"6Uf-Gk-hkv.title" = "Lig";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "7nk-Lb-gvY"; */
+"7nk-Lb-gvY.text" = "Başlık";
+
+/* Class = "UILabel"; text = "Your average reaction time:"; ObjectID = "AVa-p1-zWz"; */
+"AVa-p1-zWz.text" = "Ortalama tepki süreniz:";
+
+/* Class = "UILabel"; text = "Contact / Feedback"; ObjectID = "B5E-Vu-fJC"; */
+"B5E-Vu-fJC.text" = "İletişim / Geribildirim";
+
+/* Class = "UILabel"; text = "You can add max 3 records at once. Remains: 3"; ObjectID = "B6n-ps-aOr"; */
+"B6n-ps-aOr.text" = "Tek seferde en fazla 3 kayıt ekleyebilirsiniz. Kalan: 3";
+
+/* Class = "UIButton"; normalTitle = "$4.99"; ObjectID = "F4O-bL-gSl"; */
+"F4O-bL-gSl.normalTitle" = "$4.99";
+
+/* Class = "UITabBarItem"; title = "League"; ObjectID = "Fzg-lg-ff4"; */
+"Fzg-lg-ff4.title" = "Lig";
+
+/* Class = "UILabel"; text = "Remove Ads"; ObjectID = "HL6-bg-hd6"; */
+"HL6-bg-hd6.text" = "Reklamları kaldır";
+
+/* Class = "UIButton"; configuration.title = "Create Message"; ObjectID = "Ldu-p5-XJ4"; */
+"Ldu-p5-XJ4.configuration.title" = "Mesaj oluştur";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ldu-p5-XJ4"; */
+"Ldu-p5-XJ4.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "League"; ObjectID = "UK2-RI-SmR"; */
+"UK2-RI-SmR.title" = "Lig";
+
+/* Class = "UINavigationItem"; title = "Local Records"; ObjectID = "VzK-ul-zc6"; */
+"VzK-ul-zc6.title" = "Yerel Kayıtlar";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "ZfA-al-XaS"; */
+"ZfA-al-XaS.title" = "Item";
+
+/* Class = "UILabel"; text = "Your avarage progression by last week"; ObjectID = "bLa-Q3-YSh"; */
+"bLa-Q3-YSh.text" = "Geçen haftaya göre ortalama ilerlemeniz";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "cx2-Cb-zL9"; */
+"cx2-Cb-zL9.title" = "Ayarlar";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "eOX-Is-R3W"; */
+"eOX-Is-R3W.text" = "Title";
+
+/* Class = "UILabel"; text = "LightsOut: Reflex Test"; ObjectID = "erG-jW-CbI"; */
+"erG-jW-CbI.text" = "LightsOut: Reflex Test";
+
+/* Class = "UIButton"; configuration.title = "Get Pro!"; ObjectID = "guT-V6-O3f"; */
+"guT-V6-O3f.configuration.title" = "Pro al!";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "guT-V6-O3f"; */
+"guT-V6-O3f.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Restore purchase"; ObjectID = "guz-2T-iur"; */
+"guz-2T-iur.normalTitle" = "Satın almamı geri yükle";
+
+/* Class = "UILabel"; text = "You can send your feedback and ideas"; ObjectID = "iHh-Pu-s88"; */
+"iHh-Pu-s88.text" = "Geri bildirim ve fikirlerinizi iletebilirsiniz";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "k8x-RB-HYN"; */
+"k8x-RB-HYN.title" = "Ayarlar";
+
+/* Class = "UINavigationItem"; title = "Your Local Records"; ObjectID = "pdh-oP-yFF"; */
+"pdh-oP-yFF.title" = "Yerel Rekorlarınız";
+
+/* Class = "UITabBarItem"; title = "LightsOut"; ObjectID = "qax-wO-VMG"; */
+"qax-wO-VMG.title" = "LightsOut";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "thv-BE-reK"; */
+"thv-BE-reK.title" = "Item";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "vSS-ZE-Loy"; */
+"vSS-ZE-Loy.text" = "Detaylar";
+
+/* Class = "UINavigationItem"; title = "Statistics"; ObjectID = "vhV-l7-GH8"; */
+"vhV-l7-GH8.title" = "Istatistik";
+
+/* Class = "UILabel"; text = "v2.0.0"; ObjectID = "vjf-a8-HdC"; */
+"vjf-a8-HdC.text" = "v2.0.0";
+
+/* Class = "UILabel"; text = "You need to tap and hold on the gray area where is on the LightsOut screen to start. Five red lights start turning red in order. When all lights turn red, they will be off after a random time (between 1-5 seconds). You need to relase your finger as quickly as possible. You can see your reaction time your screen. You can discover in the app what can you do with your reaction time."; ObjectID = "wQC-IC-z1q"; */
+"wQC-IC-z1q.text" = "Başlamak için LightsOut ekranındaki gri alana dokunup basılı tutmanız gerekir. Beş kırmızı ışık sırayla kırmızıya dönmeye başlar. Tüm ışıklar kırmızıya döndüğünde rastgele bir süre sonra (1-5 saniye arasında) sönecektir. Parmağınızı olabildiğince çabuk serbest bırakmanız gerekir. Tepki sürenizi ekranınızda görebilirsiniz. Tepki sürenizle neler yapabileceğinizi uygulamada keşfedebilirsiniz.";
+
+/* Class = "UILabel"; text = "Access Friend Leagues"; ObjectID = "y8H-WO-0da"; */
+"y8H-WO-0da.text" = "Arkadaş Liglerine Erişim";

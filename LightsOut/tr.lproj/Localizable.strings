@@ -1,0 +1,89 @@
+/*
+  Localizable.strings
+  LightsOut
+
+  Created by Murat Baykor on 13.06.2022.
+  
+*/
+
+"Something went wrong" = "Bir şeyler ters gitti";
+"Unable to complete your request. Please try again." = "İsteğiniz tamamlanamadı. Lütfen tekrar deneyin.";
+"The app could not connect to the database. Please reopen the app." = "Uygulama veritabanına bağlanamadı. Lütfen uygulamayı yeniden açın.";
+"The database could not be created. Please reopen the app." = "Veritabanı oluşturulamadı. Lütfen uygulamayı yeniden açın.";
+"The new records could not be saved." = "Yeni kayıtlar kaydedilemedi.";
+"All records could not be retrieved from the database. Please try again." = "Veritabanından kayıtlar alınamadı. Lütfen tekrar deneyin.";
+"The record could not be deleted from the database." = "Kayıt veritabanından silinemedi.";
+"The record could not be retrieved from the database." = "Kayıt veritabanından alınamadı.";
+"The record could not be updated in the database." = "Kayıt, veritabanında güncellenemedi.";
+"The average reaction time could not be calculated for the chart." = "Grafik için ortalama tepki süresi hesaplanamadı.";
+"The password is wrong. Please check it and try again." = "Şifre yanlış. Lütfen kontrol edip tekrar deneyin.";
+"The league could not be found. Please check the league number and try again." = "Lig bulunamadı. Lütfen lig numarasını kontrol edip tekrar deneyin.";
+"You could not join this league. Please try again." = "Bu lige katılamazsınız. Lütfen tekrar deneyin.";
+"Check your password." = "Şifrenizi kontrol edin.";
+"You are already in this league." = "Zaten bu ligdesiniz.";
+"The league could not be created. Please try again" = "Lig oluşturulamadı. Lütfen tekrar deneyin";
+"Done" = "Bitti";
+"Cancel" = "İptal";
+"Next" = "Sonraki";
+"Delete" = "Sil";
+"Error" = "Hata";
+"Create" = "Oluştur";
+"Join" = "Katıl";
+"OK" = "Tamam";
+"Choose Action" = "Eylem Seç";
+"Save to Online Rankings" = "Çevrimiçi Sıralamalara Kaydet";
+"Get PRO" = "PRO ol";
+"If you become a PRO you can access the friends league" = "PRO olursan arkadaşlar ligine girebilirsinşlar ligine erişebilirsiniz";
+"Contact / Feedback" = "İletişim / Geribildirim";
+"Your message was successfully sent." = "Mesajınız başarıyla gönderildi";
+"Your message could not be sent." = "Mesajınız gönderilemedi.";
+"You can not send an email. Check your settings." = "E-posta gönderemezsiniz. Ayarlarınızı kontrol edin.";
+"Quit League" = "Ligden Çık";
+"You are the owner of this league. If you quit, the league will be deleted. Are you sure?" = "Bu ligin sahibisin. Çıkarsanız lig silinir. Emin misin?";
+"Delete and quit" = "Sil ve çık";
+"If you quit the league, your records will be deleted from the league. Are you sure?" = "Ligden çıkarsanız, kayıtlarınız ligden silinecektir. Emin misin?";
+"Quit" = "Çık";
+"Delete Records" = "Kayıtları Sil";
+"You can delete all records in the league or just your own." = "Ligdeki tüm kayıtları veya sadece kendi kayıtlarınızı.";
+"Delete All" = "Tümünü Sil";
+"Delete Owns" = "Kendiminkileri Sil";
+"Your record will be deleted from the league" = "Kaydınız ligden silinecek";
+"Your Records" = "Kayıtlarınız";
+"Online Rankings" = "Çevrimiçi Sıralamalar";
+"Add a league" = "Lig ekle";
+"You can create a league or join a league" = "Bir lig oluşturabilir veya bir lige katılabilirsiniz";
+"seconds" = "saniye";
+"Your average reaction time:" = "Ortalama tepki süreniz:";
+"Tap and hold to start!" = "Başlamak için dokunun ve basılı tutun!";
+"When all lights are off, release as quickly as you can." = "Tüm ışıklar söndüğünde, olabildiğince çabuk bırakın.";
+"You have no life." = "Canın yok";
+"Wait until all lights are OUT!" = "Tüm ışıklar SONENE kadar bekleyin!";
+"Wait until all lights are ON!" = "Tüm ışıklar AÇIK olana kadar bekleyin!";
+"Your reaction time:" = "Tepki süreniz:";
+"Fail! Try again!" = "Başarısız! Tekrar deneyin!";
+"Release" = "Bırak";
+"Game Settings" = "Oyun Ayarları";
+"About" = "Hakkında";
+"You are a pro" = "PRO'sunuz";
+"You have unlimited life and access to friend leagues. No ads." = "Sınırsız can hakkınız ve arkadaş liglerine erişiminiz var. Reklam yok.";
+"Become a PRO!" = "PRO Ol!";
+"Remove ads and access friends leagues" = "Reklamları kaldırın ve arkadaşlar liglerine erişin";
+"Statistics" = "İstatistikler";
+"Your reaction time records and progression" = "Tepki süresi kayıtlarınız ve ilerlemeniz";
+"Sound Effect" = "Ses Efekti";
+"On" = "Açık";
+"Off" = "Kapali";
+"About Game" = "Oyun Hakkında";
+"Rate on the App Store" = "App Store'da derecelendir";
+"Contact / Feedback" = "İletişim / Geri Bildirim";
+"Your progression by last week (seconds)" = "Geçen haftaya göre ilerlemeniz (saniye)";
+"Enter your feedback here..." = "Geri bildiriminizi buraya girin...";
+"No Records?\n Add records with the add button" = "Kayıt Yok?\n Ekle düğmesiyle kayıt ekle";
+"No Records?\n Go to the Lights Out screen and test your reaction time." = "Kayıt Yok?\n LightsOut ekranına gidin ve tepki sürenizi test edin.";
+"Your process is not completed. Please try again." = "İşleminiz tamamlanmadı. Lütfen tekrar deneyin.";
+"You don't have permission to buy. Please check your settings." = "Satın alma izniniz yok. Lütfen ayarlarınızı kontrol edin.";
+"Your restore process is not completed. Please try again." = "Geri yükleme işleminiz tamamlanmadı. Lütfen tekrar deneyin.";
+"PRO option could not be purchasable. Please try again later." = "PRO seçeneği satın alınabilir degil. Lütfen daha sonra tekrar deneyin.";
+"Check your internet connection" = "İnternet bağlantınızı kontrol edin";
+
+

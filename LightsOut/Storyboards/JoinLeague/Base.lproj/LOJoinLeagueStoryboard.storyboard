@@ -11,7 +11,7 @@
         <!--Join LeagueVC-->
         <scene sceneID="new-dW-Tep">
             <objects>
-                <viewController restorationIdentifier="LOCreateLeagueVC" storyboardIdentifier="LOCreateLeagueVC" id="n0l-M7-3YF" customClass="LOJoinLeagueVC" customModule="LightsOut_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LOCreateLeagueVC" storyboardIdentifier="LOCreateLeagueVC" id="n0l-M7-3YF" customClass="LOJoinLeagueVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="mzF-8e-bOr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,7 @@
         <!--Join League LoadingVC-->
         <scene sceneID="UjX-3G-MP0">
             <objects>
-                <viewController id="HZB-ju-cPW" customClass="LOJoinLeagueLoadingVC" customModule="LightsOut_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HZB-ju-cPW" customClass="LOJoinLeagueLoadingVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m7P-nv-wCo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,7 +178,7 @@
         <!--Join League ConfirmationVC-->
         <scene sceneID="ilT-Vq-YPA">
             <objects>
-                <viewController id="vIj-ci-z2L" customClass="LOJoinLeagueConfirmationVC" customModule="LightsOut_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vIj-ci-z2L" customClass="LOJoinLeagueConfirmationVC" customModule="LightsOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0IY-mO-taY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

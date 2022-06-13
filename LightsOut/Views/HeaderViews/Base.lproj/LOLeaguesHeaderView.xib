@@ -18,18 +18,18 @@
                     <rect key="frame" x="20" y="0.0" width="328" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Leagues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54P-oR-dIx">
-                            <rect key="frame" x="0.0" y="0.0" width="188" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="168" height="60"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvx-Go-FeV">
-                            <rect key="frame" x="188" y="0.0" width="140" height="60"/>
+                            <rect key="frame" x="168" y="0.0" width="160" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6o1-MS-FeG">
-                                    <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="70" id="kW6-mY-5gg"/>
+                                        <constraint firstAttribute="width" constant="80" id="kW6-mY-5gg"/>
                                     </constraints>
                                     <color key="tintColor" systemColor="systemRedColor"/>
                                     <state key="normal" title="Button"/>
@@ -41,7 +41,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBt-Sp-GTh">
-                                    <rect key="frame" x="70" y="0.0" width="10" height="60"/>
+                                    <rect key="frame" x="80" y="0.0" width="10" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="10" id="Gy8-8c-040"/>
                                     </constraints>
@@ -50,9 +50,9 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMh-d0-QTl">
-                                    <rect key="frame" x="80" y="0.0" width="60" height="60"/>
+                                    <rect key="frame" x="90" y="0.0" width="70" height="60"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="60" id="2UL-KD-Pyl"/>
+                                        <constraint firstAttribute="width" constant="70" id="2UL-KD-Pyl"/>
                                     </constraints>
                                     <color key="tintColor" systemColor="systemRedColor"/>
                                     <state key="normal" title="Button"/>

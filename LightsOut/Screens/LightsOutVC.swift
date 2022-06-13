@@ -7,8 +7,14 @@
 
 import UIKit
 import StoreKit
+import AppTrackingTransparency
+import AdSupport
+import GoogleMobileAds
+import Network
 
 class LightsOutVC: UIViewController {
+    
+    let monitor = NWPathMonitor()
     
     @IBOutlet weak var light0: LOSingleLightView!
     @IBOutlet weak var light1: LOSingleLightView!
@@ -44,7 +50,6 @@ class LightsOutVC: UIViewController {
     var lightsCountForStartSequence = 0
     var lifeCount: Int = 0 {
         didSet{
-            print("DEBUG: Lifecount changed")
             defaults.set(lifeCount, forKey: Constants.Keys.lifeCount)
             lifeView.updateLifeLabel(with: lifeCount)
             isLifeTimeOn = defaults.bool(forKey: Constants.Keys.isTimerOn)
@@ -55,20 +60,15 @@ class LightsOutVC: UIViewController {
                     self.instructionView.isHidden = false
                 }
                 
-                
-                print("DEBUG: Lifecount is 0 so you cant play")
                 if !isLifeTimeOn {
-                    print("Life timer acildi")
                     isLifeTimeOn = true
                     lifeZeroDate = Date().timeIntervalSince1970
                     lifeFillDate = Date().timeIntervalSince1970 + 60
                     defaults.set(lifeFillDate, forKey: Constants.Keys.lifeFillDate)
                     lifeTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTestTimer), userInfo: nil, repeats: true)
                 } else {
-                    print("Life timer Zaten acik")
                     lifeTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTestTimer), userInfo: nil, repeats: true)
                     if Date().timeIntervalSince1970 >= lifeFillDate {
-                        print("Can eklenebilir zaman dolmus")
                         addOneToLifeCount()
                         isLifeTimeOn = false
                         lifeTimer?.invalidate()
@@ -79,13 +79,15 @@ class LightsOutVC: UIViewController {
         }
     }
     
+    var isSoundOn: Bool = UserDefaults.standard.bool(forKey: Constants.Keys.soundSettings)
     
     var removedAdsButtonTapped = false
     var isPro: Bool? {
         didSet {
             if isPro == false && oldValue == nil {
+                requestIDFA()
                 print("DEBUG: Pro Olunmadi")
-//                requestIDFA()
+                //                requestIDFA()
             } else if isPro == true {
                 getProButton.isHidden = true
                 getProButton.isEnabled = false
@@ -94,6 +96,11 @@ class LightsOutVC: UIViewController {
             
         }
     }
+    
+    var showedRewardedAds = false
+    var didEarnLife = false
+    private var interstitial: GADInterstitialAd?
+    private var rewardedAd: GADRewardedAd?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,12 +113,21 @@ class LightsOutVC: UIViewController {
         
         lifeCount = defaults.integer(forKey: Constants.Keys.lifeCount)
         
+        let queue = DispatchQueue.global(qos: .background)
+        monitor.start(queue: queue)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         removedAdsButtonTapped = false
         isPro = isPurchased()
+    }
+    
+    func checkConnectionAndShowAlertAndReturn(withMessage message: LOError) {
+        if monitor.currentPath.status == .unsatisfied {
+            presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: message.localizedDescription)
+        }
     }
     
     func isPurchased() -> Bool {
@@ -139,7 +155,65 @@ class LightsOutVC: UIViewController {
             lifeCountDownLabel.text = ""
         }
     }
-
+    
+    func requestIDFA() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                self.createAndLoadInterstitial()
+                self.createAndloadRewardedAd()
+            })
+        })
+    }
+    
+    func createAndLoadInterstitial() {
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID: Constants.TestKeys.interstitial,
+                               request: request,
+                               completionHandler: { [self] ad, error in
+            if error != nil {
+                return
+            }
+            interstitial = ad
+            interstitial?.fullScreenContentDelegate = self
+        }
+        )
+    }
+    
+    func showInterstitialAd() {
+        if interstitial != nil && !isPro! {
+            interstitial?.present(fromRootViewController: self)
+        }
+    }
+    
+    func createAndloadRewardedAd() {
+        let request = GADRequest()
+        GADRewardedAd.load(withAdUnitID: Constants.TestKeys.rewarded,
+                           request: request,
+                           completionHandler: { [self] ad, error in
+            if error != nil {
+                return
+            }
+            rewardedAd = ad
+            rewardedAd?.fullScreenContentDelegate = self
+        }
+        )
+    }
+    
+    func showRewarded() {
+        if let ad = rewardedAd {
+            ad.present(fromRootViewController: self) {
+                let reward = ad.adReward
+                print("Reward received with currency \(reward.amount), amount \(reward.amount.doubleValue)")
+                if reward.amount == 10 {
+                    self.didEarnLife = true
+                    
+                }
+                
+            }
+        } else {
+            print("Ad wasn't ready")
+        }
+    }
     
     func anonymousLogin() {
         FirebaseManager.shared.authAnonymous { uid, error in
@@ -159,6 +233,7 @@ class LightsOutVC: UIViewController {
         lights[lightsCountForStartSequence].turnRed()
         lightsCountForStartSequence += 1
         
+        
         if lightsCountForStartSequence == 5 {
             instructionView.changeLabel(with: LocalizedStrings.waitLightsOut)
             lightsCountForStartSequence = 0
@@ -168,11 +243,13 @@ class LightsOutVC: UIViewController {
     }
     
     func lightsOut() {
-        let randomTime = Double.random(in: 1...3)
-        print("DEBUG: \(randomTime)")
+        let randomTime = Double.random(in: 1...5)
         randomLightsOutTimer = Timer.scheduledTimer(withTimeInterval: randomTime, repeats: false, block: { [self] _ in
             for light in self.lights {
                 light.turnDefault()
+            }
+            if self.isSoundOn {
+                LOAudioPlayer.shared.playsound(soundType: .start)
             }
             self.reactionCounterTimer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
             instructionView.changeLabel(with: LocalizedStrings.release)
@@ -185,7 +262,6 @@ class LightsOutVC: UIViewController {
     
     func rateRequest() {
         let count = UserDefaults.standard.integer(forKey: Constants.Keys.playCountKey)
-        print("DEBUG: \(count)")
         switch count {
         case 14:
             if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
@@ -195,8 +271,8 @@ class LightsOutVC: UIViewController {
             if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
             }
-//        case _ where count % 4 == 0:
-//            showInterstitialAd()
+        case _ where count % 4 == 0:
+            showInterstitialAd()
         default:
             break;
         }
@@ -259,11 +335,48 @@ extension LightsOutVC: LOTouchAreaDelegate {
 extension LightsOutVC: LOLifeViewDelegate {
     func didTapAddLifeButton() {
         print("DEBUG: Add life Button Tapped")
+        checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
         if !isPro! {
-            lifeCount += 1
-            lifeView.lifeUpOrDownAnimation(lifeCase: .up)
+            showedRewardedAds = true
+            showRewarded()
+            //            lifeCount += 1
+            //            lifeView.lifeUpOrDownAnimation(lifeCase: .up)
         }
+        
+    }
+    
+    
+}
 
+extension LightsOutVC: GADFullScreenContentDelegate {
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        if showedRewardedAds {
+            print("DEBUG: Rewarded ads sghow")
+            showedRewardedAds = false
+            createAndloadRewardedAd()
+            if didEarnLife {
+                lifeCount += 1
+                lifeView.lifeUpOrDownAnimation(lifeCase: .up)
+                didEarnLife = false
+            }
+            
+            
+            print("DEBUG: showedRewardedAds = \(showedRewardedAds) and create new rewarded ads")
+        } else {
+            print("DEBUG: Create new interstitial ads.")
+            createAndLoadInterstitial()
+        }
+        
+    }
+    
+    /// Tells the delegate that the ad failed to present full screen content.
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
+    }
+    
+    /// Tells the delegate that the ad will present full screen content.
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad will present full screen content.")
     }
     
     

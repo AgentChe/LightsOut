@@ -1,0 +1,89 @@
+/*
+  Localizable.strings
+  LightsOut
+
+  Created by Murat Baykor on 13.06.2022.
+  
+*/
+
+"Something went wrong" = "Something went wrong";
+"Unable to complete your request. Please try again." = "Unable to complete your request. Please try again.";
+"The app could not connect to the database. Please reopen the app." = "The app could not connect to the database. Please reopen the app.";
+"The database could not be created. Please reopen the app." = "The database could not be created. Please reopen the app.";
+"The new records could not be saved." = "The new records could not be saved.";
+"All records could not be retrieved from the database. Please try again." = "All records could not be retrieved from the database. Please try again.";
+"The record could not be deleted from the database." = "The record could not be deleted from the database.";
+"The record could not be retrieved from the database." = "The record could not be retrieved from the database.";
+"The record could not be updated in the database." = "The record could not be updated in the database.";
+"The average reaction time could not be calculated for the chart." = "The average reaction time could not be calculated for the chart.";
+"The password is wrong. Please check it and try again." = "The password is wrong. Please check it and try again.";
+"The league could not be found. Please check the league number and try again." = "The league could not be found. Please check the league number and try again.";
+"You could not join this league. Please try again." = "You could not join this league. Please try again.";
+"Check your password." = "Check your password.";
+"You are already in this league." = "You are already in this league.";
+"The league could not be created. Please try again" = "The league could not be created. Please try again";
+"Done" = "Done";
+"Cancel" = "Cancel";
+"Next" = "Next";
+"Delete" = "Delete";
+"Error" = "Error";
+"Create" = "Create";
+"Join" = "Join";
+"OK" = "OK";
+"Choose Action" = "Choose Action";
+"Save to Online Rankings" = "Save to Online Rankings";
+"Get PRO" = "Get PRO";
+"If you become a PRO you can access the friends league" = "If you become a PRO you can access the friends league";
+"Contact / Feedback" = "Contact / Feedback";
+"Your message was successfully sent." = "Your message was successfully sent.";
+"Your message could not be sent." = "Your message could not be sent.";
+"You can not send an email. Check your settings." = "You can not send an email. Check your settings.";
+"Quit League" = "Quit League";
+"You are the owner of this league. If you quit, the league will be deleted. Are you sure?" = "You are the owner of this league. If you quit, the league will be deleted. Are you sure?";
+"Delete and quit" = "Delete and quit";
+"If you quit the league, your records will be deleted from the league. Are you sure?" = "If you quit the league, your records will be deleted from the league. Are you sure?";
+"Quit" = "Quit";
+"Delete Records" = "Delete Records";
+"You can delete all records in the league or just your own." = "You can delete all records in the league or just your own.";
+"Delete All" = "Delete All";
+"Delete Owns" = "Delete Owns";
+"Your record will be deleted from the league" = "Your record will be deleted from the league";
+"Your Records" = "Your Records";
+"Online Rankings" = "Online Rankings";
+"Add a league" = "Add a league";
+"You can create a league or join a league" = "You can create a league or join a league";
+"seconds" = "seconds";
+"Your average reaction time:" = "Your average reaction time:" ;
+"Tap and hold to start!" = "Tap and hold to start!";
+"When all lights are off, release as quickly as you can." = "When all lights are off, release as quickly as you can.";
+"You have no life." = "You have no life.";
+"Wait until all lights are OUT!" = "Wait until all lights are OUT!";
+"Wait until all lights are ON!" = "Wait until all lights are ON!";
+"Your reaction time:" = "Your reaction time:";
+"Fail! Try again!" = "Fail! Try again!";
+"Release" = "Release";
+"Game Settings" = "Game Settings";
+"About" = "About";
+"You are a pro" = "You are a pro";
+"You have unlimited life and access to friend leagues. No ads." = "You have unlimited life and access to friend leagues. No ads.";
+"Become a PRO!" = "Become a PRO!";
+"Remove ads and access friends leagues" = "Remove ads and access friends leagues";
+"Statistics" = "Statistics";
+"Your reaction time records and progression" = "Your reaction time records and progression";
+"Sound Effect" = "Sound Effect";
+"On" = "On";
+"Off" = "Kapali";
+"About Game" = "About Game";
+"Rate on the App Store" = "Rate on the App Store";
+"Contact / Feedback" = "Contact / Feedback";
+"Your progression by last week (seconds)" = "Your progression by last week (seconds)";
+"Enter your feedback here..." = "Enter your feedback here...";
+"No Records?\n Add records with the add button" = "No Records?\n Add records with the add button";
+"No Records?\n Go to the Lights Out screen and test your reaction time." = "No Records?\n Go to the Lights Out screen and test your reaction time.";
+"Your process is not completed. Please try again." = "Your process is not completed. Please try again.";
+"You don't have permission to buy. Please check your settings." = "You don't have permission to buy. Please check your settings.";
+"Your restore process is not completed. Please try again." = "Your restore process is not completed. Please try again.";
+"PRO option could not be purchasable. Please try again later." = "PRO option could not be purchasable. Please try again later.";
+"Check your internet connection" = "Check your internet connection";
+
+

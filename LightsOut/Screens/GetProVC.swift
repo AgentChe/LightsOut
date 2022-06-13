@@ -20,7 +20,6 @@ class GetProVC: UIViewController {
         super.viewDidLoad()
         IAPManager.shared.delegate = self
         logoImageView.layer.cornerRadius = 10
-        descriptionLabel.text = "Add-free experience\nUnlimited life\nAccess Friend Leagues"
     }
     
     @IBAction func closeButton(_ sender: UIButton) {
@@ -48,13 +47,15 @@ extension GetProVC: IAPManagerDelegate {
     func didReceiveError(_ errorType: PaymentErrors) {
         switch errorType {
         case .cantMakePayment:
-            print("DEBUG: cantmakepayment")
+            presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.cantMakePayment)
         case .loadError:
-         print("DEBUG: Cant load product")
+            presentAlertWithOk(title:
+            LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.cantLoadProduct)
         case .paymentError:
-            print("DEBUG: payment error")
+            presentAlertWithOk(title:
+            LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.cantBuyAdsFree)
         case .restoreError:
-          print("DEBUG: restore error")
+            presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.cantRestore)
         }
     
     }

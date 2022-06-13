@@ -9,14 +9,11 @@ import UIKit
 import SQLite
 
 class LocalRecordsVC: LODataLoadingVC {
-    static let statisticsHeaderId = "statisticsHeaderId"
-    
     
     enum Section { case main }
     var userUid: String?
     var localRecords: [RecordModel] = [] {
         didSet {
-            print("DEBUG: Local record was change")
             updateData(on: localRecords)
             
         }
@@ -24,7 +21,7 @@ class LocalRecordsVC: LODataLoadingVC {
     var avarageReactionTime = 0.0 {
         didSet {
             if avarageReactionTime.isNaN {
-                collectionView.backgroundView = LOEmptyStateView(message: "No Records?\n Go Lights Out screen and test your reaction time.")
+                collectionView.backgroundView = LOEmptyStateView(message: LocalizedStrings.emptyStateInLocalRecords)
                 collectionView.isScrollEnabled = false
             } else {
                 collectionView.backgroundView = nil
@@ -46,7 +43,6 @@ class LocalRecordsVC: LODataLoadingVC {
         collectionView.register(UINib(nibName: Constants.CellReuseID.localRecordCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.localRecordCell)
         collectionView.register(UINib(nibName: Constants.HeaderReuseID.localRecordsHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Constants.HeaderReuseID.localRecordsHeader)
 
-        //DatabaseManager.shared.addCustomRecord()
     }
     
     
@@ -58,13 +54,12 @@ class LocalRecordsVC: LODataLoadingVC {
     
     
     func loadRecords() {
-        print("DEBUG: Load records work")
         DatabaseManager.shared.getAllRecordsFromSqliteDb { result in
             switch result {
             case .success(let localRecords):
                 self.localRecords = localRecords
             case .failure(let error):
-                print("DEBUG: Load records error with error: \(error)")
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             }
         }
     }
@@ -125,13 +120,6 @@ extension LocalRecordsVC: LOLocalRecordsHeaderViewDelegate {
 
 }
 
-//extension LocalRecordsVC: UITextFieldDelegate {
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        guard let text = textField.text else { return true }
-//        let newLength = text.count + string.count - range.length
-//        return newLength <= 12
-//    }
-//}
 
 extension LocalRecordsVC: LOLocalRecordCellActionDelegate {
 
@@ -159,7 +147,7 @@ extension LocalRecordsVC: LOLocalRecordCellActionDelegate {
                 self.updateData(on: self.localRecords)
                 return
             }
-            print("DEBUG: \(error.localizedDescription)")
+            self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
         }
     }
     

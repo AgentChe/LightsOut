@@ -1,0 +1,96 @@
+
+/* Class = "UILabel"; text = "Unlimited Life"; ObjectID = "1hb-lL-4J8"; */
+"1hb-lL-4J8.text" = "Vida ilimitada";
+
+/* Class = "UINavigationItem"; title = "Online Rankings"; ObjectID = "49u-V2-6cm"; */
+"49u-V2-6cm.title" = "Clasificaciones en línea";
+
+/* Class = "UINavigationItem"; title = "League"; ObjectID = "6Uf-Gk-hkv"; */
+"6Uf-Gk-hkv.title" = "Liga";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "7nk-Lb-gvY"; */
+"7nk-Lb-gvY.text" = "Title";
+
+/* Class = "UILabel"; text = "Your average reaction time:"; ObjectID = "AVa-p1-zWz"; */
+"AVa-p1-zWz.text" = "Tiempo medio de reacción:";
+
+/* Class = "UILabel"; text = "Contact / Feedback"; ObjectID = "B5E-Vu-fJC"; */
+"B5E-Vu-fJC.text" = "Contacto / Comentarios";
+
+/* Class = "UILabel"; text = "You can add max 3 records at once. Remains: 3"; ObjectID = "B6n-ps-aOr"; */
+"B6n-ps-aOr.text" = "Puede agregar un máximo de 3 registros a la vez. Quedan: 3";
+
+/* Class = "UIButton"; normalTitle = "$4.99"; ObjectID = "F4O-bL-gSl"; */
+"F4O-bL-gSl.normalTitle" = "$4.99";
+
+/* Class = "UITabBarItem"; title = "League"; ObjectID = "Fzg-lg-ff4"; */
+"Fzg-lg-ff4.title" = "Liga";
+
+/* Class = "UILabel"; text = "Remove Ads"; ObjectID = "HL6-bg-hd6"; */
+"HL6-bg-hd6.text" = "Eliminar anuncios";
+
+/* Class = "UIButton"; configuration.title = "Create Message"; ObjectID = "Ldu-p5-XJ4"; */
+"Ldu-p5-XJ4.configuration.title" = "Crear mensaje";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ldu-p5-XJ4"; */
+"Ldu-p5-XJ4.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "League"; ObjectID = "UK2-RI-SmR"; */
+"UK2-RI-SmR.title" = "Liga";
+
+/* Class = "UINavigationItem"; title = "Local Records"; ObjectID = "VzK-ul-zc6"; */
+"VzK-ul-zc6.title" = "Registros locales";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "ZfA-al-XaS"; */
+"ZfA-al-XaS.title" = "Objeto";
+
+/* Class = "UILabel"; text = "Your avarage progression by last week"; ObjectID = "bLa-Q3-YSh"; */
+"bLa-Q3-YSh.text" = "Su progresión promedio en la última semana";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "cx2-Cb-zL9"; */
+"cx2-Cb-zL9.title" = "Configuración";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "eOX-Is-R3W"; */
+"eOX-Is-R3W.text" = "Título";
+
+/* Class = "UILabel"; text = "LightsOut: Reflex Test"; ObjectID = "erG-jW-CbI"; */
+"erG-jW-CbI.text" = "LightsOut: Reflex Test";
+
+/* Class = "UIButton"; configuration.title = "Get Pro!"; ObjectID = "guT-V6-O3f"; */
+"guT-V6-O3f.configuration.title" = "¡Obtén Pro!";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "guT-V6-O3f"; */
+"guT-V6-O3f.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Restore purchase"; ObjectID = "guz-2T-iur"; */
+"guz-2T-iur.normalTitle" = "Restaurar compra";
+
+/* Class = "UILabel"; text = "You can send your feedback and ideas"; ObjectID = "iHh-Pu-s88"; */
+"iHh-Pu-s88.text" = "Puede enviar sus comentarios e ideas";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "k8x-RB-HYN"; */
+"k8x-RB-HYN.title" = "Configuración";
+
+/* Class = "UINavigationItem"; title = "Your Local Records"; ObjectID = "pdh-oP-yFF"; */
+"pdh-oP-yFF.title" = "Sus registros locales";
+
+/* Class = "UITabBarItem"; title = "LightsOut"; ObjectID = "qax-wO-VMG"; */
+"qax-wO-VMG.title" = "LightsOut";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "thv-BE-reK"; */
+"thv-BE-reK.title" = "Item";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "vSS-ZE-Loy"; */
+"vSS-ZE-Loy.text" = "Detalle";
+
+/* Class = "UINavigationItem"; title = "Statistics"; ObjectID = "vhV-l7-GH8"; */
+"vhV-l7-GH8.title" = "Estadísticas";
+
+/* Class = "UILabel"; text = "v2.0.0"; ObjectID = "vjf-a8-HdC"; */
+"vjf-a8-HdC.text" = "v2.0.0";
+
+/* Class = "UILabel"; text = "You need to tap and hold on the gray area where is on the LightsOut screen to start. Five red lights start turning red in order. When all lights turn red, they will be off after a random time (between 1-5 seconds). You need to relase your finger as quickly as possible. You can see your reaction time your screen. You can discover in the app what can you do with your reaction time."; ObjectID = "wQC-IC-z1q"; */
+"wQC-IC-z1q.text" = "YDebe tocar y mantener presionada el área gris donde se encuentra en la pantalla LightsOut para comenzar. Cinco luces rojas comienzan a ponerse rojas en orden. Cuando todas las luces se vuelven rojas, se apagarán después un tiempo aleatorio (entre 1-5 segundos). Debes soltar el dedo lo más rápido posible. Puedes ver tu tiempo de reacción en la pantalla. Puedes descubrir en la aplicación qué puedes hacer con tu tiempo de reacción.";
+
+/* Class = "UILabel"; text = "Access Friend Leagues"; ObjectID = "y8H-WO-0da"; */
+"y8H-WO-0da.text" = "Acceder a las ligas de amigos";

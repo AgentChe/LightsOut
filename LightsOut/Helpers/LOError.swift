@@ -9,7 +9,7 @@ import Foundation
 
 enum LOError: String, Error, Codable {
     
-    case unableToConnectDatabase, unableToCreateDatabase, dbWasCreatedSuccessfully, dbAlreadyCreated, unableToSaveNewRecord, unableToGetAllRecords, unableToDelete, cantGetSingleUserFromDB, updateErrorInLocalDb, cantCalculateAvarageForChart,wrongLeaguePassword, cantFoundLeague, cantJoinLeague, checkYourPassword, alreadyInLeague, createLeagueError
+    case unableToConnectDatabase, unableToCreateDatabase, dbWasCreatedSuccessfully, dbAlreadyCreated, unableToSaveNewRecord, unableToGetAllRecords, unableToDelete, cantGetSingleUserFromDB, updateErrorInLocalDb, cantCalculateAvarageForChart,wrongLeaguePassword, cantFoundLeague, cantJoinLeague, checkYourPassword, alreadyInLeague, createLeagueError, checkYourInternet
     
     var localizedDescription: String {
         switch self {
@@ -45,6 +45,8 @@ enum LOError: String, Error, Codable {
             return LocalizedErrorMessages.alreadyInLeague
         case .createLeagueError:
             return LocalizedErrorMessages.cantCreateLeague
+        case .checkYourInternet:
+            return LocalizedErrorMessages.checkYourInternet
         }
     }
 }

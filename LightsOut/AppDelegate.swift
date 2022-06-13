@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import StoreKit
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
 //        defaults.set(true, forKey: Keys.adsFree)
         FirebaseApp.configure()
         

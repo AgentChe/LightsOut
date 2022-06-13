@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Network
 
 class LeagueVC: LODataLoadingVC {
     
+    let monitor = NWPathMonitor()
     
     @IBOutlet var collectionView: UICollectionView!
 
@@ -54,6 +56,9 @@ class LeagueVC: LODataLoadingVC {
         
         authIfUserNotLogin()
         createObservers()
+        
+        let queue = DispatchQueue.global(qos: .background)
+        monitor.start(queue: queue)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -123,6 +128,12 @@ class LeagueVC: LODataLoadingVC {
         }
     }
     
+    func checkConnectionAndShowAlertAndReturn(withMessage message: LOError) {
+        if monitor.currentPath.status == .unsatisfied {
+            presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: message.localizedDescription)
+        }
+    }
+    
 }
 
 extension LeagueVC: UICollectionViewDataSource {
@@ -171,10 +182,16 @@ extension LeagueVC: UICollectionViewDataSource {
 extension LeagueVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            indexPath.row == 0 ? goTo(with: Constants.Screens.localRecordsVC) : goTo(with: Constants.Screens.onlineRecordsVC)
+            if indexPath.row == 0 {
+                goTo(with: Constants.Screens.localRecordsVC)
+            } else {
+                checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
+                goTo(with: Constants.Screens.onlineRecordsVC)
+            }
         } else if indexPath.section == 1 {
             print("DEBUG: REKLAM")
         } else {
+            checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
             if self.friendsLeague.isEmpty {
                 checkUserProStatusAndPresentAlert(status: isPro, userUid: userUid)
             } else {
@@ -186,6 +203,8 @@ extension LeagueVC: UICollectionViewDelegate {
 
 extension LeagueVC: LOLeaguesHeaderViewDelegate {
     func didTapCreateButton() {
+        checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
+        
         if userUid != "" && isPro == true {
             performSegue(withIdentifier: Constants.Segues.goToCreateLeague, sender: self)
         } else if isPro == false {
@@ -194,6 +213,8 @@ extension LeagueVC: LOLeaguesHeaderViewDelegate {
     }
 
     func didTapJoinButton() {
+        checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
+        
         if userUid != "" && isPro == true  {
             performSegue(withIdentifier: Constants.Segues.goToJoinLeague, sender: self)
         } else if isPro == false {
