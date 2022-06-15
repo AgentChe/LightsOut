@@ -27,7 +27,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     var product: SKProduct?
     //Fetch Product From Apple
     public func fetchProduct() {
-        let request = SKProductsRequest(productIdentifiers: ["com.foytingo.getPro"])
+        let request = SKProductsRequest(productIdentifiers: ["com.foytingo.pro"])
         request.delegate = self
         request.start()
     }

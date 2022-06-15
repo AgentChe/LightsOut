@@ -16,7 +16,6 @@ class OnlineRankingsVC: LODataLoadingVC {
     var onlineRecords: [RecordModel] = []
     {
         didSet {
-            print("DEBUG: Online record was change")
             updateData(on: onlineRecords)
 
         }
@@ -47,7 +46,6 @@ class OnlineRankingsVC: LODataLoadingVC {
     }
     
     func loadRecords() {
-        print("DEBUG: Online load records work")
         self.showLoadingView()
         FirebaseManager.shared.getAllRecordsFromFirestore { records, error in
             guard let error = error else {
@@ -56,7 +54,7 @@ class OnlineRankingsVC: LODataLoadingVC {
 
                 return
             }
-            print("DEBUG: Error with load records \(error)")
+            self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.unableToComplete)
         }
     }
     

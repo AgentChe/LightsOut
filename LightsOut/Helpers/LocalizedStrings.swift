@@ -93,4 +93,5 @@ enum LocalizedStrings {
     static let emailPlaceholder = NSLocalizedString("Enter your feedback here...", comment: "")
     static let emptyStateInLeague = NSLocalizedString("No Records?\n Add records with the add button", comment: "")
     static let emptyStateInLocalRecords = NSLocalizedString("No Records?\n Go to the Lights Out screen and test your reaction time.", comment: "")
+    static let languageSettings = NSLocalizedString("en", comment: "")
 }

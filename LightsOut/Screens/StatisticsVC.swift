@@ -54,7 +54,6 @@ class StatisticsVC: LODataLoadingVC {
                                            ChartDataEntry(x: 5, y: avarages[5].isNaN ? 0.0 : avarages[5]),
                                            ChartDataEntry(x: 6, y: avarages[6].isNaN ? 0.0 : avarages[6])]
 
-                print(avarages)
                 let set1 = LineChartDataSet(entries: chartValuesForDates, label: LocalizedStrings.chartDesc)
                 set1.setColor(.systemRed)
                 set1.drawCircleHoleEnabled = false

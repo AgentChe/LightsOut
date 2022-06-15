@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let isItOpenBefore = defaults.bool(forKey: Constants.Keys.isItFirstOpen)
         
         if !isItOpenBefore {
-            print("DEBUG: IT IS FIRST")
+            // IT IS FIRST TIME APP OPENING
             defaults.set(5, forKey: Constants.Keys.lifeCount)
             defaults.set(true, forKey: Constants.Keys.isItFirstOpen)
             //UserDefaults.standard.set(true, forKey: Keys.adsFree)
@@ -32,8 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if adsFreeStatus {
                 defaults.set(true, forKey: Constants.Keys.getPro)
             }
-        } else {
-            print("DEBUG: IT was opened before")
         }
         
         
@@ -74,6 +72,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Remove the observer.
+        SKPaymentQueue.default().remove(IAPManager.shared)
     }
 
 

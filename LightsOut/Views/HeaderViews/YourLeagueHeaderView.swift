@@ -27,7 +27,6 @@ class YourLeagueHeaderView: UICollectionReusableView {
     
 
     @objc func handleTap(sender: UITapGestureRecognizer){
-        print("DEBUG: HandleTap")
         headerViewDelegate?.didTapAction()
     }
 }

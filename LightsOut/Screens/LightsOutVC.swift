@@ -79,15 +79,14 @@ class LightsOutVC: UIViewController {
         }
     }
     
-    var isSoundOn: Bool = UserDefaults.standard.bool(forKey: Constants.Keys.soundSettings)
+    var isSoundOn: Bool = false
     
     var removedAdsButtonTapped = false
     var isPro: Bool? {
         didSet {
             if isPro == false && oldValue == nil {
                 requestIDFA()
-                print("DEBUG: Pro Olunmadi")
-                //                requestIDFA()
+
             } else if isPro == true {
                 getProButton.isHidden = true
                 getProButton.isEnabled = false
@@ -122,6 +121,7 @@ class LightsOutVC: UIViewController {
         super.viewWillAppear(animated)
         removedAdsButtonTapped = false
         isPro = isPurchased()
+        isSoundOn = UserDefaults.standard.bool(forKey: Constants.Keys.soundSettings)
     }
     
     func checkConnectionAndShowAlertAndReturn(withMessage message: LOError) {
@@ -203,15 +203,12 @@ class LightsOutVC: UIViewController {
         if let ad = rewardedAd {
             ad.present(fromRootViewController: self) {
                 let reward = ad.adReward
-                print("Reward received with currency \(reward.amount), amount \(reward.amount.doubleValue)")
-                if reward.amount == 10 {
+                if reward.amount.doubleValue > 0 {
                     self.didEarnLife = true
-                    
                 }
-                
             }
         } else {
-            print("Ad wasn't ready")
+            self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.unableToComplete)
         }
     }
     
@@ -232,7 +229,9 @@ class LightsOutVC: UIViewController {
     @objc func lightsRed() {
         lights[lightsCountForStartSequence].turnRed()
         lightsCountForStartSequence += 1
-        
+        if isSoundOn {
+            LOAudioPlayer.shared.playsound(soundType: .lights)
+        }
         
         if lightsCountForStartSequence == 5 {
             instructionView.changeLabel(with: LocalizedStrings.waitLightsOut)
@@ -248,7 +247,8 @@ class LightsOutVC: UIViewController {
             for light in self.lights {
                 light.turnDefault()
             }
-            if self.isSoundOn {
+            
+            if isSoundOn {
                 LOAudioPlayer.shared.playsound(soundType: .start)
             }
             self.reactionCounterTimer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
@@ -298,7 +298,6 @@ extension LightsOutVC: LOTouchAreaDelegate {
                 lifeCount -= 1
                 lifeView.lifeUpOrDownAnimation(lifeCase: .down)
                 defaults.set(lifeCount, forKey: Constants.Keys.lifeCount)
-                print("DEBUG: Lifecount down \(lifeCount)")
             }
             
             instructionView.changeLabel(with: LocalizedStrings.fail)
@@ -334,13 +333,10 @@ extension LightsOutVC: LOTouchAreaDelegate {
 
 extension LightsOutVC: LOLifeViewDelegate {
     func didTapAddLifeButton() {
-        print("DEBUG: Add life Button Tapped")
         checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
         if !isPro! {
             showedRewardedAds = true
             showRewarded()
-            //            lifeCount += 1
-            //            lifeView.lifeUpOrDownAnimation(lifeCase: .up)
         }
         
     }
@@ -351,7 +347,6 @@ extension LightsOutVC: LOLifeViewDelegate {
 extension LightsOutVC: GADFullScreenContentDelegate {
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         if showedRewardedAds {
-            print("DEBUG: Rewarded ads sghow")
             showedRewardedAds = false
             createAndloadRewardedAd()
             if didEarnLife {
@@ -359,25 +354,9 @@ extension LightsOutVC: GADFullScreenContentDelegate {
                 lifeView.lifeUpOrDownAnimation(lifeCase: .up)
                 didEarnLife = false
             }
-            
-            
-            print("DEBUG: showedRewardedAds = \(showedRewardedAds) and create new rewarded ads")
         } else {
-            print("DEBUG: Create new interstitial ads.")
             createAndLoadInterstitial()
         }
         
     }
-    
-    /// Tells the delegate that the ad failed to present full screen content.
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        print("Ad did fail to present full screen content.")
-    }
-    
-    /// Tells the delegate that the ad will present full screen content.
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad will present full screen content.")
-    }
-    
-    
 }

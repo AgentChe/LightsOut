@@ -65,7 +65,6 @@ class LOTouchAreaView: UIView {
             if lifeCount <= 0 {
                 let generator = UINotificationFeedbackGenerator()
                 generator.notificationOccurred(.error)
-                print("DEBUG: Error your have no life from touchareaView.")
                 sender.state = .cancelled
                 return
             }

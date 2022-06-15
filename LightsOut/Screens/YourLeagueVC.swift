@@ -160,7 +160,6 @@ class YourLeagueVC: LODataLoadingVC {
 
 extension YourLeagueVC: YourLeagueHeaderViewDelegate {
     func didTapAction() {
-        print("DEBUG: handletap Your elague")
         let destVC = UIStoryboard(name: "LOCreateLagueStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LOCreatLeagueConfirmation") as! LOCreatLeagueConfirmationVC
         destVC.modalPresentationStyle = .overFullScreen
         destVC.modalTransitionStyle = .crossDissolve

@@ -7,6 +7,7 @@
 
 import UIKit
 import Network
+import GoogleMobileAds
 
 class LeagueVC: LODataLoadingVC {
     
@@ -16,8 +17,6 @@ class LeagueVC: LODataLoadingVC {
 
     let goLeagueInfo = Notification.Name(rawValue: Constants.NotificationKeys.goLeagueNotificationKey)
     let updateLeagueInfo = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
-    
-    let cellId = "cellId"
     
     var friendsLeague: [LeagueModel] = [] {
         didSet {
@@ -37,9 +36,17 @@ class LeagueVC: LODataLoadingVC {
         }
     }
     
+    var bannerIsLoad = true {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +55,8 @@ class LeagueVC: LODataLoadingVC {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isScrollEnabled = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId) //This will be turned ad cell.
+        
+        collectionView.register(UINib(nibName: Constants.CellReuseID.bannerCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.bannerCell)
         collectionView.register(UINib(nibName: Constants.CellReuseID.fullSizeCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.fullSizeCell)
         collectionView.register(UINib(nibName: Constants.CellReuseID.squareCell, bundle: nil), forCellWithReuseIdentifier: Constants.CellReuseID.squareCell)
         
@@ -60,6 +68,7 @@ class LeagueVC: LODataLoadingVC {
         let queue = DispatchQueue.global(qos: .background)
         monitor.start(queue: queue)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         isPro = isPurchased()
@@ -141,7 +150,7 @@ extension LeagueVC: UICollectionViewDataSource {
         if section == 0 {
             return Constants.ItemCounts.leagueVCSection0
         } else if section == 1 {
-            return Constants.ItemCounts.leagueVCSection1
+            return bannerIsLoad ? Constants.ItemCounts.leagueVCSection1 : 0
         } else {
             return friendsLeague.isEmpty ? 1 : friendsLeague.count
         }
@@ -155,8 +164,10 @@ extension LeagueVC: UICollectionViewDataSource {
             return cell
         } else if indexPath.section == 1 {
             //This is ad cell
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-            cell.backgroundColor = .systemRed
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.bannerCell, for: indexPath) as! LOBannerCell
+            cell.adView.delegate = self
+            cell.adView.rootViewController = self
+            cell.adView.load(GADRequest())
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.squareCell, for: indexPath) as! LOSquareCell
@@ -188,9 +199,7 @@ extension LeagueVC: UICollectionViewDelegate {
                 checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
                 goTo(with: Constants.Screens.onlineRecordsVC)
             }
-        } else if indexPath.section == 1 {
-            print("DEBUG: REKLAM")
-        } else {
+        } else if indexPath.section == 2 {
             checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
             if self.friendsLeague.isEmpty {
                 checkUserProStatusAndPresentAlert(status: isPro, userUid: userUid)
@@ -222,4 +231,11 @@ extension LeagueVC: LOLeaguesHeaderViewDelegate {
         }
     }
   
+}
+
+extension LeagueVC: GADBannerViewDelegate {
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        bannerIsLoad = false
+    }
+
 }

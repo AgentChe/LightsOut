@@ -41,22 +41,20 @@ class LOAddNameVC: LODataLoadingVC {
         guard var record = record else {
             return
         }
-        print(record)
         record.name = nameTextField.text
         record.isSaved = true
         showLoadingView()
         DatabaseManager.shared.updateRecord(record: record) { error in
             if let error = error {
-                print("DEBUG: Error: \(error)")
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             } else {
-                print("DEBUG: Successfully updated with no error")
                 FirebaseManager.shared.saveRecordToFirebase(record: record
                 ) { error in
                     self.dismissLoadingView()
                     self.delegate?.didTapSaveButton(index: self.index , name: self.nameTextField.text!)
                     self.dismiss(animated: true)
                     guard let error = error else { return }
-                    print("DEBUG: Error with save to firebase - \(error)")
+                    self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
                 }
             }
         }

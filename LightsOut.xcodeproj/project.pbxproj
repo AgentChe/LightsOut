@@ -10,6 +10,8 @@
 		4909185DCD44C67D06BF705A /* Pods_LightsOut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4A4C52EE7E4842B3FDD436 /* Pods_LightsOut.framework */; };
 		B62B039A2857155900C0D11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62B039C2857155900C0D11E /* Main.storyboard */; };
 		B62B03A5285716EF00C0D11E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B62B03A7285716EF00C0D11E /* Localizable.strings */; };
+		B6479FD42859D1640050CE8B /* LOBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6479FD22859D1640050CE8B /* LOBannerCell.swift */; };
+		B6479FD52859D1640050CE8B /* LOBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6479FD32859D1640050CE8B /* LOBannerCell.xib */; };
 		B66D291D2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D291F2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard */; };
 		B66D29262857560C002CAD00 /* LOCreateLagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D29282857560C002CAD00 /* LOCreateLagueStoryboard.storyboard */; };
 		B66D292D2857568E002CAD00 /* LOJoinLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D292F2857568E002CAD00 /* LOJoinLeagueStoryboard.storyboard */; };
@@ -95,6 +97,9 @@
 		B62B03A6285716EF00C0D11E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B62B03A92857199C00C0D11E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B62B03AA285719B200C0D11E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B6479FD22859D1640050CE8B /* LOBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOBannerCell.swift; sourceTree = "<group>"; };
+		B6479FD32859D1640050CE8B /* LOBannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LOBannerCell.xib; sourceTree = "<group>"; };
+		B6479FD62859F8530050CE8B /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		B66D291E2857555B002CAD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LOAddNameForLeagueStoryboard.storyboard; sourceTree = "<group>"; };
 		B66D292328575567002CAD00 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LOAddNameForLeagueStoryboard.strings; sourceTree = "<group>"; };
 		B66D292528575596002CAD00 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LOAddNameForLeagueStoryboard.strings; sourceTree = "<group>"; };
@@ -178,7 +183,6 @@
 		B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B6BDFB2828508D8300F805A5 /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		B6BDFB2A28508F1E00F805A5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
-		B6BDFB2C2850924C00F805A5 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		B6DCD24828531C3E00725C1E /* RefreshMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshMessage.swift; sourceTree = "<group>"; };
 		B6DCD24A28531D1000725C1E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		B6DCD24C28531D5A00725C1E /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
@@ -249,10 +253,10 @@
 				B6BDFA7D285079A500F805A5 /* LaunchScreen.storyboard */,
 				B6BDFA80285079A500F805A5 /* Info.plist */,
 				B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */,
-				B6BDFB2C2850924C00F805A5 /* Configuration.storekit */,
 				B62B03A7285716EF00C0D11E /* Localizable.strings */,
 				B66D293D28575C1C002CAD00 /* beep2.wav */,
 				B66D294128575DF0002CAD00 /* start.wav */,
+				B6479FD62859F8530050CE8B /* Configuration.storekit */,
 			);
 			path = LightsOut;
 			sourceTree = "<group>";
@@ -439,6 +443,8 @@
 				B6BDFB112850824900F805A5 /* LOOnlineRecordCell.xib */,
 				B6BDFB172850824900F805A5 /* LOSquareCell.swift */,
 				B6BDFB122850824900F805A5 /* LOSquareCell.xib */,
+				B6479FD22859D1640050CE8B /* LOBannerCell.swift */,
+				B6479FD32859D1640050CE8B /* LOBannerCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 				B6BDFB1C2850824900F805A5 /* LOLocalRecordCell.xib in Resources */,
 				B66D29262857560C002CAD00 /* LOCreateLagueStoryboard.storyboard in Resources */,
 				B6BDFA7C285079A500F805A5 /* Assets.xcassets in Resources */,
+				B6479FD52859D1640050CE8B /* LOBannerCell.xib in Resources */,
 				B66D291D2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard in Resources */,
 				B66D2934285756EB002CAD00 /* LOAddNameStoryboard.storyboard in Resources */,
 				B6BDFB1D2850824900F805A5 /* LOFullSizeCell.xib in Resources */,
@@ -626,6 +633,7 @@
 				B6BDFB182850824900F805A5 /* LOFullSizeCell.swift in Sources */,
 				B6BDFAA328507C7500F805A5 /* RecordModel.swift in Sources */,
 				B6BDFAFF285081B700F805A5 /* LOCreateLeagueVC.swift in Sources */,
+				B6479FD42859D1640050CE8B /* LOBannerCell.swift in Sources */,
 				B6BDFA75285079A300F805A5 /* SceneDelegate.swift in Sources */,
 				B6BDFAA128507C4600F805A5 /* LOError.swift in Sources */,
 				B6BDFAD12850804500F805A5 /* LOSingleLightView.swift in Sources */,

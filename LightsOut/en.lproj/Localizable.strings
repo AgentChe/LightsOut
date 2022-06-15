@@ -72,7 +72,7 @@
 "Your reaction time records and progression" = "Your reaction time records and progression";
 "Sound Effect" = "Sound Effect";
 "On" = "On";
-"Off" = "Kapali";
+"Off" = "Off";
 "About Game" = "About Game";
 "Rate on the App Store" = "Rate on the App Store";
 "Contact / Feedback" = "Contact / Feedback";
@@ -85,5 +85,5 @@
 "Your restore process is not completed. Please try again." = "Your restore process is not completed. Please try again.";
 "PRO option could not be purchasable. Please try again later." = "PRO option could not be purchasable. Please try again later.";
 "Check your internet connection" = "Check your internet connection";
-
+"en" = "en";
 

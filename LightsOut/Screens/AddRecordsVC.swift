@@ -78,25 +78,23 @@ class AddRecordsVC: LODataLoadingVC {
             FirebaseManager.shared.saveRecordToFirendLeague(records: selectedRecords, leagueNumber: leagueNumber) { error in
                 self.dismissLoadingView()
                 if let error = error {
-                    print("DEBUG: \(error)")
+                    self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
                 } else {
                     self.navigationController?.popViewController(animated: true)
                 }
             }
         }
         
-        //print(recordsWithEmptyName)
     }
     
     func loadRecords() {
-        print("DEBUG: Load records work")
         DatabaseManager.shared.getAllRecordsFromSqliteDb { result in
             switch result {
             case .success(let localRecords):
                 self.localRecords = localRecords
                 self.updateData(on: self.localRecords)
             case .failure(let error):
-                print("DEBUG: Load records error with error: \(error)")
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             }
         }
     }
@@ -172,7 +170,7 @@ extension AddRecordsVC: LOAddNameForLeagueVCDelegate {
 
             DatabaseManager.shared.updateRecordForFriendLeague(record: record) { error in
                 if let error = error {
-                    print("DEBUG: \(error)")
+                    self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
                 }
             }
             selectedRecords.append(record)
@@ -182,7 +180,7 @@ extension AddRecordsVC: LOAddNameForLeagueVCDelegate {
         FirebaseManager.shared.saveRecordToFirendLeague(records: selectedRecords, leagueNumber: leagueNumber) { error in
             self.dismissLoadingView()
             if let error = error {
-                print("DEBUG: \(error)")
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             } else {
                 self.navigationController?.popViewController(animated: true)
             }

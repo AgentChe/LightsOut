@@ -27,10 +27,8 @@ class LOCreateLeagueVC: UIViewController {
             FirebaseManager.shared.getLeagueDetails(leagueId: randomLeaagueID!) { result in
                 switch result {
                 case .success(_):
-                    print("DEBUG: Lig var")
                     self.randomLeaagueID = Int.random(in: 10000...99999)
                 case .failure(_):
-                    print("DEBUG: Lig yok")
                     self.leagueIdIsOk = true
                 }
             }

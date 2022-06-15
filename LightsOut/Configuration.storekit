@@ -1,21 +1,21 @@
 {
-  "identifier" : "75DA7E9F",
+  "identifier" : "E7EDC073",
   "nonRenewingSubscriptions" : [
 
   ],
   "products" : [
     {
-      "displayPrice" : "0.99",
+      "displayPrice" : "4.99",
       "familyShareable" : false,
-      "internalID" : "35AFDD7F",
+      "internalID" : "A466BFD9",
       "localizations" : [
         {
           "description" : "",
-          "displayName" : "",
+          "displayName" : "PRO",
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.foytingo.getPro",
+      "productID" : "com.foytingo.pro",
       "referenceName" : "PRO",
       "type" : "NonConsumable"
     }

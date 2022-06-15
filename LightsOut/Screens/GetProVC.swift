@@ -12,14 +12,13 @@ class GetProVC: UIViewController {
     @IBOutlet var closeButton: UIButton!
     @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var descriptionLabel: UITextView!
     
     @IBOutlet var buyButton: UIButton!
     @IBOutlet var restoreButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         IAPManager.shared.delegate = self
-        logoImageView.layer.cornerRadius = 10
+        configureViewElements()
     }
     
     @IBAction func closeButton(_ sender: UIButton) {
@@ -32,6 +31,19 @@ class GetProVC: UIViewController {
     
     @IBAction func restoreButton(_ sender: UIButton) {
         IAPManager.shared.restore()
+    }
+    
+    func configureViewElements() {
+        guard let product = IAPManager.shared.product else {
+            presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.unableToComplete)
+            return
+        }
+        
+        let price = "\(product.priceLocale.currencySymbol!) \(product.price)"
+        buyButton.layer.cornerRadius = 10
+        buyButton.setTitle(price, for: .normal)
+        logoImageView.layer.cornerRadius = 15
+        
     }
 }
 

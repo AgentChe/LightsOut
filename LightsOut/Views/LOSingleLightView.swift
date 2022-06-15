@@ -9,7 +9,7 @@ import UIKit
 
 class LOSingleLightView: UIView {
     
-    var isSoundOn: Bool = UserDefaults.standard.bool(forKey: Constants.Keys.soundSettings)
+    //var isSoundOn: Bool = UserDefaults.standard.bool(forKey: Constants.Keys.soundSettings)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,10 +32,7 @@ class LOSingleLightView: UIView {
         backgroundColor = .systemRed
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
-        print("DEBUG: issoundOn: \(isSoundOn)")
-        if isSoundOn {
-            LOAudioPlayer.shared.playsound(soundType: .lights)
-        }
+        
     }
     
     func turnDefault() {

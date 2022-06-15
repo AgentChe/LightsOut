@@ -85,17 +85,12 @@ struct FirebaseManager {
             completion(.wrongLeaguePassword)
             return
         }
-        
-        
-        print("DEBUG: LeagueNumber: \(leagueNumber)")
+   
         let docRef = db.collection("leagues").document(leagueNumber)
-        print("DEBUG: \(docRef)")
         docRef.getDocument(as: LeagueModel.self) { result in
-            print("LeagueWasFound")
             switch result {
             case .success(let league):
                 if league.participantsUids.contains(userUid) {
-                    print("DEBUG: zaten ligdesin")
                     completion(.alreadyInLeague)
                 } else {
                     if password == league.leaguePassword {
@@ -116,7 +111,6 @@ struct FirebaseManager {
                     }
                 }
             case .failure(let error):
-                print("DEBUG: \(error)")
                 completion(.cantFoundLeague)
             }
         }
@@ -127,7 +121,6 @@ struct FirebaseManager {
         
         db.collection("leagues").whereField("participantsUids", arrayContains: userUid).getDocuments { snapshot, error in
             if let error = error {
-                print("DEBUG: Error getting documents")
                 completion(yourLeagues,error)
             } else {
                 for document in snapshot!.documents {
@@ -164,7 +157,6 @@ struct FirebaseManager {
     
     
     func saveRecordToFirebase(record: RecordModel, completion: @escaping(Error?) -> Void) {
-        print("DEBUG: saverecordto firebase work")
         db.collection("records").order(by: "recordTime").getDocuments { snapshot, error in
             if let error = error {
                 completion(error)
@@ -178,8 +170,6 @@ struct FirebaseManager {
                                   "name": record.name ?? "",
                                   "timeStamp": record.timeStamp,
                                   "recordUid": record.recordUid] as [String : Any]
-                
-                print("DEBUG: \(record)")
                 
                 self.db.collection("records").document(record.recordUid).setData(recordData, completion: completion)
             }
@@ -260,7 +250,7 @@ struct FirebaseManager {
         
         var refreshMessage = RefreshMessage(title: "Info", message: "Info message")
         
-        let languageSettings = "TR"//LocalizedStrings.languageSettings
+        let languageSettings = LocalizedStrings.languageSettings
         
         db.collection("refreshMessage_\(languageSettings)").getDocuments { (snapshot, error) in
             if let error = error {

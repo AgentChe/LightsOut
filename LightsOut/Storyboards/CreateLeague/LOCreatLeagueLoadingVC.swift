@@ -55,26 +55,14 @@ class LOCreatLeagueLoadingVC: UIViewController {
             switch result {
                 
             case .success(let leagueDetails):
-                print("DEBUG: Successfuly created and show league id and password \(leagueDetails.leagueId)")
                 destVC.leagueID = leagueDetails.leagueId
                 destVC.password = leagueDetails.leaguePassword
                 self.present(destVC, animated: true)
             case .failure(let error):
-                print("DEBUG: \(error)")
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             }
         }
-        
-        
-        //        FirebaseManager.shared.createLeagueToFirebase(league: newLeague) { error in
-        //            if let error = error {
-        //                print("DEBUG: \(error)")
-        //            } else {
-        //                print("DEBUG: Successfuly created and show league id and password")
-        //                self.performSegue(withIdentifier: "goToConfirmationCreate", sender: self)
-        //            }
-        //
-        //
-        //        }
+
     }
     
     
