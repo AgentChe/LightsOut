@@ -24,7 +24,8 @@ class LOCreateLeagueVC: UIViewController {
     var password = 0
     var randomLeaagueID: Int? {
         didSet {
-            FirebaseManager.shared.getLeagueDetails(leagueId: randomLeaagueID!) { result in
+            FirebaseManager.shared.getLeagueDetails(leagueId: randomLeaagueID!) { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .success(_):
                     self.randomLeaagueID = Int.random(in: 10000...99999)

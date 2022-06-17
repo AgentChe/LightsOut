@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  LightsOut
+
+  Created by Murat Baykor on 17.06.2022.
+  
+*/
+
+NSUserTrackingUsageDescription = "Size kişiselleştirilmiş reklamlar sunmak için kullanılacaktır.";

@@ -35,7 +35,8 @@ class LOJoinLeagueLoadingVC: UIViewController {
             return
         }
 
-        FirebaseManager.shared.joinLeague(leagueNumber: leagueNumber, leaguePassword: leaguePassword, userUid: userUid) { error in
+        FirebaseManager.shared.joinLeague(leagueNumber: leagueNumber, leaguePassword: leaguePassword, userUid: userUid) { [weak self] error in
+            guard let self = self else { return }
             if error != nil {
                 self.alertTitle = LocalizedErrorMessages.somethingWentWrong
                 self.alertMessage = LocalizedErrorMessages.cantJoinLeague

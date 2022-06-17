@@ -1,9 +1,9 @@
 
 /* Class = "UILabel"; text = "You can save your record to the friend league."; ObjectID = "cDq-zH-zZF"; */
-"cDq-zH-zZF.text" = "Zaman kaydınızı arkadaş ligine kaydedebilirsiniz.";
+"cDq-zH-zZF.text" = "Zaman kaydınızı arkadaş ligine isim ekleyerek kaydedebilirsiniz.";
 
 /* Class = "UILabel"; text = "Save Record"; ObjectID = "cSs-VS-y8p"; */
-"cSs-VS-y8p.text" = "Zamanı Kaydet";
+"cSs-VS-y8p.text" = "İsim Ekle";
 
 /* Class = "UIButton"; configuration.title = "Cancel"; ObjectID = "gW2-g7-8JT"; */
 "gW2-g7-8JT.configuration.title" = "İptal";

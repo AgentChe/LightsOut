@@ -167,7 +167,7 @@ class LightsOutVC: UIViewController {
     
     func createAndLoadInterstitial() {
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID: Constants.TestKeys.interstitial,
+        GADInterstitialAd.load(withAdUnitID: Constants.AdMobKeys.interstitial,
                                request: request,
                                completionHandler: { [self] ad, error in
             if error != nil {
@@ -187,7 +187,7 @@ class LightsOutVC: UIViewController {
     
     func createAndloadRewardedAd() {
         let request = GADRequest()
-        GADRewardedAd.load(withAdUnitID: Constants.TestKeys.rewarded,
+        GADRewardedAd.load(withAdUnitID: Constants.AdMobKeys.rewarded,
                            request: request,
                            completionHandler: { [self] ad, error in
             if error != nil {
@@ -213,7 +213,8 @@ class LightsOutVC: UIViewController {
     }
     
     func anonymousLogin() {
-        FirebaseManager.shared.authAnonymous { uid, error in
+        FirebaseManager.shared.authAnonymous { [weak self] uid, error in
+            guard let self = self else { return }
             guard let error = error else {
                 self.userUid = uid
                 return

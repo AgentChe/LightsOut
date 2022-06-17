@@ -16,15 +16,15 @@ struct FirebaseManager {
     static let shared = FirebaseManager()
     let db = Firestore.firestore()
     
-    func authAnonymous(completion: @escaping(String, Error?) -> Void) {
+    func authAnonymous(completion: @escaping(String, LOError?) -> Void) {
         var uid = ""
         Auth.auth().signInAnonymously { authResult, error in
-            if let error = error {
-                completion(uid, error)
+            if error != nil {
+                completion(uid, .pleaseReopenApp)
             } else {
                 guard let user = authResult?.user else { return }
                 uid = user.uid
-                completion(uid, error)
+                completion(uid, nil)
             }
         }
     }
@@ -37,11 +37,11 @@ struct FirebaseManager {
         }
     }
     
-    func getAllRecordsFromFirestore(completion: @escaping([RecordModel], Error?) -> Void) {
+    func getAllRecordsFromFirestore(completion: @escaping([RecordModel], LOError?) -> Void) {
         var records = [RecordModel]()
         db.collection("records").order(by: "recordTime").getDocuments { snapshot, error in
-            if let error = error {
-                completion(records, error)
+            if error != nil {
+                completion(records, .unableToGetAllRecords)
             } else {
                 for document in snapshot!.documents {
                     let recordUid = document.documentID
@@ -57,7 +57,7 @@ struct FirebaseManager {
                         break
                     }
                 }
-                completion(records, error)
+                completion(records, nil)
             }
         }
     }
@@ -110,18 +110,18 @@ struct FirebaseManager {
                         completion(.wrongLeaguePassword)
                     }
                 }
-            case .failure(let error):
+            case .failure(_):
                 completion(.cantFoundLeague)
             }
         }
     }
  
-    func getYourLeagues(userUid: String, completion: @escaping([LeagueModel],Error?) -> Void) {
+    func getYourLeagues(userUid: String, completion: @escaping([LeagueModel],LOError?) -> Void) {
         var yourLeagues = [LeagueModel]()
         
         db.collection("leagues").whereField("participantsUids", arrayContains: userUid).getDocuments { snapshot, error in
-            if let error = error {
-                completion(yourLeagues,error)
+            if error != nil {
+                completion(yourLeagues, .cantGetYourLeagues)
             } else {
                 for document in snapshot!.documents {
                     
@@ -136,20 +136,20 @@ struct FirebaseManager {
                     let newLeague = LeagueModel(leagueId: leagueId, leagueName: leagueName, leaguePassword: leaguePassword, creatorUid: creatorUid, participantCount: participantCount, participantsUids: participantsUids, recordsInLeagues: recordsInLeagues)
                     yourLeagues.append(newLeague)
                 }
-                completion(yourLeagues,error)
+                completion(yourLeagues,nil)
             }
         }
     }
     
     
-    func getrecordsInLeague(leagueId: Int, completion: @escaping([OnlineRecordModel]?, Error?) -> Void) {
+    func getrecordsInLeague(leagueId: Int, completion: @escaping([OnlineRecordModel]?, LOError?) -> Void) {
         let docRef = db.collection("leagues").document("\(leagueId)")
         docRef.getDocument(as: LeagueModel.self) { result in
             switch result {
             case .success(let league):
                 completion(league.recordsInLeagues, nil)
-            case .failure(let error):
-                completion(nil, error)
+            case .failure(_):
+                completion(nil, .cantGetRecordsInLeague)
             }
         }
     }

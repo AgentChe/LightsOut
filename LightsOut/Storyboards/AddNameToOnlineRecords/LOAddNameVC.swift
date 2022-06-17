@@ -48,8 +48,8 @@ class LOAddNameVC: LODataLoadingVC {
             if let error = error {
                 self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             } else {
-                FirebaseManager.shared.saveRecordToFirebase(record: record
-                ) { error in
+                FirebaseManager.shared.saveRecordToFirebase(record: record) { [weak self] error in
+                    guard let self = self else { return }
                     self.dismissLoadingView()
                     self.delegate?.didTapSaveButton(index: self.index , name: self.nameTextField.text!)
                     self.dismiss(animated: true)

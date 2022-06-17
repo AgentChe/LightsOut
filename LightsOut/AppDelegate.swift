@@ -14,10 +14,12 @@ import GoogleMobileAds
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let defaults = UserDefaults.standard
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        SKPaymentQueue.default().add(IAPManager.shared)
+        IAPManager.shared.fetchProduct()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-//        defaults.set(true, forKey: Keys.adsFree)
         FirebaseApp.configure()
         
         let isItOpenBefore = defaults.bool(forKey: Constants.Keys.isItFirstOpen)
@@ -28,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defaults.set(true, forKey: Constants.Keys.isItFirstOpen)
             //UserDefaults.standard.set(true, forKey: Keys.adsFree)
             let adsFreeStatus = defaults.bool(forKey: Constants.Keys.adsFree)
-            print("DEBUG: ads free have bought before: \(adsFreeStatus)")
             if adsFreeStatus {
                 defaults.set(true, forKey: Constants.Keys.getPro)
             }
@@ -36,27 +37,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         DatabaseManager.shared.connectDatabase { error in
-            
-            if let error = error {
-                //Show error alert with database connection
-                print("DEBUG: error from database connection \(error.localizedDescription)")
-            } else {
-                //Create table if is not
-                print("connection basarilir")
+            guard error != nil else {
+                //Connection success
                 DatabaseManager.shared.createTableIfWasNotCreated { error in
-                    guard let error = error else { return }
-                    //Show error alert with table creation
-                    print("DEBUG: error from database creation \(error.localizedDescription)")
+                    guard error != nil else { return }
+                    //Show error alert with table creatio
                 }
+                return
             }
-        
-            
-            
         }
-        
-        SKPaymentQueue.default().add(IAPManager.shared)
-        IAPManager.shared.fetchProduct()
-        
         return true
     }
 

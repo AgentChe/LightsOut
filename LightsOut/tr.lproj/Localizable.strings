@@ -86,4 +86,6 @@
 "PRO option could not be purchasable. Please try again later." = "PRO seçeneği satın alınabilir degil. Lütfen daha sonra tekrar deneyin.";
 "Check your internet connection" = "İnternet bağlantınızı kontrol edin";
 "en" = "tr";
-
+"Please reopen the app." = "Lütfen uygulamayı tekrar açın.";
+"Your leagues can not be retrieved. Please try again." = "Ligleriniz alınamadı. Lütfen tekrar deneyiniz.";
+"The records in league can not be retrieved. Please try again." = "Ligdeki rekorlar alınamadı. Lütfen tekrar deneyiniz.";

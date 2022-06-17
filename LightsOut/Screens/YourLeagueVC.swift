@@ -69,7 +69,8 @@ class YourLeagueVC: LODataLoadingVC {
     func loadRecords() {
         self.showLoadingView()
         guard let leagueId = league?.leagueId else { return }
-        FirebaseManager.shared.getrecordsInLeague(leagueId: leagueId) { records, error in
+        FirebaseManager.shared.getrecordsInLeague(leagueId: leagueId) { [weak self] records, error in
+            guard let self = self else { return }
             self.dismissLoadingView()
             if let error = error {
                 self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)

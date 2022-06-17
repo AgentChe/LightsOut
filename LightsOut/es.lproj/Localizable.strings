@@ -86,5 +86,7 @@
 "PRO option could not be purchasable. Please try again later." = "La opción PRO no se pudo comprar. Vuelva a intentarlo más tarde.";
 "Check your internet connection" = "Revise su conexión a Internet";
 "en" = "es";
-
+"Please reopen the app." = "Vuelva a abrir la aplicación.";
+"Your leagues can not be retrieved. Please try again." = "Tus ligas no se pueden recuperar. Inténtalo de nuevo";
+"The records in league can not be retrieved. Please try again." = "No se pueden recuperar los récords de la liga. Vuelva a intentarlo";
 

@@ -8,6 +8,9 @@
 import Foundation
 
 enum LocalizedErrorMessages {
+    static let pleaseReopenApp = NSLocalizedString("Please reopen the app.", comment: "")
+    static let cantGetYourLeagues = NSLocalizedString("Your leagues can not be retrieved. Please try again.", comment: "")
+    static let cantGetRecordsInLeague = NSLocalizedString("The records in league can not be retrieved. Please try again.", comment: "")
     static let somethingWentWrong = NSLocalizedString("Something went wrong", comment: "")
     static let unableToComplete = NSLocalizedString("Unable to complete your request. Please try again.", comment: "")
     static let unableToConnectDatabase = NSLocalizedString("The app could not connect to the database. Please reopen the app.", comment: "")

@@ -15,7 +15,7 @@ class LOBannerCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10
-        adView.adUnitID = Constants.TestKeys.banner
+        adView.adUnitID = Constants.AdMobKeys.banner
     }
 
 

@@ -9,7 +9,7 @@ import Foundation
 
 enum LOError: String, Error, Codable {
     
-    case unableToConnectDatabase, unableToCreateDatabase, dbWasCreatedSuccessfully, dbAlreadyCreated, unableToSaveNewRecord, unableToGetAllRecords, unableToDelete, cantGetSingleUserFromDB, updateErrorInLocalDb, cantCalculateAvarageForChart,wrongLeaguePassword, cantFoundLeague, cantJoinLeague, checkYourPassword, alreadyInLeague, createLeagueError, checkYourInternet
+    case unableToConnectDatabase, unableToCreateDatabase, unableToSaveNewRecord, unableToGetAllRecords, unableToDelete, cantGetSingleUserFromDB, updateErrorInLocalDb, cantCalculateAvarageForChart,wrongLeaguePassword, cantFoundLeague, cantJoinLeague, checkYourPassword, alreadyInLeague, createLeagueError, checkYourInternet, pleaseReopenApp, cantGetYourLeagues, cantGetRecordsInLeague
     
     var localizedDescription: String {
         switch self {
@@ -17,10 +17,10 @@ enum LOError: String, Error, Codable {
             return LocalizedErrorMessages.unableToConnectDatabase
         case .unableToCreateDatabase:
             return LocalizedErrorMessages.unableToCreateDatabase
-        case .dbWasCreatedSuccessfully:
-            return "Database was created successfuly"
-        case .dbAlreadyCreated:
-            return "Database was already created."
+//        case .dbWasCreatedSuccessfully:
+//            return "Database was created successfuly"
+//        case .dbAlreadyCreated:
+//            return "Database was already created."
         case .unableToSaveNewRecord:
             return LocalizedErrorMessages.unableToSaveNewRecord
         case .unableToGetAllRecords:
@@ -47,6 +47,12 @@ enum LOError: String, Error, Codable {
             return LocalizedErrorMessages.cantCreateLeague
         case .checkYourInternet:
             return LocalizedErrorMessages.checkYourInternet
+        case .pleaseReopenApp:
+            return LocalizedErrorMessages.pleaseReopenApp
+        case .cantGetYourLeagues:
+            return LocalizedErrorMessages.cantGetYourLeagues
+        case .cantGetRecordsInLeague:
+            return LocalizedErrorMessages.cantGetRecordsInLeague
         }
     }
 }

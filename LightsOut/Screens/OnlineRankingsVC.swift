@@ -36,7 +36,8 @@ class OnlineRankingsVC: LODataLoadingVC {
     }
     
     func loadRankingRefreshMessage() {
-        FirebaseManager.shared.loadRankingRefreshMessage { (refreshMessage, error) in
+        FirebaseManager.shared.loadRankingRefreshMessage { [weak self] (refreshMessage, error) in
+            guard let self = self else { return }
             guard let error = error else {
                 self.presentAlertWithOk(title: refreshMessage.title, message: refreshMessage.message)
                 return
@@ -47,8 +48,9 @@ class OnlineRankingsVC: LODataLoadingVC {
     
     func loadRecords() {
         self.showLoadingView()
-        FirebaseManager.shared.getAllRecordsFromFirestore { records, error in
-            guard let error = error else {
+        FirebaseManager.shared.getAllRecordsFromFirestore { [weak self] records, error in
+            guard let self = self else { return }
+            guard error != nil else {
                 self.dismissLoadingView()
                 self.onlineRecords = records
 

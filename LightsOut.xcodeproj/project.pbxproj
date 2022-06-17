@@ -12,6 +12,7 @@
 		B62B03A5285716EF00C0D11E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B62B03A7285716EF00C0D11E /* Localizable.strings */; };
 		B6479FD42859D1640050CE8B /* LOBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6479FD22859D1640050CE8B /* LOBannerCell.swift */; };
 		B6479FD52859D1640050CE8B /* LOBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6479FD32859D1640050CE8B /* LOBannerCell.xib */; };
+		B65F465A285CB1F20075EB4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B65F465C285CB1F20075EB4A /* InfoPlist.strings */; };
 		B66D291D2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D291F2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard */; };
 		B66D29262857560C002CAD00 /* LOCreateLagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D29282857560C002CAD00 /* LOCreateLagueStoryboard.storyboard */; };
 		B66D292D2857568E002CAD00 /* LOJoinLeagueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66D292F2857568E002CAD00 /* LOJoinLeagueStoryboard.storyboard */; };
@@ -100,6 +101,8 @@
 		B6479FD22859D1640050CE8B /* LOBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOBannerCell.swift; sourceTree = "<group>"; };
 		B6479FD32859D1640050CE8B /* LOBannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LOBannerCell.xib; sourceTree = "<group>"; };
 		B6479FD62859F8530050CE8B /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		B65F465B285CB1F20075EB4A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B65F465D285CB1FA0075EB4A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B66D291E2857555B002CAD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LOAddNameForLeagueStoryboard.storyboard; sourceTree = "<group>"; };
 		B66D292328575567002CAD00 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LOAddNameForLeagueStoryboard.strings; sourceTree = "<group>"; };
 		B66D292528575596002CAD00 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LOAddNameForLeagueStoryboard.strings; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		B66D294B28575EB7002CAD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/YourLeagueHeaderView.xib; sourceTree = "<group>"; };
 		B66D294E28575EBC002CAD00 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/YourLeagueHeaderView.strings; sourceTree = "<group>"; };
 		B66D295028575EC0002CAD00 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/YourLeagueHeaderView.strings; sourceTree = "<group>"; };
+		B698CE8E285CADAF00B3B19B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6A7EA5E28520FEE003F7852 /* YourLeagueHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourLeagueHeaderView.swift; sourceTree = "<group>"; };
 		B6B702FA2850CD07003D5AD3 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		B6BDFA6F285079A300F805A5 /* LightsOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightsOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +132,6 @@
 		B6BDFA74285079A300F805A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B6BDFA7B285079A500F805A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6BDFA7E285079A500F805A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B6BDFA80285079A500F805A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6BDFA9C28507C0800F805A5 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		B6BDFA9E28507C1500F805A5 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B6BDFAA028507C4600F805A5 /* LOError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOError.swift; sourceTree = "<group>"; };
@@ -251,12 +254,13 @@
 				B62B039C2857155900C0D11E /* Main.storyboard */,
 				B6BDFA7B285079A500F805A5 /* Assets.xcassets */,
 				B6BDFA7D285079A500F805A5 /* LaunchScreen.storyboard */,
-				B6BDFA80285079A500F805A5 /* Info.plist */,
 				B6BDFB262850875E00F805A5 /* GoogleService-Info.plist */,
+				B698CE8E285CADAF00B3B19B /* Info.plist */,
 				B62B03A7285716EF00C0D11E /* Localizable.strings */,
 				B66D293D28575C1C002CAD00 /* beep2.wav */,
 				B66D294128575DF0002CAD00 /* start.wav */,
 				B6479FD62859F8530050CE8B /* Configuration.storekit */,
+				B65F465C285CB1F20075EB4A /* InfoPlist.strings */,
 			);
 			path = LightsOut;
 			sourceTree = "<group>";
@@ -516,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62B03A5285716EF00C0D11E /* Localizable.strings in Resources */,
+				B65F465A285CB1F20075EB4A /* InfoPlist.strings in Resources */,
 				B6BDFB192850824900F805A5 /* LOOnlineRecordCell.xib in Resources */,
 				B6BDFB1A2850824900F805A5 /* LOSquareCell.xib in Resources */,
 				B6BDFB272850875E00F805A5 /* GoogleService-Info.plist in Resources */,
@@ -667,6 +672,15 @@
 				B62B03AA285719B200C0D11E /* tr */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B65F465C285CB1F20075EB4A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B65F465B285CB1F20075EB4A /* es */,
+				B65F465D285CB1FA0075EB4A /* tr */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		B66D291F2857555B002CAD00 /* LOAddNameForLeagueStoryboard.storyboard */ = {
@@ -865,10 +879,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 3FP28BF586;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LightsOut/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -896,10 +911,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 3FP28BF586;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LightsOut/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

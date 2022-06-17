@@ -75,8 +75,10 @@ class AddRecordsVC: LODataLoadingVC {
             self.present(destVC, animated: true)
         } else {
             showLoadingView()
-            FirebaseManager.shared.saveRecordToFirendLeague(records: selectedRecords, leagueNumber: leagueNumber) { error in
+            FirebaseManager.shared.saveRecordToFirendLeague(records: selectedRecords, leagueNumber: leagueNumber) { [weak self] error in
+                guard let self = self else { return }
                 self.dismissLoadingView()
+                
                 if let error = error {
                     self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
                 } else {
@@ -177,7 +179,8 @@ extension AddRecordsVC: LOAddNameForLeagueVCDelegate {
             
         }
         
-        FirebaseManager.shared.saveRecordToFirendLeague(records: selectedRecords, leagueNumber: leagueNumber) { error in
+        FirebaseManager.shared.saveRecordToFirendLeague(records: selectedRecords, leagueNumber: leagueNumber) { [weak self] error in
+            guard let self = self else { return }
             self.dismissLoadingView()
             if let error = error {
                 self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)

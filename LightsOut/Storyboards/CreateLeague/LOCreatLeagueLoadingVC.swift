@@ -47,7 +47,8 @@ class LOCreatLeagueLoadingVC: UIViewController {
         let recordsInLeague = [placeHolderRecord]
         let newLeague = LeagueModel(leagueId: leagueId, leagueName: leagueName, leaguePassword: passwordInt, creatorUid: leagueOwnerUid, participantCount: 1, participantsUids: [leagueOwnerUid], recordsInLeagues: recordsInLeague)
         
-        FirebaseManager.shared.createLeagueToFirebase(league: newLeague) { result in
+        FirebaseManager.shared.createLeagueToFirebase(league: newLeague) { [weak self] result in
+            guard let self = self else { return }
             let destVC = UIStoryboard(name: "LOCreateLagueStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LOCreatLeagueConfirmation") as! LOCreatLeagueConfirmationVC
             destVC.modalPresentationStyle = .overFullScreen
             destVC.modalTransitionStyle = .crossDissolve

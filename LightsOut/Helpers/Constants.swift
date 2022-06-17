@@ -20,7 +20,6 @@ struct Constants {
     enum ItemCounts {
         static let leagueVCSection0 = 2
         static let leagueVCSection1 = UserDefaults.standard.bool(forKey: Constants.Keys.getPro) ? 0 : 1
-        
         static let settingsVCSection0 = 2
         static let settingsVCSection1 = 1
         static let settingsVCSection2 = 3
@@ -95,6 +94,11 @@ struct Constants {
         static let rewarded = "ca-app-pub-3940256099942544/5224354917"
     }
     
+    enum AdMobKeys {
+        static let interstitial = "ca-app-pub-1024628359947334/9424812380"
+        static let banner = "ca-app-pub-1024628359947334/2932459211"
+        static let rewarded = "ca-app-pub-1024628359947334/9935922893"
+    }
 }
 
 

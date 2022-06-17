@@ -32,7 +32,9 @@ class LeagueVC: LODataLoadingVC {
     
     var isPro: Bool? {
         didSet {
-            collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
     
@@ -96,7 +98,8 @@ class LeagueVC: LODataLoadingVC {
     
     func loadFirendsLeaguesFromFirebase() {
         showLoadingView()
-        FirebaseManager.shared.getYourLeagues(userUid: userUid) { leagues, error in
+        FirebaseManager.shared.getYourLeagues(userUid: userUid) { [weak self] leagues, error in
+            guard let self = self else { return }
             guard let error = error else {
                 self.dismissLoadingView()
                 self.friendsLeague = leagues
@@ -110,7 +113,8 @@ class LeagueVC: LODataLoadingVC {
         if let currentUserUid = FirebaseManager.shared.getCurrentUser() {
             userUid = currentUserUid
         } else {
-            FirebaseManager.shared.authAnonymous { currentUserUid, error in
+            FirebaseManager.shared.authAnonymous { [weak self] currentUserUid, error in
+                guard let self = self else { return }
                 guard let error = error else {
                     self.userUid = currentUserUid
                     return
@@ -165,9 +169,14 @@ extension LeagueVC: UICollectionViewDataSource {
         } else if indexPath.section == 1 {
             //This is ad cell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.bannerCell, for: indexPath) as! LOBannerCell
-            cell.adView.delegate = self
-            cell.adView.rootViewController = self
-            cell.adView.load(GADRequest())
+            if !isPro! {
+                cell.adView.delegate = self
+                cell.adView.rootViewController = self
+                cell.adView.load(GADRequest())
+            } else {
+                cell.isHidden = true
+            }
+            
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellReuseID.squareCell, for: indexPath) as! LOSquareCell
