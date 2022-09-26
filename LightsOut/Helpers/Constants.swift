@@ -88,17 +88,17 @@ struct Constants {
         static let goToYourLeague = "goToYourLeague"
     }
     
-    enum TestKeys {
+    enum AdMobKeys {
         static let interstitial = "ca-app-pub-3940256099942544/1033173712"
         static let banner = "ca-app-pub-3940256099942544/6300978111"
         static let rewarded = "ca-app-pub-3940256099942544/5224354917"
     }
     
-    enum AdMobKeys {
+//    enum AdMobKeys {
         static let interstitial = "ca-app-pub-1024628359947334/9424812380"
         static let banner = "ca-app-pub-1024628359947334/2932459211"
         static let rewarded = "ca-app-pub-1024628359947334/9935922893"
-    }
+//    }
 }
 
 

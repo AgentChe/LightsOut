@@ -76,7 +76,10 @@ class YourLeagueVC: LODataLoadingVC {
                 self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: error.localizedDescription)
             } else {
                 var recordsInFriends = [RecordModel]()
-                for record in records! {
+                guard let records = records else {
+                    self.records = recordsInFriends
+                    return }
+                for record in records {
                     let newRecord = RecordModel(id: 0, userUid: record.userUid, timeStamp: record.timeStamp, recordTime: record.recordTime, name: record.name, recordUid: record.recordUid, isSaved: false, isOnline: false)
                     if newRecord.recordUid != "placeHolderRecord" {
                         recordsInFriends.append(newRecord)
@@ -145,7 +148,7 @@ class YourLeagueVC: LODataLoadingVC {
         if userUid == league.creatorUid {
             presentQuitAndDeleteAlert(userUid: userUid, leagueNumber: league.leagueId)
         } else {
-            
+            presentQuitAlert(userUid: userUid, leagueNumber: league.leagueId, participantCount: league.participantCount)
         }
     }
     

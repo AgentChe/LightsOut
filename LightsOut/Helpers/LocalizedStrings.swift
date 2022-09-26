@@ -61,6 +61,10 @@ enum LocalizedAlertboxStrings {
     static let deleteAll = NSLocalizedString("Delete All", comment: "")
     static let deleteOwns = NSLocalizedString("Delete Owns", comment: "")
     static let deleteRecordsDesc = NSLocalizedString("Your record will be deleted from league", comment: "")
+    static let addLife = NSLocalizedString("Add Life", comment: "")
+    static let addLifeDesc = NSLocalizedString("You can watch ads for one life or buy PRO for unlimited lives.", comment: "")
+    static let watchAdsButton = NSLocalizedString("Watch Ads +1 ❤️", comment: "")
+    static let getProButton = NSLocalizedString("Get PRO +∞ ❤️‍🔥", comment: "")
 }
 
 enum LocalizedStrings {

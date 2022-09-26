@@ -12,7 +12,7 @@ import AdSupport
 import GoogleMobileAds
 import Network
 
-class LightsOutVC: UIViewController {
+class LightsOutVC: LODataLoadingVC {
     
     let monitor = NWPathMonitor()
     
@@ -99,7 +99,11 @@ class LightsOutVC: UIViewController {
     var showedRewardedAds = false
     var didEarnLife = false
     private var interstitial: GADInterstitialAd?
-    private var rewardedAd: GADRewardedAd?
+    private var rewardedAd: GADRewardedAd? {
+        didSet {
+            rewardedAd?.fullScreenContentDelegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +113,7 @@ class LightsOutVC: UIViewController {
         touchArea.touchAreaDelegate = self
         lifeView.lifeViewDelegate = self
         lights = [light0,light1,light2,light3,light4]
-        
+
         lifeCount = defaults.integer(forKey: Constants.Keys.lifeCount)
         
         let queue = DispatchQueue.global(qos: .background)
@@ -159,8 +163,8 @@ class LightsOutVC: UIViewController {
     func requestIDFA() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                self.createAndLoadInterstitial()
-                self.createAndloadRewardedAd()
+//                self.createAndLoadInterstitial()
+                //self.createAndloadRewardedAd()
             })
         })
     }
@@ -186,31 +190,42 @@ class LightsOutVC: UIViewController {
     }
     
     func createAndloadRewardedAd() {
+        showLoadingView()
         let request = GADRequest()
         GADRewardedAd.load(withAdUnitID: Constants.AdMobKeys.rewarded,
                            request: request,
                            completionHandler: { [self] ad, error in
+            dismissLoadingView()
             if error != nil {
+                self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.unableToComplete)
                 return
             }
             rewardedAd = ad
-            rewardedAd?.fullScreenContentDelegate = self
-        }
-        )
-    }
-    
-    func showRewarded() {
-        if let ad = rewardedAd {
-            ad.present(fromRootViewController: self) {
-                let reward = ad.adReward
-                if reward.amount.doubleValue > 0 {
+            
+                ad?.present(fromRootViewController: self) {
+                let reward = ad?.adReward
+                    if reward?.amount.doubleValue ?? 0.0 > 0 {
                     self.didEarnLife = true
                 }
+                
             }
-        } else {
-            self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.unableToComplete)
-        }
+        })
+        
+        
     }
+    
+//    func showRewarded() {
+//        if let ad = rewardedAd {
+//            ad.present(fromRootViewController: self) {
+//                let reward = ad.adReward
+//                if reward.amount.doubleValue > 0 {
+//                    self.didEarnLife = true
+//                }
+//            }
+//        } else {
+//            self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.unableToComplete)
+//        }
+//    }
     
     func anonymousLogin() {
         FirebaseManager.shared.authAnonymous { [weak self] uid, error in
@@ -272,13 +287,22 @@ class LightsOutVC: UIViewController {
             if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
             }
-        case _ where count % 4 == 0:
+        case _ where count % 6 == 0:
             showInterstitialAd()
         default:
             break;
         }
     }
     
+    
+    func createInterstitialAdGameStart() {
+        let count = UserDefaults.standard.integer(forKey: Constants.Keys.playCountKey)
+        print("DEBUG: \(count)")
+        if count % 6 == 0 {
+            createAndLoadInterstitial()
+        }
+        
+    }
     
 }
 
@@ -288,6 +312,7 @@ extension LightsOutVC: LOTouchAreaDelegate {
         instructionView.isHidden = false
         instructionView.changeLabel(with: LocalizedStrings.waitLightsON)
         lightsUpInOrder()
+        createInterstitialAdGameStart()
     }
     
     func endGame() {
@@ -336,8 +361,20 @@ extension LightsOutVC: LOLifeViewDelegate {
     func didTapAddLifeButton() {
         checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
         if !isPro! {
-            showedRewardedAds = true
-            showRewarded()
+
+            let ac = UIAlertController(title: LocalizedAlertboxStrings.addLife, message: LocalizedAlertboxStrings.addLifeDesc, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.watchAdsButton, style: .default, handler: { action in
+                self.showedRewardedAds = true
+                self.createAndloadRewardedAd()
+            }))
+            
+            ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.getProButton, style: .default, handler: { action in
+                self.performSegue(withIdentifier: Constants.Segues.goToGetPro, sender: self)
+            }))
+            
+            ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.cancel, style: .cancel))
+            
+            present(ac, animated: true)
         }
         
     }
@@ -347,16 +384,18 @@ extension LightsOutVC: LOLifeViewDelegate {
 
 extension LightsOutVC: GADFullScreenContentDelegate {
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("DEBUG: BOOOO")
         if showedRewardedAds {
             showedRewardedAds = false
-            createAndloadRewardedAd()
+//            createAndloadRewardedAd()
             if didEarnLife {
+                print("DEBUG: zzaaaaa")
                 lifeCount += 1
                 lifeView.lifeUpOrDownAnimation(lifeCase: .up)
                 didEarnLife = false
             }
-        } else {
-            createAndLoadInterstitial()
+//        } else {
+//            createAndLoadInterstitial()
         }
         
     }

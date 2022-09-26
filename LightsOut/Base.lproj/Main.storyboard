@@ -86,7 +86,7 @@
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Ezw-3O-4kB" kind="presentation" modalPresentationStyle="fullScreen" id="lc8-Fk-SvK"/>
+                                    <segue destination="Ezw-3O-4kB" kind="presentation" identifier="goToGetPro" modalPresentationStyle="fullScreen" id="lc8-Fk-SvK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjT-nw-0VA">
@@ -155,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.79999999999995" y="67.916041979010501"/>
+            <point key="canvasLocation" x="890" y="15"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zrx-3k-dNp">
@@ -240,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qu-ey-y1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790" y="834"/>
+            <point key="canvasLocation" x="1790" y="810"/>
         </scene>
         <!--Online Rankings-->
         <scene sceneID="YFS-1G-XtL">
@@ -324,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLj-jJ-UAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2577" y="69"/>
+            <point key="canvasLocation" x="2701" y="15"/>
         </scene>
         <!--LOAddNameStoryboard-->
         <scene sceneID="Hda-ht-R7P">
@@ -899,7 +899,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="lc8-Fk-SvK"/>
-        <segue reference="4Sw-pg-8Vt"/>
+        <segue reference="MAo-7B-Q2o"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024" width="341" height="341"/>

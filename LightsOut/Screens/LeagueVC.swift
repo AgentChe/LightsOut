@@ -92,8 +92,12 @@ class LeagueVC: LODataLoadingVC {
         loadFirendsLeaguesFromFirebase()
     }
     
-    @objc func goLeague() {
-        goTo(with: Constants.Screens.yourLeagueVC)
+    @objc func goLeague(_ notification: NSNotification) {
+        guard let object = notification.object as? LeagueModel else { return }
+        let destVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.Screens.yourLeagueVC) as! YourLeagueVC
+        destVC.league = object
+        destVC.userUid = userUid
+        navigationController?.pushViewController(destVC, animated: true)
     }
     
     func loadFirendsLeaguesFromFirebase() {

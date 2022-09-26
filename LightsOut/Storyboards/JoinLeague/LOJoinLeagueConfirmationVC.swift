@@ -10,6 +10,7 @@ import UIKit
 class LOJoinLeagueConfirmationVC: UIViewController {
     
     @IBOutlet var boxView: UIView!
+    var leagueNumber: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +19,25 @@ class LOJoinLeagueConfirmationVC: UIViewController {
     }
     
     @IBAction func goLeagueButtonAction(_ sender: UIButton) {
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: {
-            let goLeagueName = Notification.Name(rawValue: Constants.NotificationKeys.goLeagueNotificationKey)
-            NotificationCenter.default.post(name: goLeagueName, object: nil)
-            let joinLeagueName = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
-            NotificationCenter.default.post(name: joinLeagueName, object: nil)
-            
-        })
+        guard let leagueNumber = leagueNumber else { return }
+        guard let leagueId = Int(leagueNumber) else { return }
+        FirebaseManager.shared.getLeagueDetails(leagueId: leagueId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let league):
+                self.view.window?.rootViewController?.dismiss(animated: true, completion: {
+                    let goLeagueName = Notification.Name(rawValue: Constants.NotificationKeys.goLeagueNotificationKey)
+                    NotificationCenter.default.post(name: goLeagueName, object: league)
+                    let joinLeagueName = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)
+                    NotificationCenter.default.post(name: joinLeagueName, object: nil)
+
+                })
+            case .failure(_):
+                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            }
+        }
+
+
     }
     
     

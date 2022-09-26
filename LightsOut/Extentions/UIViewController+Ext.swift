@@ -57,8 +57,7 @@ extension UIViewController {
         ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.cancel, style: .cancel))
         present(ac, animated: true)
     }
-    
-    
+
     func presentQuitAndDeleteAlert(userUid: String, leagueNumber: Int) {
         let ac = UIAlertController(title: LocalizedAlertboxStrings.quitLeague, message: LocalizedAlertboxStrings.quitAndDeleteDesc , preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.quitAndDelete , style: .destructive, handler: { [weak self] action in
@@ -78,10 +77,10 @@ extension UIViewController {
         present(ac, animated: true)
     }
 
-    func presentQuitAlert(userUid: String, leagueNumber: Int) {
+    func presentQuitAlert(userUid: String, leagueNumber: Int, participantCount: Int) {
         let ac = UIAlertController(title: LocalizedAlertboxStrings.quitLeague, message: LocalizedAlertboxStrings.justQuitDesc, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.quit, style: .destructive, handler: { [weak self] action in
-            FirebaseManager.shared.exitLeague(userUid: userUid, leagueNumber: leagueNumber, owner: false) { [weak self] error in
+            FirebaseManager.shared.exitLeague(userUid: userUid, leagueNumber: leagueNumber, owner: false, participantCount: participantCount) { [weak self] error in
                 guard let self = self else { return }
                 guard let error = error else {
                     let leagueWasDeleted = Notification.Name(rawValue: Constants.NotificationKeys.updateLeagueInfo)

@@ -43,6 +43,7 @@ class LOJoinLeagueLoadingVC: UIViewController {
                 self.performSegue(withIdentifier: Constants.Segues.goToAlert, sender: self)
             } else {
                 self.performSegue(withIdentifier: Constants.Segues.goToConfirmation, sender: self)
+                
             }
             
         }
@@ -53,6 +54,9 @@ class LOJoinLeagueLoadingVC: UIViewController {
               let secondView = segue.destination as! LOAlertVC
             secondView.alertTitle = alertTitle
             secondView.alertMessage = alertMessage
+        } else if segue.identifier == Constants.Segues.goToConfirmation {
+            let secondView = segue.destination as! LOJoinLeagueConfirmationVC
+            secondView.leagueNumber = leagueNumber
         }
     }
     

@@ -230,9 +230,9 @@ struct FirebaseManager {
         }
     }
 
-    func exitLeague(userUid: String, leagueNumber: Int, owner: Bool, completion: @escaping(Error?) -> Void) {
+    func exitLeague(userUid: String, leagueNumber: Int, owner: Bool, participantCount:Int = 0, completion: @escaping(Error?) -> Void) {
         let docRef = db.collection("leagues").document("\(leagueNumber)")
-        docRef.updateData(["participantsUids": FieldValue.arrayRemove([userUid])]) { error in
+        docRef.updateData(["participantCount": participantCount-1 ,"participantsUids": FieldValue.arrayRemove([userUid])]) { error in
             if let error = error {
                 completion(error)
             } else {
