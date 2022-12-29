@@ -63,7 +63,7 @@ class LightsOutVC: LODataLoadingVC {
                 if !isLifeTimeOn {
                     isLifeTimeOn = true
                     lifeZeroDate = Date().timeIntervalSince1970
-                    lifeFillDate = Date().timeIntervalSince1970 + 60
+                    lifeFillDate = Date().timeIntervalSince1970 + 120
                     defaults.set(lifeFillDate, forKey: Constants.Keys.lifeFillDate)
                     lifeTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTestTimer), userInfo: nil, repeats: true)
                 } else {
@@ -86,7 +86,7 @@ class LightsOutVC: LODataLoadingVC {
         didSet {
             if isPro == false && oldValue == nil {
                 requestIDFA()
-
+                
             } else if isPro == true {
                 getProButton.isHidden = true
                 getProButton.isEnabled = false
@@ -98,7 +98,11 @@ class LightsOutVC: LODataLoadingVC {
     
     var showedRewardedAds = false
     var didEarnLife = false
-    private var interstitial: GADInterstitialAd?
+    private var interstitial: GADInterstitialAd? {
+        didSet {
+            interstitial?.fullScreenContentDelegate = self
+        }
+    }
     private var rewardedAd: GADRewardedAd? {
         didSet {
             rewardedAd?.fullScreenContentDelegate = self
@@ -113,7 +117,7 @@ class LightsOutVC: LODataLoadingVC {
         touchArea.touchAreaDelegate = self
         lifeView.lifeViewDelegate = self
         lights = [light0,light1,light2,light3,light4]
-
+        
         lifeCount = defaults.integer(forKey: Constants.Keys.lifeCount)
         
         let queue = DispatchQueue.global(qos: .background)
@@ -140,7 +144,7 @@ class LightsOutVC: LODataLoadingVC {
     }
     
     func addOneToLifeCount() {
-        lifeCount += 1
+        lifeCount += 4
         lifeView.lifeUpOrDownAnimation(lifeCase: .up)
         DispatchQueue.main.async {
             self.instructionView.changeLabel(with: "")
@@ -163,7 +167,7 @@ class LightsOutVC: LODataLoadingVC {
     func requestIDFA() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-//                self.createAndLoadInterstitial()
+                //                self.createAndLoadInterstitial()
                 //self.createAndloadRewardedAd()
             })
         })
@@ -178,7 +182,7 @@ class LightsOutVC: LODataLoadingVC {
                 return
             }
             interstitial = ad
-            interstitial?.fullScreenContentDelegate = self
+            
         }
         )
     }
@@ -202,9 +206,9 @@ class LightsOutVC: LODataLoadingVC {
             }
             rewardedAd = ad
             
-                ad?.present(fromRootViewController: self) {
+            ad?.present(fromRootViewController: self) {
                 let reward = ad?.adReward
-                    if reward?.amount.doubleValue ?? 0.0 > 0 {
+                if reward?.amount.doubleValue ?? 0.0 > 0 {
                     self.didEarnLife = true
                 }
                 
@@ -214,18 +218,18 @@ class LightsOutVC: LODataLoadingVC {
         
     }
     
-//    func showRewarded() {
-//        if let ad = rewardedAd {
-//            ad.present(fromRootViewController: self) {
-//                let reward = ad.adReward
-//                if reward.amount.doubleValue > 0 {
-//                    self.didEarnLife = true
-//                }
-//            }
-//        } else {
-//            self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.unableToComplete)
-//        }
-//    }
+    //    func showRewarded() {
+    //        if let ad = rewardedAd {
+    //            ad.present(fromRootViewController: self) {
+    //                let reward = ad.adReward
+    //                if reward.amount.doubleValue > 0 {
+    //                    self.didEarnLife = true
+    //                }
+    //            }
+    //        } else {
+    //            self.presentAlertWithOk(title: LocalizedErrorMessages.somethingWentWrong, message: LocalizedErrorMessages.unableToComplete)
+    //        }
+    //    }
     
     func anonymousLogin() {
         FirebaseManager.shared.authAnonymous { [weak self] uid, error in
@@ -287,7 +291,8 @@ class LightsOutVC: LODataLoadingVC {
             if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
             }
-        case _ where count % 6 == 0:
+        case _ where count % 4 == 0:
+            
             showInterstitialAd()
         default:
             break;
@@ -297,8 +302,7 @@ class LightsOutVC: LODataLoadingVC {
     
     func createInterstitialAdGameStart() {
         let count = UserDefaults.standard.integer(forKey: Constants.Keys.playCountKey)
-        print("DEBUG: \(count)")
-        if count % 6 == 0 {
+        if count % 4 == 0 {
             createAndLoadInterstitial()
         }
         
@@ -361,10 +365,12 @@ extension LightsOutVC: LOLifeViewDelegate {
     func didTapAddLifeButton() {
         checkConnectionAndShowAlertAndReturn(withMessage: .checkYourInternet)
         if !isPro! {
-
+            
             let ac = UIAlertController(title: LocalizedAlertboxStrings.addLife, message: LocalizedAlertboxStrings.addLifeDesc, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: LocalizedAlertboxStrings.watchAdsButton, style: .default, handler: { action in
                 self.showedRewardedAds = true
+                self.isLifeTimeOn = false
+                self.lifeTimer?.invalidate()
                 self.createAndloadRewardedAd()
             }))
             
@@ -384,18 +390,19 @@ extension LightsOutVC: LOLifeViewDelegate {
 
 extension LightsOutVC: GADFullScreenContentDelegate {
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("DEBUG: BOOOO")
         if showedRewardedAds {
             showedRewardedAds = false
-//            createAndloadRewardedAd()
+            //            createAndloadRewardedAd()
             if didEarnLife {
-                print("DEBUG: zzaaaaa")
-                lifeCount += 1
+                lifeCount += 4
                 lifeView.lifeUpOrDownAnimation(lifeCase: .up)
                 didEarnLife = false
+                isLifeTimeOn = false
+                lifeTimer?.invalidate()
+                lifeCountDownLabel.text = ""
             }
-//        } else {
-//            createAndLoadInterstitial()
+            //        } else {
+            //            createAndLoadInterstitial()
         }
         
     }
