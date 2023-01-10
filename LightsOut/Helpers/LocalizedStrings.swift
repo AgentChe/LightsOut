@@ -94,6 +94,7 @@ enum LocalizedStrings {
     static let soundEffectOn = NSLocalizedString("On", comment: "")
     static let soundEffectOff = NSLocalizedString("Off", comment: "")
     static let aboutGameCell = NSLocalizedString("About Game", comment: "")
+    static let shareCell = NSLocalizedString("Share", comment: "")
     static let rateCell = NSLocalizedString("Rate on the App Store", comment: "")
     static let contactCell = NSLocalizedString("Contact / Feedback", comment: "")
     static let chartDesc = NSLocalizedString("Your progression by last week (seconds)", comment: "")

@@ -152,6 +152,8 @@ struct UIHelper {
             cellTitle = LocalizedStrings.rateCell
         case [2,2]:
             cellTitle = LocalizedStrings.contactCell
+        case [2, 3]:
+            cellTitle = LocalizedStrings.shareCell
         default:
             cellTitle = "Hello"
         }

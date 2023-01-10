@@ -68,6 +68,13 @@ class SettingsVC: UITableViewController {
         } else if indexPath == [2,0]  {
             // About Game
             performSegue(withIdentifier: Constants.Segues.goToAboutGame, sender: self)
+        } else if indexPath == [2, 3] {
+            guard let url = URL(string: "https://apps.apple.com/ru/app/reaction-time/id1516097125") else {
+                return
+            }
+            
+            let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+            present(vc, animated: true)
         }
     }
     

@@ -22,7 +22,7 @@ struct Constants {
         static let leagueVCSection1 = UserDefaults.standard.bool(forKey: Constants.Keys.getPro) ? 0 : 1
         static let settingsVCSection0 = 2
         static let settingsVCSection1 = 1
-        static let settingsVCSection2 = 3
+        static let settingsVCSection2 = 4
     }
     
     
